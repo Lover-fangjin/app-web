@@ -1,0 +1,190 @@
+<style>
+    #user-update {
+        padding: 20px 25px 25px 0;
+    }
+
+    #user-update .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+</style>
+<div class="layui-fluid" id="projectinfo-update">
+    <form class="layui-form" action="" lay-filter="projectinfo-update-form">
+        <div class="layui-form-item febs-hide">
+            <label class="layui-form-label febs-form-item-require">项目id：</label>
+            <div class="layui-input-block">
+                <input type="text" name="id" data-th-value="${projectinfo.id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">项目地址：</label>
+            <div class="layui-input-block">
+                <input type="text" name="address"   lay-verify="address"
+                autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">经度：</label>
+            <div class="layui-input-block">
+                <input type="text" name="lon"   lay-verify="lon"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">纬度：</label>
+            <div class="layui-input-block">
+                <input type="text" name="lat"   lay-verify="lat"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">所属机构：</label>
+            <div class="layui-input-block">
+                <input type="text" name="borgId" id="borgId" class="layui-input" lay-filter="borgId">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">负责队伍：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptId" id="deptId" class="layui-input" lay-filter="deptId">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">负责人：</label>
+            <div class="layui-input-block">
+                <select name="chargeId"  id="chargeId">
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">联系电话：</label>
+            <div class="layui-input-block">
+                <input type="text" name="tel" id="tel"  lay-verify="tel"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">主要职责描述：</label>
+            <div class="layui-input-block">
+                <textarea name="description" maxlength="100" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="projectinfo-update-form-submit" id="submit"></button>
+            <button type="reset" class="layui-btn" id="reset"></button>
+        </div>
+    </form>
+</div>
+
+<script data-th-inline="javascript">
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect'], function () {
+        var $ = layui.$,
+                febs = layui.febs,
+                layer = layui.layer,
+                formSelects = layui.formSelects,
+                treeSelect = layui.treeSelect,
+                form = layui.form,
+                $view = $('#projectinfo-update'),
+                projectinfo = [[${projectinfo}]],
+                validate = layui.validate;
+
+        form.verify(validate);
+        form.render();
+
+        initselect();
+        initprojectinfoValue();
+
+        formSelects.render();
+        treeSelect.render({
+            elem: $view.find('#borgId'),
+            type: 'get',
+            data: ctx + 'businessorg/select/tree',
+            async: false,
+            placeholder: '请选择',
+            search: false,
+
+            success: function () {
+                treeSelect.checkNode('borgId', projectinfo.borgId);
+            }
+        });
+        treeSelect.render({
+            elem: $view.find('#deptId'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            async: false,
+            search: false,
+            success: function () {
+                treeSelect.checkNode('deptId', projectinfo.deptId);
+            },
+            click: function(obj){
+                var deptid=$("#deptId").val();
+                $.ajax({
+                    type: 'GET',
+                    url: ctx+'projectinfo/userlist/'+deptid,
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#chargeId").empty();
+                        $.each(data.data, function (key, val) {
+
+                            var option2 = $("<option>").val(val.userId).text(val.truename);
+                            //通过LayUI.jQuery添加列表项
+                            $("#chargeId").append(option2);
+                            $("#tel").val(val.mobile);
+                        });
+                        layui.form.render('select');
+                    }
+                });
+            }
+        });
+
+
+
+        function initselect()
+        {
+            $.ajax({
+                type: 'GET',
+                url: ctx+'projectinfo/userlist/'+projectinfo.deptId,
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    $("#chargeId").empty();
+                    $.each(data.data, function (key, val) {
+                        var option2 = $("<option>").val(val.userId).text(val.truename);
+                        //通过LayUI.jQuery添加列表项
+                        $("#chargeId").append(option2);
+                        $("#tel").val(val.mobile);
+                    });
+                    layui.form.render('select');
+                }
+            });
+        }
+
+
+        function initprojectinfoValue() {
+            form.val("projectinfo-update-form", {
+                "address": projectinfo.address,
+                "lon": projectinfo.lon,
+                "lat": projectinfo.lat,
+                "description": projectinfo.description,
+                "tel": projectinfo.tel,
+                "chargeId": projectinfo.chargeId
+            });
+        }
+
+        form.on('submit(projectinfo-update-form-submit)', function (data) {
+            /* if (febs.nativeEqual(data.field, projectinfo)) {
+             febs.alert.warn('数据未作任何修改！');
+             return false;
+             }*/
+
+            febs.post(ctx + 'projectinfo/update', data.field, function () {
+                layer.closeAll();
+                febs.alert.success(projectinfo.address + ' 项目数据修改成功');
+                $('#febs-projectinfo').find('#query').click();
+            });
+            return false;
+        });
+    });
+</script>

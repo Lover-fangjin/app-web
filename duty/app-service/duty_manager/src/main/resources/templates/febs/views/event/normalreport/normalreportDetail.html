@@ -1,0 +1,144 @@
+<style>
+    #user-update {
+        padding: 20px 25px 25px 0;
+    }
+
+    #user-update .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+    .layui-layer-content{
+        padding: 10px 0px;
+    }
+</style>
+<div class="layui-fluid" id="normalreport-update">
+    <form class="layui-form" action="" lay-filter="normalreport-update-form">
+        <div class="layui-form-item febs-hide">
+            <label class="layui-form-label ">事件id：</label>
+            <div class="layui-input-block">
+                <input type="text" name="id" data-th-value="${normalreport.id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">事件编号：</label>
+            <div class="layui-input-block">
+                <input type="text" name="reportNo"   lay-verify="reportNo"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label ">上报人：</label>
+            <div class="layui-input-block">
+                <input type="text" name="truename"  lay-verify="truename"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">联系方式：</label>
+            <div class="layui-input-block">
+                <input type="text" name="mobile"   lay-verify="mobile"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">上报时间：</label>
+            <div class="layui-input-block">
+                <input type="text" name="happenDate" id="happenDate"   lay-verify="happenDate"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">所属机构：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptName"   lay-verify="deptName"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <hr>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label ">访客姓名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="name"   lay-verify="name"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">联系电话：</label>
+            <div class="layui-input-block">
+                <input type="text" name="tel"   lay-verify="tel"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label ">来访事由：</label>
+            <div class="layui-input-block">
+                <input type="text" name="cause"  lay-verify="cause"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">登记位置：</label>
+            <div class="layui-input-block">
+                <input type="text" name="address"  lay-verify="address"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">备注：</label>
+            <div class="layui-input-block">
+                <textarea name="remarke" placeholder="" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="normalreport-update-form-submit" id="submit"></button>
+            <button type="reset" class="layui-btn" id="reset"></button>
+        </div>
+    </form>
+</div>
+
+<script data-th-inline="javascript">
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect','laydate'], function () {
+        var $ = layui.$,
+                laydate = layui.laydate,
+                febs = layui.febs,
+                layer = layui.layer,
+                formSelects = layui.formSelects,
+                treeSelect = layui.treeSelect,
+                form = layui.form,
+                normalreport = [[${normalreport}]],
+                $view = $('#normalreport-update'),
+                validate = layui.validate;
+
+        form.verify(validate);
+        form.render();
+
+        initnormalreportValue();
+
+        formSelects.render();
+
+
+        function initnormalreportValue() {
+            form.val("normalreport-update-form", {
+                "reportNo": normalreport.reportNo,
+                "truename": normalreport.truename,
+                "mobile": normalreport.mobile,
+                "happenDate": normalreport.happenDate,
+                "deptName": normalreport.deptName,
+                "name": normalreport.name,
+                "tel": normalreport.tel,
+                "cause": normalreport.cause,
+                "address": normalreport.address,
+                "remarke": normalreport.remarke
+
+            });
+        }
+
+
+    });
+</script>

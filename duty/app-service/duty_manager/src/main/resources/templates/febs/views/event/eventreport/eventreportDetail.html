@@ -1,0 +1,247 @@
+<style>
+    #user-update {
+        padding: 20px 25px 25px 0;
+    }
+
+    #user-update .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+    .layui-layer-content{
+        padding: 10px 0px;
+    }
+    .layui-carousel{
+        margin: 0px  0px 10px 15px;
+    }
+</style>
+<div class="layui-fluid" id="eventeport-update">
+    <form class="layui-form" action="" lay-filter="eventreport-update-form">
+        <div class="layui-form-item febs-hide">
+            <label class="layui-form-label ">事件id：</label>
+            <div class="layui-input-block">
+                <input type="text" name="id" data-th-value="${eventreport.id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">事件编号：</label>
+            <div class="layui-input-block">
+                <input type="text" name="reportNo"   lay-verify="reportNo"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">上报人：</label>
+            <div class="layui-input-block">
+                <input type="text" name="truename"  lay-verify="truename"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">联系方式：</label>
+            <div class="layui-input-block">
+                <input type="text" name="mobile"   lay-verify="mobile"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">上报时间：</label>
+            <div class="layui-input-block">
+                <input type="text" name="happenDate" id="happenDate"   lay-verify="happenDate"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">所属机构：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptName"   lay-verify="deptName"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <hr>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">事件类别：</label>
+            <div class="layui-input-block">
+                <input type="text" name="eventClass"   lay-verify="eventClass"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">事件类型：</label>
+            <div class="layui-input-block">
+                <input type="text" name="eventType"   lay-verify="eventType"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label ">位置：</label>
+            <div class="layui-input-block">
+                <input type="text" name="location"  lay-verify="location"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item otherEvent">
+            <label class="layui-form-label ">姓名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="name"   lay-verify="name"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item otherEvent">
+            <label class="layui-form-label ">证件号码：</label>
+            <div class="layui-input-block">
+                <input type="text" name="card"   lay-verify="card"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item otherEvent">
+            <label class="layui-form-label ">健康码状态：</label>
+            <div class="layui-input-block">
+                <input type="text" name="hcodeStatus"   lay-verify="hcodeStatus"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item otherEvent">
+            <label class="layui-form-label ">体温：</label>
+            <div class="layui-input-block">
+                <input type="text" name="temperature"  lay-verify="temperature"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">居住地：</label>
+            <div class="layui-input-block">
+                <input type="text" name="address"  lay-verify="address"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item otherEvent">
+            <label class="layui-form-label ">联系电话：</label>
+            <div class="layui-input-block">
+                <input type="text" name="tel"  lay-verify="tel"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item otherEvent">
+            <label class="layui-form-label ">14天内是否有出入记录：</label>
+            <div class="layui-input-block">
+                <input type="text" name="record"   lay-verify="record"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item otherEvent">
+            <label class="layui-form-label ">所到地：</label>
+            <div class="layui-input-block">
+                <input type="text" name="arrival"   lay-verify="arrival"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-carousel" id="event_imgs" lay-filter="event_imgs">
+            <div carousel-item="" id="imgs">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label ">备注：</label>
+            <div class="layui-input-block">
+                <textarea name="remarks" maxlength="100" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="eventreport-update-form-submit" id="submit"></button>
+            <button type="reset" class="layui-btn" id="reset"></button>
+        </div>
+    </form>
+</div>
+
+<script data-th-inline="javascript">
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect','laydate','carousel'], function () {
+        var $ = layui.$,
+                laydate = layui.laydate,
+                febs = layui.febs,
+                layer = layui.layer,
+                formSelects = layui.formSelects,
+                treeSelect = layui.treeSelect,
+                form = layui.form,
+                eventreport = [[${eventreport}]],
+                $view = $('#eventreport-update'),
+                validate = layui.validate,
+                carousel = layui.carousel;
+
+        form.verify(validate);
+        form.render();
+
+        initeventreportValue();
+
+        formSelects.render();
+
+        //常规轮播
+        carousel.render({
+            elem: '#event_imgs'
+            ,arrow: 'always'
+        });
+
+
+        function initeventreportValue() {
+            form.val("eventreport-update-form", {
+                "reportNo": eventreport.reportNo,
+                "truename": eventreport.truename,
+                "mobile": eventreport.mobile,
+                "happenDate": eventreport.happenDate,
+                "deptName": eventreport.deptName,
+                "eventClass": eventreport.eventClass,
+                "eventType": eventreport.eventType,
+                "location": eventreport.location,
+                "name": eventreport.name,
+                "card": eventreport.card,
+                "hcodeStatus": eventreport.hcodeStatus,
+                "temperature": eventreport.temperature,
+                "address": eventreport.address,
+                "tel": eventreport.tel,
+                "arrival": eventreport.arrival,
+                "remarks": eventreport.remarks
+            });
+
+            //14天内是否有出入记录
+            if(eventreport.record=="1"){
+                form.val("eventreport-update-form", {
+                    "record": "是"
+                });
+            }else{
+                form.val("eventreport-update-form", {
+                    "record": "否"
+                });
+            }
+
+            //判断是否有图片
+            if(eventreport.imgs.length>0){
+                for(var i in eventreport.imgs){
+                    var div = document.createElement("div");
+                    var img = document.createElement("img");
+                    div.class="eventImage";
+//                    var imgSrc = "https://fztsp.bjxingtaikeji.com/duty_service/files/"+ eventreport.imgs[i];
+                    var imgSrc = ctx +"files/"+ eventreport.imgs[i];
+                    img.setAttribute("layer-src", imgSrc);
+                    img.src = imgSrc;
+                    img.style = "width:100%;"
+                    div.appendChild(img);
+
+                    $("#imgs").append(div);
+                }
+            }else{
+                $("#event_imgs").hide();
+            }
+
+
+            layer.photos({
+                photos: '#imgs'
+                ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+            });
+
+            //判断事件类别是否是涉疫类
+            if(eventreport.eventClassId!="6" && eventreport.eventTypeId!="49"){
+                $(".otherEvent").hide();
+            }
+        }
+    });
+</script>

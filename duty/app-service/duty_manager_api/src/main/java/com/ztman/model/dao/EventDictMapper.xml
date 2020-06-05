@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.EventDictMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.EventDict" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="EVENT_NAME" property="eventName" jdbcType="VARCHAR" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+    <result column="PID" property="pid" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, EVENT_NAME, DESCRIPTION, PID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_event_dict
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_event_dict
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.EventDict" >
+    insert into t_event_dict (ID, EVENT_NAME, DESCRIPTION,
+    PID)
+    values (#{id,jdbcType=BIGINT}, #{eventName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
+    #{pid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.EventDict" >
+    insert into t_event_dict
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="eventName != null" >
+        EVENT_NAME,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="pid != null" >
+        PID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="eventName != null" >
+        #{eventName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.EventDict" >
+    update t_event_dict
+    <set >
+      <if test="eventName != null" >
+        EVENT_NAME = #{eventName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        PID = #{pid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.EventDict" >
+    update t_event_dict
+    set EVENT_NAME = #{eventName,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      PID = #{pid,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectAll" resultType="java.util.HashMap">
+    select id,event_name name from t_event_dict where pid=-1
+  </select>
+
+  <select id="selectEventType" parameterType="java.lang.Long" resultType="java.util.HashMap">
+    select id,event_name name from t_event_dict where pid=#{pid}
+  </select>
+</mapper>

@@ -1,0 +1,212 @@
+<style>
+    #user-add {
+        padding: 20px 25px 25px 0;
+    }
+    #user-add .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+</style>
+<div class="layui-fluid" id="user-add">
+    <form class="layui-form" action="" lay-filter="user-add-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">用户名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" minlength="2" maxlength="50" lay-verify="range|username"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="truename" lay-verify="truename" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">性别：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="0" title="男性">
+                <input type="radio" name="sex" value="1" title="女性">
+                <input type="radio" name="sex" value="2" title="保密" checked="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">职务：</label>
+            <div class="layui-input-block">
+                <select name="ext3"  id="ext3">
+                    <option value="">请选择</option>
+                    <option value="1">大队长</option>
+                    <option value="2">中队长</option>
+                    <option value="3">分队长</option>
+                    <option value="4">小队长</option>
+                    <option value="5">队员</option>
+                    <option value="6">司机</option>
+                    <option value="7">中控员</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">所属组织：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptId" id="user-add-dept" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">所属角色：</label>
+            <div class="layui-input-block">
+                <select name="roleId"
+                        lay-verify="required"
+                        xm-select-max="1"
+                        xm-select-direction="down"
+                        xm-select="user-add-role"
+                        xm-select-skin="default">
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">手机：</label>
+            <div class="layui-input-block">
+                <input type="tel" name="mobile" lay-verify="phone" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">籍贯：</label>
+            <div class="layui-input-block">
+                <input type="text" name="nativePlace" lay-verify="nativePlace" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">民族：</label>
+            <div class="layui-input-block">
+                <input type="text" name="nation" lay-verify="nation" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">身高：</label>
+            <div class="layui-input-block">
+                <input type="text" name="height" lay-verify="height" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学历：</label>
+            <div class="layui-input-block">
+                <input type="text" name="education" lay-verify="education" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">状态：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="status" value="1" title="有效" checked="">
+                <input type="radio" name="status" value="0" title="禁用">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注：</label>
+            <div class="layui-input-block">
+                <textarea name="description" maxlength="100" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+
+        <!--<div class="layui-form-item">
+            <label class="layui-form-label">邮箱：</label>
+            <div class="layui-input-block">
+                <input type="text" name="email" lay-verify="email" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">政治面貌：</label>
+            <div class="layui-input-block">
+                <input type="text" name="politicalAffil" lay-verify="politicalAffil" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否为退役军人：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="exServiceman" value="是" title="是" checked="">
+                <input type="radio" name="exServiceman" value="否" title="否">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">工作单位：</label>
+            <div class="layui-input-block">
+                <input type="text" name="company" lay-verify="company" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>-->
+
+
+
+
+
+
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="user-add-form-submit" id="submit"></button>
+            <button type="reset" class="layui-btn" id="reset"></button>
+        </div>
+    </form>
+</div>
+
+<script>
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect'], function () {
+        var $ = layui.$,
+            febs = layui.febs,
+            layer = layui.layer,
+            formSelects = layui.formSelects,
+            treeSelect = layui.treeSelect,
+            form = layui.form,
+            $view = $('#user-add'),
+            validate = layui.validate;
+
+        form.verify(validate);
+        form.render();
+
+        formSelects.render();
+
+        treeSelect.render({
+            elem: $view.find('#user-add-dept'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            search: false
+        });
+
+        formSelects.config('user-add-role', {
+            searchUrl: ctx + 'role',
+            response: {
+                statusCode: 200
+            },
+            beforeSuccess: function (id, url, searchVal, result) {
+                var data = result.data;
+                var tranData = [];
+                for (var i = 0; i < data.length; i++) {
+                    tranData.push({
+                        name: data[i].roleName,
+                        value: data[i].roleId
+                    })
+                }
+                result.data = tranData;
+                return result;
+            },
+            error: function (id, url, searchVal, err) {
+                console.error(err);
+                febs.alert.error('获取角色列表失败');
+            }
+        });
+
+        form.on('submit(user-add-form-submit)', function (data) {
+            febs.post(ctx + 'user', data.field, function () {
+                layer.closeAll();
+                febs.alert.success('新增用户成功，初始密码为 123456');
+                $('#febs-user').find('#query').click();
+            });
+            return false;
+        });
+    });
+</script>

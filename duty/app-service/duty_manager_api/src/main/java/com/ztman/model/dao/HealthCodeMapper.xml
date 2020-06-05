@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.HealthCodeMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.HealthCode" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="H_SUM" property="hSum" jdbcType="VARCHAR" />
+    <result column="WUYICHANG" property="wuyichang" jdbcType="VARCHAR" />
+    <result column="YISI" property="yisi" jdbcType="VARCHAR" />
+    <result column="GELI" property="geli" jdbcType="VARCHAR" />
+    <result column="QUEZHEN" property="quezhen" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, H_SUM, WUYICHANG, YISI, GELI, QUEZHEN, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_health_code
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_health_code
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.HealthCode" >
+    insert into t_health_code (ID, H_SUM, WUYICHANG, 
+      YISI, GELI, QUEZHEN, 
+      CREATE_TIME)
+    values (#{id,jdbcType=BIGINT}, #{hSum,jdbcType=VARCHAR}, #{wuyichang,jdbcType=VARCHAR}, 
+      #{yisi,jdbcType=VARCHAR}, #{geli,jdbcType=VARCHAR}, #{quezhen,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.HealthCode" >
+    insert into t_health_code
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="hSum != null" >
+        H_SUM,
+      </if>
+      <if test="wuyichang != null" >
+        WUYICHANG,
+      </if>
+      <if test="yisi != null" >
+        YISI,
+      </if>
+      <if test="geli != null" >
+        GELI,
+      </if>
+      <if test="quezhen != null" >
+        QUEZHEN,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="hSum != null" >
+        #{hSum,jdbcType=VARCHAR},
+      </if>
+      <if test="wuyichang != null" >
+        #{wuyichang,jdbcType=VARCHAR},
+      </if>
+      <if test="yisi != null" >
+        #{yisi,jdbcType=VARCHAR},
+      </if>
+      <if test="geli != null" >
+        #{geli,jdbcType=VARCHAR},
+      </if>
+      <if test="quezhen != null" >
+        #{quezhen,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.HealthCode" >
+    update t_health_code
+    <set >
+      <if test="hSum != null" >
+        H_SUM = #{hSum,jdbcType=VARCHAR},
+      </if>
+      <if test="wuyichang != null" >
+        WUYICHANG = #{wuyichang,jdbcType=VARCHAR},
+      </if>
+      <if test="yisi != null" >
+        YISI = #{yisi,jdbcType=VARCHAR},
+      </if>
+      <if test="geli != null" >
+        GELI = #{geli,jdbcType=VARCHAR},
+      </if>
+      <if test="quezhen != null" >
+        QUEZHEN = #{quezhen,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.HealthCode" >
+    update t_health_code
+    set H_SUM = #{hSum,jdbcType=VARCHAR},
+      WUYICHANG = #{wuyichang,jdbcType=VARCHAR},
+      YISI = #{yisi,jdbcType=VARCHAR},
+      GELI = #{geli,jdbcType=VARCHAR},
+      QUEZHEN = #{quezhen,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectUpToDate" resultType="java.util.HashMap">
+    SELECT
+        h_sum sum,
+        wuyichang,
+        yisi,
+        geli,
+        quezhen
+    FROM
+        t_health_code
+    ORDER BY
+        create_time DESC
+    LIMIT 1
+  </select>
+</mapper>

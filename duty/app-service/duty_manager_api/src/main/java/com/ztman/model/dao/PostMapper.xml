@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.PostMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.Post" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="POST_CODE" property="postCode" jdbcType="VARCHAR" />
+    <result column="POST_NO" property="postNo" jdbcType="VARCHAR" />
+    <result column="POST_AREA" property="postArea" jdbcType="VARCHAR" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+    <result column="SYSTEM_ID" property="systemId" jdbcType="BIGINT" />
+    <result column="SYSTEM_NAME" property="systemName" jdbcType="VARCHAR" />
+    <result column="ADIVISION_ID" property="adivisionId" jdbcType="BIGINT" />
+    <result column="ADIVISION_NAME" property="adivisionName" jdbcType="VARCHAR" />
+    <result column="BUSINESS_ID" property="businessId" jdbcType="BIGINT" />
+    <result column="BUSINESS_NAME" property="businessName" jdbcType="VARCHAR" />
+    <result column="COMPANY_ID" property="companyId" jdbcType="BIGINT" />
+    <result column="COMPANY_NAME" property="companyName" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+    <result column="EXT6" property="ext6" jdbcType="VARCHAR" />
+    <result column="EXT7" property="ext7" jdbcType="VARCHAR" />
+    <result column="EXT8" property="ext8" jdbcType="VARCHAR" />
+    <result column="EXT9" property="ext9" jdbcType="VARCHAR" />
+    <result column="EXT10" property="ext10" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, POST_CODE, POST_NO, POST_AREA, DESCRIPTION, SYSTEM_ID, SYSTEM_NAME, ADIVISION_ID, 
+    ADIVISION_NAME, BUSINESS_ID, BUSINESS_NAME, COMPANY_ID, COMPANY_NAME, EXT1, EXT2, 
+    EXT3, EXT4, EXT5, EXT6, EXT7, EXT8, EXT9, EXT10
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_post
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_post
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.Post" >
+    insert into t_post (ID, POST_CODE, POST_NO, 
+      POST_AREA, DESCRIPTION, SYSTEM_ID, 
+      SYSTEM_NAME, ADIVISION_ID, ADIVISION_NAME, 
+      BUSINESS_ID, BUSINESS_NAME, COMPANY_ID, 
+      COMPANY_NAME, EXT1, EXT2, 
+      EXT3, EXT4, EXT5, EXT6, 
+      EXT7, EXT8, EXT9, EXT10
+      )
+    values (#{id,jdbcType=BIGINT}, #{postCode,jdbcType=VARCHAR}, #{postNo,jdbcType=VARCHAR}, 
+      #{postArea,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{systemId,jdbcType=BIGINT}, 
+      #{systemName,jdbcType=VARCHAR}, #{adivisionId,jdbcType=BIGINT}, #{adivisionName,jdbcType=VARCHAR}, 
+      #{businessId,jdbcType=BIGINT}, #{businessName,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT}, 
+      #{companyName,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, 
+      #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}, #{ext6,jdbcType=VARCHAR}, 
+      #{ext7,jdbcType=VARCHAR}, #{ext8,jdbcType=VARCHAR}, #{ext9,jdbcType=VARCHAR}, #{ext10,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.Post" >
+    insert into t_post
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="postCode != null" >
+        POST_CODE,
+      </if>
+      <if test="postNo != null" >
+        POST_NO,
+      </if>
+      <if test="postArea != null" >
+        POST_AREA,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="systemId != null" >
+        SYSTEM_ID,
+      </if>
+      <if test="systemName != null" >
+        SYSTEM_NAME,
+      </if>
+      <if test="adivisionId != null" >
+        ADIVISION_ID,
+      </if>
+      <if test="adivisionName != null" >
+        ADIVISION_NAME,
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID,
+      </if>
+      <if test="businessName != null" >
+        BUSINESS_NAME,
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID,
+      </if>
+      <if test="companyName != null" >
+        COMPANY_NAME,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+      <if test="ext4 != null" >
+        EXT4,
+      </if>
+      <if test="ext5 != null" >
+        EXT5,
+      </if>
+      <if test="ext6 != null" >
+        EXT6,
+      </if>
+      <if test="ext7 != null" >
+        EXT7,
+      </if>
+      <if test="ext8 != null" >
+        EXT8,
+      </if>
+      <if test="ext9 != null" >
+        EXT9,
+      </if>
+      <if test="ext10 != null" >
+        EXT10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="postCode != null" >
+        #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="postNo != null" >
+        #{postNo,jdbcType=VARCHAR},
+      </if>
+      <if test="postArea != null" >
+        #{postArea,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="systemId != null" >
+        #{systemId,jdbcType=BIGINT},
+      </if>
+      <if test="systemName != null" >
+        #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="adivisionId != null" >
+        #{adivisionId,jdbcType=BIGINT},
+      </if>
+      <if test="adivisionName != null" >
+        #{adivisionName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessName != null" >
+        #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        #{ext10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.Post" >
+    update t_post
+    <set >
+      <if test="postCode != null" >
+        POST_CODE = #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="postNo != null" >
+        POST_NO = #{postNo,jdbcType=VARCHAR},
+      </if>
+      <if test="postArea != null" >
+        POST_AREA = #{postArea,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="systemId != null" >
+        SYSTEM_ID = #{systemId,jdbcType=BIGINT},
+      </if>
+      <if test="systemName != null" >
+        SYSTEM_NAME = #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="adivisionId != null" >
+        ADIVISION_ID = #{adivisionId,jdbcType=BIGINT},
+      </if>
+      <if test="adivisionName != null" >
+        ADIVISION_NAME = #{adivisionName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID = #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessName != null" >
+        BUSINESS_NAME = #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null" >
+        COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        EXT6 = #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        EXT7 = #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        EXT8 = #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        EXT9 = #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        EXT10 = #{ext10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.Post" >
+    update t_post
+    set POST_CODE = #{postCode,jdbcType=VARCHAR},
+      POST_NO = #{postNo,jdbcType=VARCHAR},
+      POST_AREA = #{postArea,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      SYSTEM_ID = #{systemId,jdbcType=BIGINT},
+      SYSTEM_NAME = #{systemName,jdbcType=VARCHAR},
+      ADIVISION_ID = #{adivisionId,jdbcType=BIGINT},
+      ADIVISION_NAME = #{adivisionName,jdbcType=VARCHAR},
+      BUSINESS_ID = #{businessId,jdbcType=BIGINT},
+      BUSINESS_NAME = #{businessName,jdbcType=VARCHAR},
+      COMPANY_ID = #{companyId,jdbcType=BIGINT},
+      COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR},
+      EXT4 = #{ext4,jdbcType=VARCHAR},
+      EXT5 = #{ext5,jdbcType=VARCHAR},
+      EXT6 = #{ext6,jdbcType=VARCHAR},
+      EXT7 = #{ext7,jdbcType=VARCHAR},
+      EXT8 = #{ext8,jdbcType=VARCHAR},
+      EXT9 = #{ext9,jdbcType=VARCHAR},
+      EXT10 = #{ext10,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

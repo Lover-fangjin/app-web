@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.system.mapper.ProjectInfoMapper">
+
+    <select id="findProjectInfosList" parameterType="projectInfo" resultType="projectInfo">
+        select
+        tp.*,
+        tu.truename,
+        (select name from t_business_org where id=tp.BORG_ID) orgname,
+        (select dept_name from t_dept where DEPT_ID=tp.DEPT_ID) deptname
+        from t_project_info tp
+        left join t_user tu on tu.user_id=tp.CHARGE_ID
+        WHERE 1 = 1
+        <if test="projectInfo.address != null and projectInfo.address != ''">
+            AND tp.address like CONCAT('%',#{projectInfo.address},'%')
+        </if>
+        <if test="projectInfo.borgId != null and projectInfo.borgId != ''">
+            AND tp.BORG_ID = #{projectInfo.borgId}
+        </if>
+    </select>
+
+
+    <select id="findById" parameterType="java.lang.Long" resultType="projectInfo">
+       select
+        tp.*,
+        tu.truename,
+        (select name from t_business_org where id=tp.BORG_ID) orgname,
+        (select dept_name from t_dept where DEPT_ID=tp.DEPT_ID) deptname
+        from t_project_info tp
+        left join t_user tu on tu.user_id=tp.CHARGE_ID
+        where tp.id=#{id}
+    </select>
+
+    <select id="getUsersByDeptid" parameterType="java.lang.String" resultType="cc.mrbird.febs.system.entity.User">
+        select
+       *
+       from t_user t
+        where t.dept_id=#{deptid}
+    </select>
+
+</mapper>

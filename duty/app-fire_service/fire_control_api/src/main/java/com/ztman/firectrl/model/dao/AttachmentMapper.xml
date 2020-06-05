@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.firectrl.model.dao.AttachmentMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.firectrl.model.entity.Attachment" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="DATA_ID" property="dataId" jdbcType="BIGINT" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="FILE_SIZE" property="fileSize" jdbcType="BIGINT" />
+    <result column="FILE_SUFFIX" property="fileSuffix" jdbcType="VARCHAR" />
+    <result column="URL" property="url" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, DATA_ID, FILE_NAME, FILE_SIZE, FILE_SUFFIX, URL, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_attachment
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_attachment
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.firectrl.model.entity.Attachment" >
+    insert into t_attachment (ID, DATA_ID, FILE_NAME, 
+      FILE_SIZE, FILE_SUFFIX, URL, 
+      CREATE_TIME)
+    values (#{id,jdbcType=BIGINT}, #{dataId,jdbcType=BIGINT}, #{fileName,jdbcType=VARCHAR}, 
+      #{fileSize,jdbcType=BIGINT}, #{fileSuffix,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.firectrl.model.entity.Attachment" useGeneratedKeys="true" keyProperty="id">
+    insert into t_attachment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="dataId != null" >
+        DATA_ID,
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME,
+      </if>
+      <if test="fileSize != null" >
+        FILE_SIZE,
+      </if>
+      <if test="fileSuffix != null" >
+        FILE_SUFFIX,
+      </if>
+      <if test="url != null" >
+        URL,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="dataId != null" >
+        #{dataId,jdbcType=BIGINT},
+      </if>
+      <if test="fileName != null" >
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null" >
+        #{fileSize,jdbcType=BIGINT},
+      </if>
+      <if test="fileSuffix != null" >
+        #{fileSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.firectrl.model.entity.Attachment" >
+    update t_attachment
+    <set >
+      <if test="dataId != null" >
+        DATA_ID = #{dataId,jdbcType=BIGINT},
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null" >
+        FILE_SIZE = #{fileSize,jdbcType=BIGINT},
+      </if>
+      <if test="fileSuffix != null" >
+        FILE_SUFFIX = #{fileSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        URL = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.firectrl.model.entity.Attachment" >
+    update t_attachment
+    set DATA_ID = #{dataId,jdbcType=BIGINT},
+      FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      FILE_SIZE = #{fileSize,jdbcType=BIGINT},
+      FILE_SUFFIX = #{fileSuffix,jdbcType=VARCHAR},
+      URL = #{url,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="queryByDataId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_attachment where data_id=#{dataId}
+  </select>
+</mapper>

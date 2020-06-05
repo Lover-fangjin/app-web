@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.AttendanceMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.Attendance" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="AT_TIME" property="atTime" jdbcType="TIMESTAMP" />
+    <result column="TYPE" property="type" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="ABNORMAL" property="abnormal" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+    <result column="EXT6" property="ext6" jdbcType="VARCHAR" />
+    <result column="EXT7" property="ext7" jdbcType="VARCHAR" />
+    <result column="EXT8" property="ext8" jdbcType="VARCHAR" />
+    <result column="EXT9" property="ext9" jdbcType="VARCHAR" />
+    <result column="EXT10" property="ext10" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, AT_TIME, TYPE, USER_ID, ABNORMAL, EXT1, EXT2, EXT3, EXT4, EXT5, EXT6, EXT7, EXT8, 
+    EXT9, EXT10
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_attendance
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_attendance
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.Attendance" >
+    insert into t_attendance (ID, AT_TIME, TYPE, 
+      USER_ID, ABNORMAL, EXT1, 
+      EXT2, EXT3, EXT4, EXT5, 
+      EXT6, EXT7, EXT8, EXT9, 
+      EXT10)
+    values (#{id,jdbcType=BIGINT}, #{atTime,jdbcType=TIMESTAMP}, #{type,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=BIGINT}, #{abnormal,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, 
+      #{ext2,jdbcType=VARCHAR}, #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}, 
+      #{ext6,jdbcType=VARCHAR}, #{ext7,jdbcType=VARCHAR}, #{ext8,jdbcType=VARCHAR}, #{ext9,jdbcType=VARCHAR}, 
+      #{ext10,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.Attendance" >
+    insert into t_attendance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="atTime != null" >
+        AT_TIME,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="abnormal != null" >
+        ABNORMAL,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+      <if test="ext4 != null" >
+        EXT4,
+      </if>
+      <if test="ext5 != null" >
+        EXT5,
+      </if>
+      <if test="ext6 != null" >
+        EXT6,
+      </if>
+      <if test="ext7 != null" >
+        EXT7,
+      </if>
+      <if test="ext8 != null" >
+        EXT8,
+      </if>
+      <if test="ext9 != null" >
+        EXT9,
+      </if>
+      <if test="ext10 != null" >
+        EXT10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="atTime != null" >
+        #{atTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="abnormal != null" >
+        #{abnormal,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        #{ext10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.Attendance" >
+    update t_attendance
+    <set >
+      <if test="atTime != null" >
+        AT_TIME = #{atTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="abnormal != null" >
+        ABNORMAL = #{abnormal,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        EXT6 = #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        EXT7 = #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        EXT8 = #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        EXT9 = #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        EXT10 = #{ext10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.Attendance" >
+    update t_attendance
+    set AT_TIME = #{atTime,jdbcType=TIMESTAMP},
+      TYPE = #{type,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=BIGINT},
+      ABNORMAL = #{abnormal,jdbcType=VARCHAR},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR},
+      EXT4 = #{ext4,jdbcType=VARCHAR},
+      EXT5 = #{ext5,jdbcType=VARCHAR},
+      EXT6 = #{ext6,jdbcType=VARCHAR},
+      EXT7 = #{ext7,jdbcType=VARCHAR},
+      EXT8 = #{ext8,jdbcType=VARCHAR},
+      EXT9 = #{ext9,jdbcType=VARCHAR},
+      EXT10 = #{ext10,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="queryByUserId" resultType="java.util.HashMap" parameterType="java.util.Map">
+    SELECT USER_ID userId,
+    MIN(CASE WHEN TYPE=1 THEN AT_TIME END) goto,
+    MAX(CASE WHEN TYPE=0 THEN AT_TIME END) gooff
+    FROM t_attendance
+    WHERE DATE_FORMAT(AT_TIME, '%Y-%m-%d') = DATE_FORMAT(#{date}, '%Y-%m-%d') and USER_ID=#{userId}
+    GROUP BY USER_ID
+  </select>
+
+  <select id="dutyAbnormal" parameterType="java.util.Map" resultType="java.lang.String">
+    <if test="isDuty==1">
+      SELECT
+      CASE
+      WHEN DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d %H:%i') &gt;= DATE_FORMAT(#{atTime}, '%Y-%m-%d %H:%i') THEN
+      '0'
+      ELSE
+      '1'
+      END abnormal
+      FROM
+      t_duty_info
+      WHERE DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d')=DATE_FORMAT(NOW(), '%Y-%m-%d') AND
+      DUTY_USER_ID = #{userId} limit 1
+    </if>
+    <if test="isDuty==0">
+      SELECT
+      CASE
+      WHEN DATE_FORMAT(DUTY_END_TIME, '%Y-%m-%d %H:%i') &lt;= DATE_FORMAT(#{atTime}, '%Y-%m-%d %H:%i') THEN
+      '0'
+      ELSE
+      '1'
+      END abnormal
+      FROM
+      t_duty_info
+      WHERE DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d')=DATE_FORMAT(NOW(), '%Y-%m-%d') AND
+      DUTY_USER_ID = #{userId} limit 1
+    </if>
+  </select>
+</mapper>

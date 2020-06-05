@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.DutyInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.DutyInfo" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="SITE_ID" property="siteId" jdbcType="BIGINT" />
+    <result column="DUTY_USER_ID" property="dutyUserId" jdbcType="BIGINT" />
+    <result column="DUTY_DATE" property="dutyDate" jdbcType="VARCHAR" />
+    <result column="DUTY_TIME" property="dutyTime" jdbcType="VARCHAR" />
+    <result column="DUTY_START_TIME" property="dutyStartTime" jdbcType="TIMESTAMP" />
+    <result column="DUTY_END_TIME" property="dutyEndTime" jdbcType="TIMESTAMP" />
+    <result column="LOCATION" property="location" jdbcType="VARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, SITE_ID, DUTY_USER_ID, DUTY_DATE, DUTY_TIME, DUTY_START_TIME, DUTY_END_TIME,
+    LOCATION, REMARKS
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_duty_info
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_duty_info
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.DutyInfo" >
+    insert into t_duty_info (ID, SITE_ID, DUTY_USER_ID,
+    DUTY_DATE, DUTY_TIME, DUTY_START_TIME,
+    DUTY_END_TIME, LOCATION, REMARKS
+    )
+    values (#{id,jdbcType=BIGINT}, #{siteId,jdbcType=BIGINT}, #{dutyUserId,jdbcType=BIGINT},
+    #{dutyDate,jdbcType=VARCHAR}, #{dutyTime,jdbcType=VARCHAR}, #{dutyStartTime,jdbcType=TIMESTAMP},
+    #{dutyEndTime,jdbcType=TIMESTAMP}, #{location,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}
+    )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.DutyInfo" >
+    insert into t_duty_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="siteId != null" >
+        SITE_ID,
+      </if>
+      <if test="dutyUserId != null" >
+        DUTY_USER_ID,
+      </if>
+      <if test="dutyDate != null" >
+        DUTY_DATE,
+      </if>
+      <if test="dutyTime != null" >
+        DUTY_TIME,
+      </if>
+      <if test="dutyStartTime != null" >
+        DUTY_START_TIME,
+      </if>
+      <if test="dutyEndTime != null" >
+        DUTY_END_TIME,
+      </if>
+      <if test="location != null" >
+        LOCATION,
+      </if>
+      <if test="remarks != null" >
+        REMARKS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyUserId != null" >
+        #{dutyUserId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyDate != null" >
+        #{dutyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyTime != null" >
+        #{dutyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyStartTime != null" >
+        #{dutyStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dutyEndTime != null" >
+        #{dutyEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.DutyInfo" >
+    update t_duty_info
+    <set >
+      <if test="siteId != null" >
+        SITE_ID = #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyUserId != null" >
+        DUTY_USER_ID = #{dutyUserId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyDate != null" >
+        DUTY_DATE = #{dutyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyTime != null" >
+        DUTY_TIME = #{dutyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyStartTime != null" >
+        DUTY_START_TIME = #{dutyStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dutyEndTime != null" >
+        DUTY_END_TIME = #{dutyEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="location != null" >
+        LOCATION = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.DutyInfo" >
+    update t_duty_info
+    set SITE_ID = #{siteId,jdbcType=BIGINT},
+      DUTY_USER_ID = #{dutyUserId,jdbcType=BIGINT},
+      DUTY_DATE = #{dutyDate,jdbcType=VARCHAR},
+      DUTY_TIME = #{dutyTime,jdbcType=VARCHAR},
+      DUTY_START_TIME = #{dutyStartTime,jdbcType=TIMESTAMP},
+      DUTY_END_TIME = #{dutyEndTime,jdbcType=TIMESTAMP},
+      LOCATION = #{location,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectAll" resultType="java.util.HashMap">
+    SELECT
+        st.`NAME`,
+        u.TRUENAME Captain,
+        u.MOBILE Captain_tel,
+        st.LICATION Location,
+        st.LON,
+        st.LAT
+    FROM
+        t_site st
+    LEFT JOIN t_user u ON st.USER_ID = u.USER_ID
+  </select>
+
+  <select id="queryDutyBySiteId" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+    SELECT
+        u.TRUENAME people,
+        u.MOBILE People_tel,
+        u.IS_DUTY,
+        duty.DUTY_START_TIME,
+        duty.DUTY_END_TIME
+    FROM
+        t_duty_info duty
+    LEFT JOIN t_user u ON duty.DUTY_USER_ID = u.USER_ID
+    WHERE
+        SITE_ID = #{siteId}
+  </select>
+
+  <select id="queryDutyByUserId" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+    SELECT
+        DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d %H:%i:%s') startTime,
+        DATE_FORMAT(DUTY_END_TIME, '%Y-%m-%d %H:%i:%s') endTime,
+        timestampdiff(
+            HOUR,
+            DUTY_START_TIME,
+            DUTY_END_TIME
+        ) duration
+    FROM
+        t_duty_info
+    WHERE
+        DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d') = DATE_FORMAT(#{date}, '%Y-%m-%d')
+    AND duty_user_id = #{userId}
+  </select>
+</mapper>

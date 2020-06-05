@@ -1,0 +1,329 @@
+<!--
+<style>
+    #febs-user-detail #user-img, #febs-user-detail .user-info {
+        display: inline-block;
+        float: left;
+        margin-left: 15px;
+    }
+
+    #febs-user-detail #user-img img {
+        width: 7rem;
+        margin: 10px 10px 0 20px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    #febs-user-detail #user-info-wrapper {
+        margin: 0 0 1rem 0;
+        display: inline-block;
+    }
+
+    #febs-user-detail .user-info div {
+        margin: 10px 15px;
+        max-width: 19rem;
+    }
+
+    #febs-user-detail #options-wrapper a {
+        padding: 4px 6px;
+        color: rgba(0, 0, 0, 0.65);
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+    }
+
+    #febs-user-detail #options-wrapper a:hover {
+        color: #40a9ff;
+        border-color: #40a9ff;
+    }
+
+</style>
+<div class="layui-fluid" id="febs-user-detail" lay-title="个人信息">
+    <div id="user-info-wrapper">
+        <div id="user-img">
+            <img alt="头像" title="点我更换头像" data-th-src="@{febs/images/avatar/}+${user.avatar}">
+        </div>
+        <div class="user-info">
+            <div><span class="layui-icon layui-icon-user"></span> 账号：
+                [[${user.username}]]
+            </div>
+            <div><span class="layui-icon layui-icon-trophy"></span> 角色：
+                [[${#strings.defaultString(user.roleName,'暂无角色信息')}]]
+            </div>
+            <div><span class="layui-icon layui-icon-home"></span> 部门：
+                [[${#strings.defaultString(user.deptName,'无部门信息')}]]
+            </div>
+            <div><span class="layui-icon layui-icon-skin"></span> 性别：
+                [[${user.sex}]]
+            </div>
+        </div>
+        <div class="user-info">
+            <div><span class="layui-icon layui-icon-phone"></span> 电话：
+                [[${#strings.defaultString(user.mobile,'无电话信息')}]]
+            </div>
+            <div><span class="layui-icon layui-icon-mail"></span> 邮箱：
+                [[${#strings.defaultString(user.email,'无邮箱信息')}]]
+            </div>
+            <div><span class="layui-icon layui-icon-time-circle"></span> 最后登录时间：
+                [[${#strings.defaultString(lastLoginTime,'从未登录过系统')}]]
+            </div>
+            <div><span class="layui-icon layui-icon-read"></span> 个人简介：
+                [[${#strings.defaultString(user.description,'暂无个人介绍')}]]
+            </div>
+        </div>
+    </div>
+</div>-->
+<style>
+    #user-update {
+        padding: 20px 25px 25px 0;
+    }
+
+    #user-update .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+</style>
+<div class="layui-fluid" id="user-update">
+    <form class="layui-form" action="" lay-filter="user-update-form">
+        <div class="layui-form-item febs-hide">
+            <label class="layui-form-label febs-form-item-require">用户id：</label>
+            <div class="layui-input-block">
+                <input type="text" name="userId" data-th-value="${user.userId}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">用户名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" minlength="4" maxlength="50" data-th-id="${user.userId}"
+                       lay-verify="range|username" autocomplete="off" class="layui-input" readonly>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="truename" lay-verify="truename" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">性别：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="0" title="男性">
+                <input type="radio" name="sex" value="1" title="女性">
+                <input type="radio" name="sex" value="2" title="保密">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">职务：</label>
+            <div class="layui-input-block">
+                <select name="ext3"  id="ext3">
+                    <option value="">请选择</option>
+                    <option value="1">大队长</option>
+                    <option value="2">中队长</option>
+                    <option value="3">分队长</option>
+                    <option value="4">小队长</option>
+                    <option value="5">队员</option>
+                    <option value="6">司机</option>
+                    <option value="7">中控员</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">所属组织：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptId" id="user-update-dept" lay-filter="user-update-dept"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">所属角色：</label>
+            <div class="layui-input-block">
+                <select name="roleId"
+                        xm-select-max="1"
+                        lay-verify="required"
+                        xm-select-direction="down"
+                        xm-select="user-update-role"
+                        xm-select-skin="default">
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">手机：</label>
+            <div class="layui-input-block">
+                <input type="tel" name="mobile" lay-verify="phone" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">籍贯：</label>
+            <div class="layui-input-block">
+                <input type="text" name="nativePlace" lay-verify="nativePlace" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">民族：</label>
+            <div class="layui-input-block">
+                <input type="text" name="nation" lay-verify="nation" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">身高：</label>
+            <div class="layui-input-block">
+                <input type="text" name="height" lay-verify="height" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学历：</label>
+            <div class="layui-input-block">
+                <input type="text" name="education" lay-verify="education" maxlength="50" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">状态：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="status" value="1" title="有效">
+                <input type="radio" name="status" value="0" title="禁用">
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注：</label>
+            <div class="layui-input-block">
+                <textarea name="description" maxlength="100" class="layui-textarea">
+                </textarea>
+            </div>
+        </div>
+
+
+        <!-- <div class="layui-form-item">
+             <label class="layui-form-label">邮箱：</label>
+             <div class="layui-input-block">
+                 <input type="text" name="email" lay-verify="email" maxlength="50" autocomplete="off"
+                        class="layui-input">
+             </div>
+         </div>
+         <div class="layui-form-item">
+             <label class="layui-form-label">政治面貌：</label>
+             <div class="layui-input-block">
+                 <input type="text" name="politicalAffil" lay-verify="politicalAffil" maxlength="50" autocomplete="off"
+                        class="layui-input">
+             </div>
+         </div>
+         <div class="layui-form-item">
+             <label class="layui-form-label">是否为退役军人：</label>
+             <div class="layui-input-block">
+                 <input type="radio" name="exServiceman" value="是" title="是" checked="">
+                 <input type="radio" name="exServiceman" value="否" title="否">
+             </div>
+         </div>
+         <div class="layui-form-item">
+             <label class="layui-form-label">工作单位：</label>
+             <div class="layui-input-block">
+                 <input type="text" name="company" lay-verify="company" maxlength="50" autocomplete="off"
+                        class="layui-input">
+             </div>
+         </div>-->
+
+
+
+
+
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="user-update-form-submit" id="submit"></button>
+        </div>
+    </form>
+</div>
+
+<script data-th-inline="javascript">
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect'], function () {
+        var $ = layui.$,
+                febs = layui.febs,
+                layer = layui.layer,
+                formSelects = layui.formSelects,
+                treeSelect = layui.treeSelect,
+                form = layui.form,
+                user = [[${user}]],
+                $view = $('#user-update'),
+                validate = layui.validate;
+
+        form.verify(validate);
+        form.render();
+
+        initUserValue();
+
+        formSelects.render();
+
+        treeSelect.render({
+            elem: $view.find('#user-update-dept'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            search: false,
+            success: function () {
+                treeSelect.checkNode('user-update-dept', user.deptId);
+            }
+        });
+
+
+        formSelects.config('user-update-role', {
+            searchUrl: ctx + 'role',
+            response: {
+                statusCode: 200
+            },
+            beforeSuccess: function (id, url, searchVal, result) {
+                var data = result.data;
+                var tranData = [];
+                for (var i = 0; i < data.length; i++) {
+                    tranData.push({
+                        name: data[i].roleName,
+                        value: data[i].roleId
+                    })
+                }
+                result.data = tranData;
+                return result;
+            },
+            success: function () {
+                formSelects.value('user-update-role', user.roleId.split(','));
+            },
+            error: function (id, url, searchVal, err) {
+                console.error(err);
+                febs.alert.error('获取角色列表失败');
+            }
+        });
+
+        function initUserValue() {
+            form.val("user-update-form", {
+                "username": user.username,
+                "truename": user.truename,
+                "sex": user.sex,
+                "ext3": user.ext3,
+                "mobile": user.mobile,
+                "nativePlace": user.nativePlace,
+                "nation": user.nation,
+                "height": user.height,
+                "education": user.education,
+                "status": user.status,
+                "description": user.description
+
+                /*"email": user.email,
+                 "politicalAffil": user.politicalAffil,
+                 "exServiceman": user.exServiceman,
+                 "company": user.company,*/
+
+
+            });
+        }
+
+        form.on('submit(user-update-form-submit)', function (data) {
+            if (febs.nativeEqual(data.field, user)) {
+                febs.alert.warn('数据未作任何修改！');
+                return false;
+            }
+            febs.post(ctx + 'user/update', data.field, function () {
+                layer.closeAll();
+                febs.alert.success(user.username + ' 用户数据修改成功');
+                $('#febs-user').find('#query').click();
+            });
+            return false;
+        });
+    });
+</script>

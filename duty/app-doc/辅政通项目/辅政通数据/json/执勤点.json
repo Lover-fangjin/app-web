@@ -1,0 +1,8 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.42945,39.55095]},"properties":{"Id":1,"name":"礼贤镇农建科","captain":"秦建","address":"北京市大兴区礼贤镇城管执法队","tel":"18501930534","num":10}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.331158,39.543501]},"properties":{"Id":2,"name":"恒信建业资产管理有限公司","captain":"孙杭","address":"北京市大兴区大兴区京开辅路35号","tel":"18811141043","num":10}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.33238,39.75049]},"properties":{"Id":3,"name":"清源街道社会化","captain":"吕来宝","address":"北京市大兴区大兴区滨河西里17号","tel":"13963799938","num":10}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.3255,39.74113]},"properties":{"Id":4,"name":"市政养护队","captain":"侯典庆","address":"北京市大兴区大兴区黄村公园西南角保安宿舍","tel":"17310066516","num":10}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.413932,39.772746]},"properties":{"Id":5,"name":"西红门城管","captain":"张宝林","address":"北京市大兴区大兴区西红门镇路安小镇D103","tel":"18911654771","num":10}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.41431,39.77264]},"properties":{"Id":6,"name":"西红门综治","captain":"石博","address":"北京市大兴区大兴区西红门镇路安小镇D104","tel":"15010851672","num":10}}
+]}

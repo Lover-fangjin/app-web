@@ -1,0 +1,160 @@
+<div class="layui-fluid layui-anim febs-anim" id="febs-normalreport" lay-title="应急处突业务">
+    <div class="layui-row febs-container">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body febs-table-full">
+                    <form class="layui-form layui-table-form" lay-filter="user-table-form">
+                        <div class="layui-row">
+                            <div class="layui-col-md10">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label layui-form-label-sm">所属组织</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="dept" id="dept" lay-filter="dept"
+                                                   class="layui-input">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="layui-col-md2 layui-col-sm12 layui-col-xs12 table-action-area">
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                                    <i class="layui-icon">&#xe848;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="reset">
+                                    <i class="layui-icon">&#xe79b;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action action-more"
+                                     shiro:hasAnyPermissions="normalreport:add,normalreport:update,normalreport:export">
+                                    <i class="layui-icon">&#xe875;</i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <table lay-filter="normalreportTable" lay-data="{id: 'normalreportTable'}"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--下拉、序号等-->
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+
+
+<!--列表操作项-->
+<script type="text/html" id="normalreport-option">
+    <span shiro:lacksPermission="normalreport:view,normalreport:update,normalreport:delete">
+        <span class="layui-badge-dot febs-bg-orange"></span> 无权限
+    </span>
+    <a lay-event="detail" shiro:hasPermission="normalreport:view"><i
+            class="layui-icon febs-edit-area febs-green">&#xe7a5;</i></a>
+    <a lay-event="edit" shiro:hasPermission="normalreport:update"><i
+            class="layui-icon febs-edit-area febs-blue">&#xe7a4;</i></a>
+    <a lay-event="del" shiro:hasPermission="normalreport:delete"><i class="layui-icon febs-edit-area febs-red">&#xe7f9;</i></a>
+</script>
+<script data-th-inline="none" type="text/javascript">
+    layui.use(['dropdown', 'jquery', 'laydate', 'form', 'table', 'febs', 'treeSelect'], function () {
+        var $ = layui.jquery,
+                laydate = layui.laydate,
+                febs = layui.febs,
+                form = layui.form,
+                table = layui.table,
+                treeSelect = layui.treeSelect,
+                dropdown = layui.dropdown,
+                $view = $('#febs-normalreport'),
+                $query = $view.find('#query'),
+                $reset = $view.find('#reset'),
+                $searchForm = $view.find('form'),
+                sortObject = {field: 'createTime', type: null},
+                tableIns;
+
+
+        form.render();
+
+        /*  加载列表*/
+        initTable();
+        function initTable() {
+            tableIns = febs.table.init({
+                elem: $view.find('table'),
+                id: 'normalreportTable',
+                url: ctx + 'normalreport/list',
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'zizeng', title: '序号',type:'numbers'},
+                    {field: 'reportNo', title: '事件编号'},
+                    {field: 'happenDate', title: '上报时间', minWidth: 180, sort: true},
+                    {field: 'truename', title: '上报人'},
+                    {field: 'mobile', title: '联系方式'},
+                    {field: 'deptName', title: '所属组织'},
+                    {title: '操作', toolbar: '#normalreport-option', minWidth: 140}
+                ]]
+            });
+        }
+
+        treeSelect.render({
+            elem: $view.find('#dept'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            search: false
+        });
+
+        /*列表操作按钮功能*/
+        table.on('tool(normalreportTable)', function (obj) {
+            var data = obj.data,
+                    layEvent = obj.event;
+            if (layEvent === 'detail') {
+                febs.modal.view('信息详情', 'event/normalreport/detail/' + data.id, {
+                    area: $(window).width() <= 750 ? '95%' : '660px'
+                });
+            }
+            if (layEvent === 'del') {
+                febs.modal.confirm('删除信息', '确定删除该信息？', function () {
+                    deletenormalreports(data.id);
+                });
+            }
+        });
+
+        /*搜索功能*/
+        $query.on('click', function () {
+            var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+            tableIns.reload({where: params, page: {curr: 1}});
+        });
+        function getQueryParams() {
+            return {
+                deptId: $searchForm.find('input[name="dept"]').val().trim()
+            };
+        }
+
+        /*重置搜索项*/
+        $reset.on('click', function () {
+            sortObject.type = 'null';
+            treeSelect.revokeNode('dept');
+            tableIns.reload({where: getQueryParams(), page: {curr: 1}, initSort: sortObject});
+        });
+
+        /*删除*/
+        function deletenormalreports(normalreportIds) {
+            febs.get(ctx + 'normalreport/delete/' + normalreportIds, null, function () {
+                febs.alert.success('删除成功');
+                $query.click();
+            });
+        }
+
+        /*排序功能*/
+        table.on('sort(normalreportTable)', function (obj) {
+            sortObject = obj;
+            tableIns.reload({
+                initSort: obj,
+                where: $.extend(getQueryParams(), {
+                    field: obj.field,
+                    order: obj.type
+                })
+            });
+        });
+
+    })
+</script>

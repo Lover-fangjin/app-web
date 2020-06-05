@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.DoorMessageMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.DoorMessage" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="CONTENT" property="content" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, CONTENT, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_door_message
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_door_message
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.DoorMessage" >
+    insert into t_door_message (ID, CONTENT, CREATE_TIME
+      )
+    values (#{id,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.DoorMessage" >
+    insert into t_door_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="content != null" >
+        CONTENT,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.DoorMessage" >
+    update t_door_message
+    <set >
+      <if test="content != null" >
+        CONTENT = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.DoorMessage" >
+    update t_door_message
+    set CONTENT = #{content,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="tmpStatistics" resultType="java.util.HashMap">
+    select a.create_time,a.count,b.f_count from (select create_time,count(*) count from (select REPLACE(SUBSTRING_INDEX(SUBSTRING_INDEX(content,',',6),',',-1),'}','') tf,DATE_FORMAT(create_time,'%Y-%m-%d') create_time from t_door_message
+    <!--where DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= create_time-->
+    ) t group by create_time) a
+    left join
+    (select create_time,count(*) f_count from (select REPLACE(SUBSTRING_INDEX(SUBSTRING_INDEX(content,',',6),',',-1),'}','') tf,DATE_FORMAT(create_time,'%Y-%m-%d') create_time from t_door_message
+    <!--where DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= create_time-->
+    ) t where t.tf='F' group by create_time) b
+    on a.create_time=b.create_time
+    order by a.create_time
+  </select>
+
+  <select id="statisticsList" parameterType="java.util.Map" resultType="java.util.HashMap">
+    select date_format(create_time,'%Y-%m-%d %H:%i:%s') create_time,tem,tf from (select create_time,CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(content,',',5),',',-1) AS DECIMAL(3,1)) tem,REPLACE(SUBSTRING_INDEX(SUBSTRING_INDEX(content,',',6),',',-1),'}','') tf from t_door_message) t
+    where date_format(create_time,'%Y-%m-%d')=#{date}
+    <if test="type != null and type != ''">
+      and tf=#{type}
+    </if>
+    order by create_time
+  </select>
+</mapper>

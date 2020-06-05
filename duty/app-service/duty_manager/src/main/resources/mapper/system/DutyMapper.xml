@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.system.mapper.DutyMapper">
+
+    <resultMap id="ExportResultMap" type="cc.mrbird.febs.system.entity.DutyExport">
+        <result column="DUTY_NO" property="dutyNo" jdbcType="VARCHAR" />
+        <result column="DEPT_NAME" property="deptName" jdbcType="VARCHAR" />
+        <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+        <result column="TRUENAME" property="truename" jdbcType="VARCHAR" />
+        <result column="START_TIME" property="startTime" jdbcType="TIMESTAMP" />
+        <result column="END_TIME" property="endTime" jdbcType="TIMESTAMP" />
+        <result column="STATE" property="state" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getUsersByDeptid" parameterType="java.lang.String" resultType="cc.mrbird.febs.system.entity.User">
+        select
+        *
+        from t_user t
+        where t.dept_id=#{deptid}
+    </select>
+
+    <select id="findDutyList" parameterType="cc.mrbird.febs.system.entity.Duty" resultType="cc.mrbird.febs.system.entity.Duty">
+        select td.ID,td.DUTY_NO,td.ADDRESS,td.DUTY_DEPT_ID,td.TASK,DATE_FORMAT(td.START_TIME,'%Y-%m-%d') START_TIME,DATE_FORMAT(td.END_TIME,'%Y-%m-%d') END_TIME,td.TASK_CYCLE,td.SHIFT,td.CREATE_ID,td.CREATE_TIME,td.EXT1,td.EXT2,td.EXT3,td.EXT4,td.EXT5,td.EXT6,td.EXT7,td.EXT8,td.EXT9,td.EXT10,tu.truename,(select dept_name from t_dept where td.DUTY_DEPT_ID=DEPT_ID) deptname
+        from
+        t_duty td
+        left join t_user tu on tu.USER_ID=td.create_id
+        where 1=1
+        <if test="duty.dutyDeptId != null and duty.dutyDeptId != ''">
+            AND duty_dept_id = #{duty.dutyDeptId}
+        </if>
+        <if test="duty.startTime != null">
+            AND start_time &gt;= DATE_FORMAT(#{duty.startTime},'%Y-%m-%d')
+        </if>
+        <if test="duty.endTime != null">
+            AND end_time &lt;= DATE_FORMAT(#{duty.endTime},'%Y-%m-%d')
+        </if>
+        <if test="user.deptId != null and user.deptId != ''">
+            AND find_in_set(td.duty_dept_id,getDepts(#{user.deptId}))
+        </if>
+    </select>
+
+    <select id="findById" parameterType="cc.mrbird.febs.system.entity.Duty" resultType="cc.mrbird.febs.system.entity.Duty">
+        select td.ID,td.DUTY_NO,td.ADDRESS,td.DUTY_DEPT_ID,td.TASK,DATE_FORMAT(td.START_TIME,'%Y-%m-%d') START_TIME,DATE_FORMAT(td.END_TIME,'%Y-%m-%d') END_TIME,td.TASK_CYCLE,td.SHIFT,td.CREATE_ID,td.CREATE_TIME,(
+            SELECT
+                GROUP_CONCAT(u.truename)
+            FROM
+                t_user u
+            WHERE
+                find_in_set(user_id,td.EXT1)
+        ) EXT1,td.EXT2,td.EXT3,td.EXT4,td.EXT5,td.EXT6,td.EXT7,td.EXT8,td.EXT9,td.EXT10,tu.truename,(select dept_name from t_dept where td.DUTY_DEPT_ID=DEPT_ID) deptname
+        from
+        t_duty td
+        left join t_user tu on tu.USER_ID=td.create_id
+        where 1=1 and td.id=#{id}
+    </select>
+
+    <select id="findDutysByExport" parameterType="cc.mrbird.febs.system.entity.Duty" resultMap="ExportResultMap">
+        select td.DUTY_NO,(select dept_name from t_dept where td.DUTY_DEPT_ID=DEPT_ID) DEPT_NAME,td.ADDRESS,tu.TRUENAME,
+        DATE_FORMAT(td.START_TIME,'%Y-%m-%d') START_TIME,DATE_FORMAT(td.END_TIME,'%Y-%m-%d') END_TIME,
+        case when td.ext3=0 then '未开始' when td.ext3=1 then '执行中' when td.ext3=2 then '已完成' else '' end STATE
+        from
+        t_duty td
+        left join t_user tu on tu.USER_ID=td.create_id
+        where 1=1
+        <if test="duty.dutyDeptId != null and duty.dutyDeptId != ''">
+            AND duty_dept_id = #{duty.dutyDeptId}
+        </if>
+        <if test="duty.startTime != null">
+            AND start_time &gt;= DATE_FORMAT(#{duty.startTime},'%Y-%m-%d')
+        </if>
+        <if test="duty.endTime != null">
+            AND end_time &lt;= DATE_FORMAT(#{duty.endTime},'%Y-%m-%d')
+        </if>
+        <if test="user.deptId != null and user.deptId != ''">
+            AND find_in_set(td.duty_dept_id,getDepts(#{user.deptId}))
+        </if>
+    </select>
+</mapper>

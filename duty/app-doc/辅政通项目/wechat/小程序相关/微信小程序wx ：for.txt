@@ -1,0 +1,103 @@
+html。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
+ <view class="offive-statistics">
+      <text class="offive-statistics-text">日常应用</text>
+      <van-grid column-num="3"  border="{{ false }}">
+        <van-grid-item icon="{{item.imgSrc}}" text="{{item.label}}" wx:for="{{appList}}" bindtap="itemClick"  wx:key="i" data-url='{{item.url}}' /> 
+      </van-grid>
+    </view>
+
+json部分。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
+ "usingComponents": {
+    "van-grid": "vant-weapp/grid/index",
+    "van-grid-item": "vant-weapp/grid-item/index"
+  },
+
+js部分。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
+
+appList:[ //权限字段 1 超级管理员  2.政府领导  3.企业领导 4.普通用户  ',
+      {
+        "imgSrc":'/images/kaoqin.png',
+        'label':'考勤打卡',
+        "authority":['1','3','85'], 
+        "url":'./checkIn/checkIn'
+      },
+      {
+        "imgSrc":'/images/shijian.png',
+        'label':'事件记录',
+        "authority":['1','3','85'], 
+        "url":''
+      },
+      {
+        "imgSrc":'/images/shijian.png',
+        'label':'事件记录',
+        "authority":['1','3','4'], 
+        "url":''
+      },
+      {
+        "imgSrc":'/images/liebiao.png',
+        'label':'事件列表',
+        "authority":['1','3','4'], 
+        "url":''
+      },
+      {
+        "imgSrc":'/images/renwu.png',
+        'label':'我的任务',
+        "authority":['1','3','4'], 
+        "url":''
+      },
+      {
+        "imgSrc":'/images/qingjia.png',
+        'label':'请假',
+        "authority":['1','3','4'], 
+        "url":''
+      },
+      {
+        "imgSrc":'/images/tongxun.png',
+        'label':'通讯录',
+        "authority":['1','3','4'], 
+        "url":''
+      },
+      {
+        "imgSrc":'/images/dengji.png',
+        'label':'考勤登记',
+        "authority":['1','3','4'], 
+        "url":''
+      }
+    ]
+
+
+
+
+// 跳转
+  itemClick: function (event) {
+    if (event.currentTarget.dataset.url){
+      wx.navigateTo({
+        url: event.currentTarget.dataset.url
+      })
+    }
+  },
+  //头部详情跳转
+  infoSitatisis:function () {
+    wx.navigateTo({
+      url: './statistics/statistics'
+    })
+  },
+
+onShow: function (){
+    if (app.globalData.authority) {
+      this.formatAuthority();
+    }
+  },
+
+
+  // 权限方法
+  formatAuthority: function (){
+    let _appList = this.data.appList;
+    let ca = app.globalData.authority
+    _appList.map(item => {
+      item.visible = item.authority.indexOf(ca) !== -1
+    })
+    this.setData({
+      appList: _appList
+    })
+  },

@@ -1,0 +1,144 @@
+@import "color";
+/* 页面全局样式 */
+    $public-background:rgba(37,37,38, 0.9);  //内容区
+    $public-header-background:#1b1b1b; //头部
+    $public-right-Features:rgba(37,37,38, 0.9); //右侧竖功能栏
+    $public-right-Features-icon:#3079d1; //右侧功能栏icon
+    $card-header:rgba(37,37,38, 0.9); //标题背景颜色
+    $card-header-tab:#3079d1;//头部tab按钮悬停颜色
+    $card-header-hover:rgba(37,37,38, 0.9); //标题背景悬浮颜色
+    $public-el-card:#3079d1;
+
+//qingwu
+    $duty-bg:rgba(11,24,56,0.7);
+    $duty-statistics-color:#de8f4c;
+    $duty-color:#0f86e7;
+    $duty-border:rgba(30,159,229,0.7);
+    $duty-hover: rgba(255, 255, 255, 0.2);
+    $duty-wind-border:#0f2049;
+    
+#app{
+    background-image: '../background.jpg';
+    $border: #00c6ff52;
+    ::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 5px;
+    }
+    a:hover{
+        color: #333;
+        text-decoration: none;
+    }
+    ::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 5px;
+        //  -webkit-box-shadow: inset 0 0 5px #fff;
+        background: #a3eaff;
+        border: 1px solid rgba(255,255,255,0.5);
+    }
+    
+    ::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        // -webkit-box-shadow: inset 0 0 5px #fff;
+        border: 1px solid rgba(255,255,255,0.5);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        
+    }
+    .el-table__header-wrapper{
+        background: $card-header-tab;
+        color: #fff;
+    }
+
+    .el-input__suffix{
+        // left: 70px;
+        top: 0;
+    }
+    
+    .el-input__inner{
+        background: none;
+        color: #fff;
+        height: 30px;
+        text-align: center;
+        border: none;
+    }
+
+    .el-table{
+        background: none;
+        border: 1px solid #00c6ff75;
+
+        tr{
+            background: none;
+            text-align: center;
+            height:30px;
+        }
+        td, th {
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+         td,  th{
+            border: 0px solid #edeef0 !important;
+            border-bottom: 1px solid #edeef036 !important;
+            border-right: 1px solid #edeef03b !important;
+            margin: 1px 1px 0 0;
+        }
+        td:last-child,  th:last-child{
+            border-right: 0px solid #edeef03b !important;
+        }
+        th {
+            background: none;
+        }
+        th>.cell{
+            background: none;
+            font-size: 12px !important;
+            text-align: center !important;
+        }
+    }
+    .el-table--border::after, .el-table--group::after, .el-table::before{
+        background:none;
+    }
+    .el-table--enable-row-hover .el-table__body tr:hover>td{
+        background:#193d914f !important;
+        // border-top: 1px solid $border !important;
+        // border-bottom: 1px solid $border  !important;
+    }
+    
+    .el-collapse {
+        border-top: 0px solid #EBEEF5 !important;
+        border-bottom: 0px solid #EBEEF5 !important;
+    }
+    .el-collapse-item__content{
+        padding-bottom: none !important;
+    }
+    .el-collapse-item__header{
+        color: #fff !important;
+        background: $card-header !important;
+        border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+        padding:0 20px 0 25px;
+        height: 45px;
+        position: relative;
+        .header-icon{
+            position: absolute; 
+            right: 60px;
+        }
+    }
+    .el-collapse-item__header:hover{
+        background:$card-header-hover !important;
+    }
+    .el-collapse-item__arrow{
+        font-size: 20px;
+    }
+    .el-collapse-item__content{
+        padding-bottom: 0px !important;
+    }
+    .el-collapse-item__wrap{
+        padding-bottom: 20px !important;
+        border-bottom: 0px solid #EBEEF5 !important;
+        background:$public-background !important;
+    }
+    .el-color-picker__trigger{
+        width: 30px;
+        height: 30px;
+    }
+    .el-card{
+        // background: $public-el-card !important;
+    }
+}

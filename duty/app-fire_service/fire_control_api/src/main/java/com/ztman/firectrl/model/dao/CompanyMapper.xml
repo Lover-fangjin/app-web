@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.firectrl.model.dao.CompanyMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.firectrl.model.entity.Company" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="COMPANY_NAME" property="companyName" jdbcType="VARCHAR" />
+    <result column="COMPANY_NO" property="companyNo" jdbcType="VARCHAR" />
+    <result column="LEGAL_PERSON_NAME" property="legalPersonName" jdbcType="VARCHAR" />
+    <result column="LEGAL_PERSON_MOBILE" property="legalPersonMobile" jdbcType="VARCHAR" />
+    <result column="CONTACT_PERSON_NAME" property="contactPersonName" jdbcType="VARCHAR" />
+    <result column="CONTACT_PERSON_MOBILE" property="contactPersonMobile" jdbcType="VARCHAR" />
+    <result column="ESTABLI_DATE" property="establiDate" jdbcType="VARCHAR" />
+    <result column="REGISTER_CAPITAL" property="registerCapital" jdbcType="VARCHAR" />
+    <result column="REGISTER_PROVINCE" property="registerProvince" jdbcType="VARCHAR" />
+    <result column="REGISTER_CITY" property="registerCity" jdbcType="VARCHAR" />
+    <result column="REGISTER_DISTRICT" property="registerDistrict" jdbcType="VARCHAR" />
+    <result column="REGISTER_STREET" property="registerStreet" jdbcType="VARCHAR" />
+    <result column="REGISTER_DETAIL_ADDRESS" property="registerDetailAddress" jdbcType="VARCHAR" />
+    <result column="MANAGE_PROVINCE" property="manageProvince" jdbcType="VARCHAR" />
+    <result column="MANAGE_CITY" property="manageCity" jdbcType="VARCHAR" />
+    <result column="MANAGE_DISTRICT" property="manageDistrict" jdbcType="VARCHAR" />
+    <result column="MANAGE_STREET" property="manageStreet" jdbcType="VARCHAR" />
+    <result column="MANAGE_DETAIL_ADDRESS" property="manageDetailAddress" jdbcType="VARCHAR" />
+    <result column="CREDIT_RATING" property="creditRating" jdbcType="VARCHAR" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+    <result column="ENTERPRISE_TYPE" property="enterpriseType" jdbcType="VARCHAR" />
+    <result column="BUSINESS_START_TIME" property="businessStartTime" jdbcType="VARCHAR" />
+    <result column="BUSINESS_END_TIME" property="businessEndTime" jdbcType="VARCHAR" />
+    <result column="REGISTER_START_TIME" property="registerStartTime" jdbcType="VARCHAR" />
+    <result column="REGISTER_END_TIME" property="registerEndTime" jdbcType="VARCHAR" />
+    <result column="CERTIFICATE_NUMBER" property="certificateNumber" jdbcType="VARCHAR" />
+    <result column="ENTERPRISE_CODE" property="enterpriseCode" jdbcType="VARCHAR" />
+    <result column="FIRE_CTRL_TYPE" property="fireCtrlType" jdbcType="VARCHAR" />
+    <result column="ENTERPRISE_SCOPE" property="enterpriseScope" jdbcType="VARCHAR" />
+    <result column="REGISTER_LON" property="registerLon" jdbcType="VARCHAR" />
+    <result column="REGISTER_LAT" property="registerLat" jdbcType="VARCHAR" />
+    <result column="MANAGE_LON" property="manageLon" jdbcType="VARCHAR" />
+    <result column="MANAGE_LAT" property="manageLat" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, COMPANY_NAME, COMPANY_NO, LEGAL_PERSON_NAME, LEGAL_PERSON_MOBILE, CONTACT_PERSON_NAME, 
+    CONTACT_PERSON_MOBILE, ESTABLI_DATE, REGISTER_CAPITAL, REGISTER_PROVINCE, REGISTER_CITY, 
+    REGISTER_DISTRICT, REGISTER_STREET, REGISTER_DETAIL_ADDRESS, MANAGE_PROVINCE, MANAGE_CITY, 
+    MANAGE_DISTRICT, MANAGE_STREET, MANAGE_DETAIL_ADDRESS, CREDIT_RATING, BUSINESS_TYPE, 
+    ENTERPRISE_TYPE, BUSINESS_START_TIME, BUSINESS_END_TIME, REGISTER_START_TIME, REGISTER_END_TIME, 
+    CERTIFICATE_NUMBER, ENTERPRISE_CODE, FIRE_CTRL_TYPE, ENTERPRISE_SCOPE, REGISTER_LON, 
+    REGISTER_LAT, MANAGE_LON, MANAGE_LAT, EXT1, EXT2, EXT3, EXT4, EXT5
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_fc_company
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_fc_company
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.firectrl.model.entity.Company" >
+    insert into t_fc_company (ID, COMPANY_NAME, COMPANY_NO, 
+      LEGAL_PERSON_NAME, LEGAL_PERSON_MOBILE, CONTACT_PERSON_NAME, 
+      CONTACT_PERSON_MOBILE, ESTABLI_DATE, REGISTER_CAPITAL, 
+      REGISTER_PROVINCE, REGISTER_CITY, REGISTER_DISTRICT, 
+      REGISTER_STREET, REGISTER_DETAIL_ADDRESS, 
+      MANAGE_PROVINCE, MANAGE_CITY, MANAGE_DISTRICT, 
+      MANAGE_STREET, MANAGE_DETAIL_ADDRESS, CREDIT_RATING, 
+      BUSINESS_TYPE, ENTERPRISE_TYPE, BUSINESS_START_TIME, 
+      BUSINESS_END_TIME, REGISTER_START_TIME, REGISTER_END_TIME, 
+      CERTIFICATE_NUMBER, ENTERPRISE_CODE, FIRE_CTRL_TYPE, 
+      ENTERPRISE_SCOPE, REGISTER_LON, REGISTER_LAT, 
+      MANAGE_LON, MANAGE_LAT, EXT1, 
+      EXT2, EXT3, EXT4, EXT5
+      )
+    values (#{id,jdbcType=BIGINT}, #{companyName,jdbcType=VARCHAR}, #{companyNo,jdbcType=VARCHAR}, 
+      #{legalPersonName,jdbcType=VARCHAR}, #{legalPersonMobile,jdbcType=VARCHAR}, #{contactPersonName,jdbcType=VARCHAR}, 
+      #{contactPersonMobile,jdbcType=VARCHAR}, #{establiDate,jdbcType=VARCHAR}, #{registerCapital,jdbcType=VARCHAR}, 
+      #{registerProvince,jdbcType=VARCHAR}, #{registerCity,jdbcType=VARCHAR}, #{registerDistrict,jdbcType=VARCHAR}, 
+      #{registerStreet,jdbcType=VARCHAR}, #{registerDetailAddress,jdbcType=VARCHAR}, 
+      #{manageProvince,jdbcType=VARCHAR}, #{manageCity,jdbcType=VARCHAR}, #{manageDistrict,jdbcType=VARCHAR}, 
+      #{manageStreet,jdbcType=VARCHAR}, #{manageDetailAddress,jdbcType=VARCHAR}, #{creditRating,jdbcType=VARCHAR}, 
+      #{businessType,jdbcType=VARCHAR}, #{enterpriseType,jdbcType=VARCHAR}, #{businessStartTime,jdbcType=VARCHAR}, 
+      #{businessEndTime,jdbcType=VARCHAR}, #{registerStartTime,jdbcType=VARCHAR}, #{registerEndTime,jdbcType=VARCHAR}, 
+      #{certificateNumber,jdbcType=VARCHAR}, #{enterpriseCode,jdbcType=VARCHAR}, #{fireCtrlType,jdbcType=VARCHAR}, 
+      #{enterpriseScope,jdbcType=VARCHAR}, #{registerLon,jdbcType=VARCHAR}, #{registerLat,jdbcType=VARCHAR}, 
+      #{manageLon,jdbcType=VARCHAR}, #{manageLat,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, 
+      #{ext2,jdbcType=VARCHAR}, #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.firectrl.model.entity.Company" >
+    insert into t_fc_company
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="companyName != null" >
+        COMPANY_NAME,
+      </if>
+      <if test="companyNo != null" >
+        COMPANY_NO,
+      </if>
+      <if test="legalPersonName != null" >
+        LEGAL_PERSON_NAME,
+      </if>
+      <if test="legalPersonMobile != null" >
+        LEGAL_PERSON_MOBILE,
+      </if>
+      <if test="contactPersonName != null" >
+        CONTACT_PERSON_NAME,
+      </if>
+      <if test="contactPersonMobile != null" >
+        CONTACT_PERSON_MOBILE,
+      </if>
+      <if test="establiDate != null" >
+        ESTABLI_DATE,
+      </if>
+      <if test="registerCapital != null" >
+        REGISTER_CAPITAL,
+      </if>
+      <if test="registerProvince != null" >
+        REGISTER_PROVINCE,
+      </if>
+      <if test="registerCity != null" >
+        REGISTER_CITY,
+      </if>
+      <if test="registerDistrict != null" >
+        REGISTER_DISTRICT,
+      </if>
+      <if test="registerStreet != null" >
+        REGISTER_STREET,
+      </if>
+      <if test="registerDetailAddress != null" >
+        REGISTER_DETAIL_ADDRESS,
+      </if>
+      <if test="manageProvince != null" >
+        MANAGE_PROVINCE,
+      </if>
+      <if test="manageCity != null" >
+        MANAGE_CITY,
+      </if>
+      <if test="manageDistrict != null" >
+        MANAGE_DISTRICT,
+      </if>
+      <if test="manageStreet != null" >
+        MANAGE_STREET,
+      </if>
+      <if test="manageDetailAddress != null" >
+        MANAGE_DETAIL_ADDRESS,
+      </if>
+      <if test="creditRating != null" >
+        CREDIT_RATING,
+      </if>
+      <if test="businessType != null" >
+        BUSINESS_TYPE,
+      </if>
+      <if test="enterpriseType != null" >
+        ENTERPRISE_TYPE,
+      </if>
+      <if test="businessStartTime != null" >
+        BUSINESS_START_TIME,
+      </if>
+      <if test="businessEndTime != null" >
+        BUSINESS_END_TIME,
+      </if>
+      <if test="registerStartTime != null" >
+        REGISTER_START_TIME,
+      </if>
+      <if test="registerEndTime != null" >
+        REGISTER_END_TIME,
+      </if>
+      <if test="certificateNumber != null" >
+        CERTIFICATE_NUMBER,
+      </if>
+      <if test="enterpriseCode != null" >
+        ENTERPRISE_CODE,
+      </if>
+      <if test="fireCtrlType != null" >
+        FIRE_CTRL_TYPE,
+      </if>
+      <if test="enterpriseScope != null" >
+        ENTERPRISE_SCOPE,
+      </if>
+      <if test="registerLon != null" >
+        REGISTER_LON,
+      </if>
+      <if test="registerLat != null" >
+        REGISTER_LAT,
+      </if>
+      <if test="manageLon != null" >
+        MANAGE_LON,
+      </if>
+      <if test="manageLat != null" >
+        MANAGE_LAT,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+      <if test="ext4 != null" >
+        EXT4,
+      </if>
+      <if test="ext5 != null" >
+        EXT5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNo != null" >
+        #{companyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonName != null" >
+        #{legalPersonName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonMobile != null" >
+        #{legalPersonMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPersonName != null" >
+        #{contactPersonName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPersonMobile != null" >
+        #{contactPersonMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="establiDate != null" >
+        #{establiDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCapital != null" >
+        #{registerCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="registerProvince != null" >
+        #{registerProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCity != null" >
+        #{registerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDistrict != null" >
+        #{registerDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="registerStreet != null" >
+        #{registerStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDetailAddress != null" >
+        #{registerDetailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="manageProvince != null" >
+        #{manageProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="manageCity != null" >
+        #{manageCity,jdbcType=VARCHAR},
+      </if>
+      <if test="manageDistrict != null" >
+        #{manageDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="manageStreet != null" >
+        #{manageStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="manageDetailAddress != null" >
+        #{manageDetailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="creditRating != null" >
+        #{creditRating,jdbcType=VARCHAR},
+      </if>
+      <if test="businessType != null" >
+        #{businessType,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseType != null" >
+        #{enterpriseType,jdbcType=VARCHAR},
+      </if>
+      <if test="businessStartTime != null" >
+        #{businessStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="businessEndTime != null" >
+        #{businessEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="registerStartTime != null" >
+        #{registerStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="registerEndTime != null" >
+        #{registerEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumber != null" >
+        #{certificateNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseCode != null" >
+        #{enterpriseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fireCtrlType != null" >
+        #{fireCtrlType,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseScope != null" >
+        #{enterpriseScope,jdbcType=VARCHAR},
+      </if>
+      <if test="registerLon != null" >
+        #{registerLon,jdbcType=VARCHAR},
+      </if>
+      <if test="registerLat != null" >
+        #{registerLat,jdbcType=VARCHAR},
+      </if>
+      <if test="manageLon != null" >
+        #{manageLon,jdbcType=VARCHAR},
+      </if>
+      <if test="manageLat != null" >
+        #{manageLat,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.firectrl.model.entity.Company" >
+    update t_fc_company
+    <set >
+      <if test="companyName != null" >
+        COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNo != null" >
+        COMPANY_NO = #{companyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonName != null" >
+        LEGAL_PERSON_NAME = #{legalPersonName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonMobile != null" >
+        LEGAL_PERSON_MOBILE = #{legalPersonMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPersonName != null" >
+        CONTACT_PERSON_NAME = #{contactPersonName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPersonMobile != null" >
+        CONTACT_PERSON_MOBILE = #{contactPersonMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="establiDate != null" >
+        ESTABLI_DATE = #{establiDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCapital != null" >
+        REGISTER_CAPITAL = #{registerCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="registerProvince != null" >
+        REGISTER_PROVINCE = #{registerProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCity != null" >
+        REGISTER_CITY = #{registerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDistrict != null" >
+        REGISTER_DISTRICT = #{registerDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="registerStreet != null" >
+        REGISTER_STREET = #{registerStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDetailAddress != null" >
+        REGISTER_DETAIL_ADDRESS = #{registerDetailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="manageProvince != null" >
+        MANAGE_PROVINCE = #{manageProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="manageCity != null" >
+        MANAGE_CITY = #{manageCity,jdbcType=VARCHAR},
+      </if>
+      <if test="manageDistrict != null" >
+        MANAGE_DISTRICT = #{manageDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="manageStreet != null" >
+        MANAGE_STREET = #{manageStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="manageDetailAddress != null" >
+        MANAGE_DETAIL_ADDRESS = #{manageDetailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="creditRating != null" >
+        CREDIT_RATING = #{creditRating,jdbcType=VARCHAR},
+      </if>
+      <if test="businessType != null" >
+        BUSINESS_TYPE = #{businessType,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseType != null" >
+        ENTERPRISE_TYPE = #{enterpriseType,jdbcType=VARCHAR},
+      </if>
+      <if test="businessStartTime != null" >
+        BUSINESS_START_TIME = #{businessStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="businessEndTime != null" >
+        BUSINESS_END_TIME = #{businessEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="registerStartTime != null" >
+        REGISTER_START_TIME = #{registerStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="registerEndTime != null" >
+        REGISTER_END_TIME = #{registerEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumber != null" >
+        CERTIFICATE_NUMBER = #{certificateNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseCode != null" >
+        ENTERPRISE_CODE = #{enterpriseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fireCtrlType != null" >
+        FIRE_CTRL_TYPE = #{fireCtrlType,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseScope != null" >
+        ENTERPRISE_SCOPE = #{enterpriseScope,jdbcType=VARCHAR},
+      </if>
+      <if test="registerLon != null" >
+        REGISTER_LON = #{registerLon,jdbcType=VARCHAR},
+      </if>
+      <if test="registerLat != null" >
+        REGISTER_LAT = #{registerLat,jdbcType=VARCHAR},
+      </if>
+      <if test="manageLon != null" >
+        MANAGE_LON = #{manageLon,jdbcType=VARCHAR},
+      </if>
+      <if test="manageLat != null" >
+        MANAGE_LAT = #{manageLat,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.firectrl.model.entity.Company" >
+    update t_fc_company
+    set COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
+      COMPANY_NO = #{companyNo,jdbcType=VARCHAR},
+      LEGAL_PERSON_NAME = #{legalPersonName,jdbcType=VARCHAR},
+      LEGAL_PERSON_MOBILE = #{legalPersonMobile,jdbcType=VARCHAR},
+      CONTACT_PERSON_NAME = #{contactPersonName,jdbcType=VARCHAR},
+      CONTACT_PERSON_MOBILE = #{contactPersonMobile,jdbcType=VARCHAR},
+      ESTABLI_DATE = #{establiDate,jdbcType=VARCHAR},
+      REGISTER_CAPITAL = #{registerCapital,jdbcType=VARCHAR},
+      REGISTER_PROVINCE = #{registerProvince,jdbcType=VARCHAR},
+      REGISTER_CITY = #{registerCity,jdbcType=VARCHAR},
+      REGISTER_DISTRICT = #{registerDistrict,jdbcType=VARCHAR},
+      REGISTER_STREET = #{registerStreet,jdbcType=VARCHAR},
+      REGISTER_DETAIL_ADDRESS = #{registerDetailAddress,jdbcType=VARCHAR},
+      MANAGE_PROVINCE = #{manageProvince,jdbcType=VARCHAR},
+      MANAGE_CITY = #{manageCity,jdbcType=VARCHAR},
+      MANAGE_DISTRICT = #{manageDistrict,jdbcType=VARCHAR},
+      MANAGE_STREET = #{manageStreet,jdbcType=VARCHAR},
+      MANAGE_DETAIL_ADDRESS = #{manageDetailAddress,jdbcType=VARCHAR},
+      CREDIT_RATING = #{creditRating,jdbcType=VARCHAR},
+      BUSINESS_TYPE = #{businessType,jdbcType=VARCHAR},
+      ENTERPRISE_TYPE = #{enterpriseType,jdbcType=VARCHAR},
+      BUSINESS_START_TIME = #{businessStartTime,jdbcType=VARCHAR},
+      BUSINESS_END_TIME = #{businessEndTime,jdbcType=VARCHAR},
+      REGISTER_START_TIME = #{registerStartTime,jdbcType=VARCHAR},
+      REGISTER_END_TIME = #{registerEndTime,jdbcType=VARCHAR},
+      CERTIFICATE_NUMBER = #{certificateNumber,jdbcType=VARCHAR},
+      ENTERPRISE_CODE = #{enterpriseCode,jdbcType=VARCHAR},
+      FIRE_CTRL_TYPE = #{fireCtrlType,jdbcType=VARCHAR},
+      ENTERPRISE_SCOPE = #{enterpriseScope,jdbcType=VARCHAR},
+      REGISTER_LON = #{registerLon,jdbcType=VARCHAR},
+      REGISTER_LAT = #{registerLat,jdbcType=VARCHAR},
+      MANAGE_LON = #{manageLon,jdbcType=VARCHAR},
+      MANAGE_LAT = #{manageLat,jdbcType=VARCHAR},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR},
+      EXT4 = #{ext4,jdbcType=VARCHAR},
+      EXT5 = #{ext5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="getCountList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    <if test="type == 0" >
+      SELECT
+        @rownum:=@rownum+1 as id,
+        CASE WHEN MANAGE_CITY = '' OR MANAGE_CITY IS NULL THEN '其他' ELSE MANAGE_CITY END name,
+        COUNT(*) count,
+        '1' AS type,
+        (select lon from t_fc_area a where a.name=c.MANAGE_CITY) lon,
+        (select lat from t_fc_area a where a.name=c.MANAGE_CITY) lat
+      FROM
+        (select @rownum:=0) a,t_fc_company c
+      GROUP BY MANAGE_CITY
+      ORDER BY MANAGE_CITY DESC
+    </if>
+    <if test="type == 1" >
+      select id,name,count,type,lon,lat,case when order_num is null then 999 else order_num end order_num from (
+        SELECT
+          @rownum:=@rownum+1 as id,
+          CASE WHEN MANAGE_DISTRICT = '' OR MANAGE_DISTRICT IS NULL THEN '其他' ELSE MANAGE_DISTRICT END name,
+          COUNT(*) count,
+          '2' AS type,
+          (select lon from t_fc_area a where a.name=c.MANAGE_DISTRICT) lon,
+          (select lat from t_fc_area a where a.name=c.MANAGE_DISTRICT) lat,
+          (select order_num from t_fc_area a where a.name=c.MANAGE_DISTRICT) order_num
+        FROM
+          (select @rownum:=9) a,t_fc_company c
+        WHERE MANAGE_CITY = #{ckey}
+        GROUP BY MANAGE_DISTRICT) t
+      order by order_num
+    </if>
+    <if test="type == 2" >
+      SELECT
+      concat(c.id,@rownum:=@rownum+1) as id,
+      CASE WHEN MANAGE_STREET = '' OR MANAGE_STREET IS NULL THEN '其他' ELSE MANAGE_STREET END name,
+      COUNT(*) count,
+      '3' AS type,
+      a.lon,
+      a.lat
+      FROM
+      (select @rownum:=99) a,t_fc_company c
+      left join t_fc_area a
+      on c.MANAGE_STREET=a.`NAME`
+      WHERE a.PARENT_ID=(select ID from t_fc_area where name=#{ckey}) AND MANAGE_DISTRICT = #{ckey}
+      GROUP BY MANAGE_STREET
+      ORDER BY MANAGE_STREET DESC
+    </if>
+  </select>
+
+
+  <select id="getCompanyList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    SELECT
+      t.id,
+      t.company_name,
+      t.contact_person_name contact_name,
+      contact_person_mobile contact_mobile,
+      t.manage_detail_address,
+      case when t.credit_rating='' or t.credit_rating is null then 'AA' else t.credit_rating end credit_rating,
+      t.business_type,
+      manage_lon lon,
+      manage_lat lat
+    FROM
+      t_fc_company t
+    WHERE 1=1
+    <if test="type == 1" >
+      AND t.manage_city=#{ckey}
+    </if>
+    <if test="type == 2" >
+      AND t.manage_district=#{ckey}
+    </if>
+    <if test="type == 3" >
+      AND t.manage_street=#{ckey}
+    </if>
+  </select>
+
+
+  <select id="getCompanyDetail" parameterType="java.lang.Long" resultType="java.util.HashMap">
+    SELECT
+      company_name,
+      company_no,
+      legal_person_name,
+      legal_person_mobile,
+      contact_person_name,
+      contact_person_mobile,
+      establi_date,
+      register_capital,
+      register_province,
+      register_city,
+      register_district,
+      register_street,
+      register_detail_address,
+      manage_province,
+      manage_city,
+      manage_district,
+      manage_street,
+      manage_detail_address,
+      case when credit_rating='' or credit_rating is null then 'AA' else credit_rating end credit_rating,
+      business_type,
+      enterprise_type,
+      business_start_time,
+      business_end_time,
+      register_start_time,
+      register_end_time,
+      certificate_number,
+      enterprise_code,
+      fire_ctrl_type,
+      enterprise_scope,
+      company_detail,
+      register_lon,
+      register_lat,
+      manage_lon,
+      manage_lat
+    FROM
+      t_fc_company
+    WHERE
+      id = #{id}
+  </select>
+
+
+  <select id="getAssociKey" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    <bind name="pattern" value="'%' + ckey + '%'" />
+    select property,property_val from
+      (select 'company' property,company_name property_val from t_fc_company
+      union all
+      select 'contact' property,contact_person_name property_val from t_fc_company
+      union all
+      select 'mobile' property,contact_person_mobile property_val from t_fc_company
+      union all
+      select 'address' property,manage_detail_address property_val from t_fc_company) dict
+    where dict.property_val like #{pattern} limit 10
+  </select>
+
+  <select id="queryCompanyList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    <if test="value != null" >
+      <bind name="pattern" value="'%' + value + '%'" />
+    </if>
+    SELECT
+      t.id,
+      t.company_name,
+      t.contact_person_name contact_name,
+      contact_person_mobile contact_mobile,
+      t.manage_detail_address,
+      case when t.credit_rating='' or t.credit_rating is null then 'AA' else t.credit_rating end credit_rating,
+      t.business_type,
+      manage_lon lon,
+      manage_lat lat
+    FROM
+      t_fc_company t
+    WHERE 1=1
+    <if test="key != null and value != null" >
+      <if test="key == 'contact'" >
+        and t.contact_person_name=#{value}
+      </if>
+      <if test="key == 'mobile'" >
+        and t.contact_person_mobile=#{value}
+      </if>
+      <if test="key == 'address'" >
+        and t.manage_detail_address=#{value}
+      </if>
+      <if test="key == 'company'" >
+        and t.company_name=#{value}
+      </if>
+    </if>
+    <if test="(key == null or key == '') and value != null" >
+      and (t.contact_person_name like #{pattern}
+      or t.contact_person_mobile like #{pattern}
+      or t.manage_detail_address like #{pattern}
+      or t.company_name like #{pattern})
+    </if>
+  </select>
+
+
+  <select id="getCreditRatingChart" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    select credit_rating,count(*) count from (
+      SELECT
+      case when t.credit_rating='' or t.credit_rating is null then 'AA' else t.credit_rating end credit_rating
+      FROM
+      t_fc_company t
+      WHERE 1=1
+      <if test="type == 1" >
+        AND t.manage_city=#{ckey}
+      </if>
+      <if test="type == 2" >
+        AND t.manage_district=#{ckey}
+      </if>
+      <if test="type == 3" >
+        AND t.manage_street=#{ckey}
+      </if>
+    ) c group by credit_rating
+  </select>
+
+  <select id="getBusinessTypeChartGj" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    select d.name business_type,case when c.count is null then 0 else c.count end count from t_fc_dict d
+    left join (select case when business_type='' or business_type is null then '其他' else business_type end business_type,count(*) count from (
+      SELECT
+      SUBSTRING_INDEX( SUBSTRING_INDEX( a.business_type, ',', help_topic_id + 1 ), ',',- 1 ) AS business_type
+      FROM
+      mysql.help_topic m,
+      ( SELECT
+        t.business_type
+        FROM
+        t_fc_company t
+        WHERE 1=1
+        <if test="type == 1" >
+          AND t.manage_city=#{ckey}
+        </if>
+        <if test="type == 2" >
+          AND t.manage_district=#{ckey}
+        </if>
+        <if test="type == 3" >
+          AND t.manage_street=#{ckey}
+        </if>) a
+      WHERE
+      help_topic_id &lt; LENGTH( a.business_type ) - LENGTH( REPLACE ( a.business_type, ',', '' ) ) + 1) t
+      group by business_type) c
+    on d.name=c.business_type
+    where d.type=1
+    order by d.order_num desc
+  </select>
+
+  <select id="getBusinessTypeChartXq" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    select d.name business_type,case when c.count is null then 0 else c.count end count from t_fc_dict d
+    left join (select case when ext2='' or ext2 is null then '其他' else ext2 end business_type,count(*) count from (
+      SELECT
+      SUBSTRING_INDEX( SUBSTRING_INDEX( a.ext2, ',', help_topic_id + 1 ), ',',- 1 ) AS ext2
+      FROM
+      mysql.help_topic m,
+      ( SELECT
+        t.ext2
+        FROM
+        t_fc_company t
+        WHERE 1=1
+        <if test="type == 1" >
+          AND t.manage_city=#{ckey}
+        </if>
+        <if test="type == 2" >
+          AND t.manage_district=#{ckey}
+        </if>
+        <if test="type == 3" >
+          AND t.manage_street=#{ckey}
+        </if>) a
+      WHERE
+      help_topic_id &lt; LENGTH( a.ext2 ) - LENGTH( REPLACE ( a.ext2, ',', '' ) ) + 1) t
+      group by ext2) c
+    on d.name=c.business_type
+    where d.type=2
+    order by d.order_num desc
+  </select>
+
+  <select id="queryCompanyListByBnsType" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    <if test="bnsType != null" >
+      <bind name="pattern" value="'%' + bnsType + '%'" />
+    </if>
+    SELECT
+      t.id,
+      t.company_name,
+      t.contact_person_name contact_name,
+      contact_person_mobile contact_mobile,
+      t.manage_detail_address,
+      case when t.credit_rating='' or t.credit_rating is null then 'AA' else t.credit_rating end credit_rating,
+      t.business_type,
+      manage_lon lon,
+      manage_lat lat
+    FROM
+      t_fc_company t
+    WHERE 1=1
+      <if test="type == 1" >
+        AND t.manage_city=#{ckey}
+      </if>
+      <if test="type == 2" >
+        AND t.manage_district=#{ckey}
+      </if>
+      <if test="type == 3" >
+        AND t.manage_street=#{ckey}
+      </if>
+      <if test="bnsType != null and bnsType != ''">
+        <if test="bnsClass == 1" >
+          AND business_type like #{pattern}
+        </if>
+        <if test="bnsClass == 2" >
+          AND ext2 like #{pattern}
+        </if>
+      </if>
+      <if test="bnsType != null and bnsType == ''">
+        <if test="bnsClass == 1" >
+          AND business_type=''
+        </if>
+        <if test="bnsClass == 2" >
+          AND ext2=''
+        </if>
+      </if>
+  </select>
+</mapper>

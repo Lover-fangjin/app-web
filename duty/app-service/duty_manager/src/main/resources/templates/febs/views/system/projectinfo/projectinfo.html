@@ -1,0 +1,236 @@
+<div class="layui-fluid layui-anim febs-anim" id="febs-projectinfo" lay-title="项目信息">
+    <div class="layui-row febs-container">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body febs-table-full">
+                    <form class="layui-form layui-table-form" lay-filter="user-table-form">
+                        <div class="layui-row">
+                            <div class="layui-col-md10">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label layui-form-label-sm" style="width: 100px">项目地址</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="address" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label layui-form-label-sm">所属机构</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="borgId" id="borgId" lay-filter="borgId"
+                                                   class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-md2 layui-col-sm12 layui-col-xs12 table-action-area">
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                                    <i class="layui-icon">&#xe848;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="reset">
+                                    <i class="layui-icon">&#xe79b;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action action-more"
+                                     shiro:hasAnyPermissions="projectinfo:add,projectinfo:update,projectinfo:export">
+                                    <i class="layui-icon">&#xe875;</i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <table lay-filter="projectinfoTable" lay-data="{id: 'projectinfoTable'}"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--下拉、序号等-->
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+
+
+<!--列表操作项-->
+<script type="text/html" id="projectinfo-option">
+    <span shiro:lacksPermission="projectinfo:view,projectinfo:update,projectinfo:delete">
+        <span class="layui-badge-dot febs-bg-orange"></span> 无权限
+    </span>
+    <a lay-event="detail" shiro:hasPermission="projectinfo:view"><i
+            class="layui-icon febs-edit-area febs-green">&#xe7a5;</i></a>
+    <a lay-event="edit" shiro:hasPermission="projectinfo:update"><i
+            class="layui-icon febs-edit-area febs-blue">&#xe7a4;</i></a>
+    <a lay-event="del" shiro:hasPermission="projectinfo:delete"><i class="layui-icon febs-edit-area febs-red">&#xe7f9;</i></a>
+</script>
+<script data-th-inline="none" type="text/javascript">
+    layui.use(['dropdown', 'jquery', 'laydate', 'form', 'table', 'febs', 'treeSelect'], function () {
+        var $ = layui.jquery,
+                laydate = layui.laydate,
+                febs = layui.febs,
+                form = layui.form,
+                table = layui.table,
+                treeSelect = layui.treeSelect,
+                dropdown = layui.dropdown,
+                $view = $('#febs-projectinfo'),
+                $query = $view.find('#query'),
+                $reset = $view.find('#reset'),
+                $searchForm = $view.find('form'),
+                sortObject = {field: 'createTime', type: null},
+                tableIns;
+
+
+        form.render();
+
+        treeSelect.render({
+            elem: $view.find('#borgId'),
+            type: 'get',
+            data: ctx + 'businessorg/select/tree',
+            placeholder: '请选择',
+            search: false
+        });
+
+        /*  加载列表*/
+        initTable();
+        function initTable() {
+            tableIns = febs.table.init({
+                elem: $view.find('table'),
+                id: 'projectinfoTable',
+                url: ctx + 'projectinfo/list',
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'zizeng', title: '序号',type:'numbers'},
+                    {field: 'address', title: '项目地址'},
+                    {field: '', title: '坐标点',templet: function (d) {
+                        return d.lon+","+d.lat;
+                    }},
+                    {field: 'orgname', title: '所属机构'},
+                    {field: 'deptname', title: '负责队伍'},
+                    {field: 'description', title: '主要职责描述'},
+                    {field: 'truename', title: '负责人'},
+                    {field: 'tel', title: '联系电话'},
+                    {title: '操作', toolbar: '#projectinfo-option', minWidth: 140}
+                ]]
+            });
+        }
+
+        /*下拉按钮功能*/
+        dropdown.render({
+            elem: $view.find('.action-more'),
+            click: function (name, elem, event) {
+                var checkStatus = table.checkStatus('projectinfoTable');
+                if (name === 'add') {
+                    febs.modal.open('新增项目', 'system/projectinfo/add', {
+                        btn: ['提交', '重置'],
+                        area: $(window).width() <= 750 ? '95%' : '50%',
+                        yes: function (index, layero) {
+                            $('#projectinfo-add').find('#submit').trigger('click');
+                        },
+                        btn2: function () {
+                            $('#projectinfo-add').find('#reset').trigger('click');
+                            return false;
+                        }
+                    });
+                }
+                if (name === 'delete') {
+                    console.log(checkStatus);
+                    if (!checkStatus.data.length) {
+                        febs.alert.warn('请选择需要删除的项目');
+                    } else {
+                        febs.modal.confirm('删除项目', '确定删除该项目？', function () {
+                            var projectinfoIds = [];
+                            layui.each(checkStatus.data, function (key, item) {
+                                projectinfoIds.push(item.id)
+                            });
+                            deleteprojectinfos(projectinfoIds.join(','));
+                        });
+                    }
+                }
+                if (name === 'export') {
+                    var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+                    params.pageSize = $view.find(".layui-laypage-limits option:selected").val();
+                    params.pageNum = $view.find(".layui-laypage-em").next().html();
+                    febs.download(ctx + 'projectinfo/excel', params, '项目信息表.xlsx');
+                }
+            },
+            options: [{
+                name: 'add',
+                title: '新增项目',
+                perms: 'projectinfo:add'
+            }, {
+                name: 'delete',
+                title: '删除项目',
+                perms: 'projectinfo:delete'
+            },  {
+                name: 'export',
+                title: '导出Excel',
+                perms: 'projectinfo:export'
+            }]
+        });
+
+        /*列表操作按钮功能*/
+        table.on('tool(projectinfoTable)', function (obj) {
+            var data = obj.data,
+                    layEvent = obj.event;
+            if (layEvent === 'detail') {
+                febs.modal.view('项目信息', 'system/projectinfo/detail/' + data.id, {
+                    area: $(window).width() <= 750 ? '95%' : '660px'
+                });
+            }
+            if (layEvent === 'del') {
+                febs.modal.confirm('删除项目', '确定删除该项目？', function () {
+                    deleteprojectinfos(data.id);
+                });
+            }
+            if (layEvent === 'edit') {
+                febs.modal.open('修改项目', 'system/projectinfo/update/' + data.id, {
+                    area: $(window).width() <= 750 ? '90%' : '50%',
+                    btn: ['提交', '取消'],
+                    yes: function (index, layero) {
+                        $('#projectinfo-update').find('#submit').trigger('click');
+                    },
+                    btn2: function () {
+                        layer.closeAll();
+                    }
+                });
+            }
+        });
+
+        /*搜索功能*/
+        $query.on('click', function () {
+            var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+            tableIns.reload({where: params, page: {curr: 1}});
+        });
+        function getQueryParams() {
+            return {
+                address: $searchForm.find('input[name="address"]').val().trim(),
+                borgId: $searchForm.find("input[name='borgId']").val().trim()
+            };
+        }
+
+        /*重置搜索项*/
+        $reset.on('click', function () {
+            $searchForm[0].reset();
+            treeSelect.revokeNode('borgId');
+            sortObject.type = 'null';
+            tableIns.reload({where: getQueryParams(), page: {curr: 1}, initSort: sortObject});
+        });
+
+        /*删除*/
+        function deleteprojectinfos(projectinfoIds) {
+            febs.get(ctx + 'projectinfo/delete/' + projectinfoIds, null, function () {
+                febs.alert.success('删除项目成功');
+                $query.click();
+            });
+        }
+
+        /*排序功能*/
+        table.on('sort(projectinfoTable)', function (obj) {
+            sortObject = obj;
+            tableIns.reload({
+                initSort: obj,
+                where: $.extend(getQueryParams(), {
+                    field: obj.field,
+                    order: obj.type
+                })
+            });
+        });
+    })
+</script>

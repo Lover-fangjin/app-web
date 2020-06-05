@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.ProjectInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.ProjectInfo" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="BORG_ID" property="borgId" jdbcType="BIGINT" />
+    <result column="DEPT_ID" property="deptId" jdbcType="BIGINT" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+    <result column="CHARGE_ID" property="chargeId" jdbcType="BIGINT" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="LON" property="lon" jdbcType="VARCHAR" />
+    <result column="LAT" property="lat" jdbcType="VARCHAR" />
+    <result column="CREATE_ID" property="createId" jdbcType="BIGINT" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, ADDRESS, BORG_ID, DEPT_ID, DESCRIPTION, CHARGE_ID, TEL, LON, LAT, CREATE_ID, 
+    CREATE_TIME, EXT1, EXT2, EXT3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_project_info
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_project_info
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.ProjectInfo" >
+    insert into t_project_info (ID, ADDRESS, BORG_ID, 
+      DEPT_ID, DESCRIPTION, CHARGE_ID, 
+      TEL, LON, LAT, CREATE_ID, 
+      CREATE_TIME, EXT1, EXT2, 
+      EXT3)
+    values (#{id,jdbcType=BIGINT}, #{address,jdbcType=VARCHAR}, #{borgId,jdbcType=BIGINT}, 
+      #{deptId,jdbcType=BIGINT}, #{description,jdbcType=VARCHAR}, #{chargeId,jdbcType=BIGINT}, 
+      #{tel,jdbcType=VARCHAR}, #{lon,jdbcType=VARCHAR}, #{lat,jdbcType=VARCHAR}, #{createId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, 
+      #{ext3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.ProjectInfo" >
+    insert into t_project_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="borgId != null" >
+        BORG_ID,
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="chargeId != null" >
+        CHARGE_ID,
+      </if>
+      <if test="tel != null" >
+        TEL,
+      </if>
+      <if test="lon != null" >
+        LON,
+      </if>
+      <if test="lat != null" >
+        LAT,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="borgId != null" >
+        #{borgId,jdbcType=BIGINT},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeId != null" >
+        #{chargeId,jdbcType=BIGINT},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        #{lon,jdbcType=VARCHAR},
+      </if>
+      <if test="lat != null" >
+        #{lat,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.ProjectInfo" >
+    update t_project_info
+    <set >
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="borgId != null" >
+        BORG_ID = #{borgId,jdbcType=BIGINT},
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID = #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeId != null" >
+        CHARGE_ID = #{chargeId,jdbcType=BIGINT},
+      </if>
+      <if test="tel != null" >
+        TEL = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        LON = #{lon,jdbcType=VARCHAR},
+      </if>
+      <if test="lat != null" >
+        LAT = #{lat,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.ProjectInfo" >
+    update t_project_info
+    set ADDRESS = #{address,jdbcType=VARCHAR},
+      BORG_ID = #{borgId,jdbcType=BIGINT},
+      DEPT_ID = #{deptId,jdbcType=BIGINT},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      CHARGE_ID = #{chargeId,jdbcType=BIGINT},
+      TEL = #{tel,jdbcType=VARCHAR},
+      LON = #{lon,jdbcType=VARCHAR},
+      LAT = #{lat,jdbcType=VARCHAR},
+      CREATE_ID = #{createId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectAll" resultType="java.util.HashMap">
+    SELECT
+        b.id,
+        b. NAME name,
+        u.truename captain,
+        p.tel captain_tel,
+        p.address location,
+        p.lon,
+        p.lat,
+        getDepts(p.dept_id) deptIds
+    FROM
+        t_project_info p
+    LEFT JOIN t_business_org b ON p.borg_id = b.ID
+    LEFT JOIN t_user u ON p.charge_id = u.user_id
+    WHERE b.`LEVEL`=3
+  </select>
+</mapper>

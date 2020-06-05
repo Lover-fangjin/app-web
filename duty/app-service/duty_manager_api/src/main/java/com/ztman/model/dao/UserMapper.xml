@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.User" >
+    <id column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="DEPT_ID" property="deptId" jdbcType="BIGINT" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="LAST_LOGIN_TIME" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="SSEX" property="ssex" jdbcType="CHAR" />
+    <result column="IS_TAB" property="isTab" jdbcType="CHAR" />
+    <result column="THEME" property="theme" jdbcType="VARCHAR" />
+    <result column="AVATAR" property="avatar" jdbcType="VARCHAR" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+    <result column="POLITICAL_AFFIL" property="politicalAffil" jdbcType="VARCHAR" />
+    <result column="EX_SERVICEMAN" property="exServiceman" jdbcType="VARCHAR" />
+    <result column="SYSTEM_ID" property="systemId" jdbcType="BIGINT" />
+    <result column="SYSTEM_NAME" property="systemName" jdbcType="VARCHAR" />
+    <result column="ADIVISION_ID" property="adivisionId" jdbcType="BIGINT" />
+    <result column="ADIVISION_NAME" property="adivisionName" jdbcType="VARCHAR" />
+    <result column="BUSINESS_ID" property="businessId" jdbcType="BIGINT" />
+    <result column="BUSINESS_NAME" property="businessName" jdbcType="VARCHAR" />
+    <result column="COMPANY_ID" property="companyId" jdbcType="BIGINT" />
+    <result column="COMPANY" property="company" jdbcType="VARCHAR" />
+    <result column="POST_ID" property="postId" jdbcType="BIGINT" />
+    <result column="POST_NAME" property="postName" jdbcType="VARCHAR" />
+    <result column="NATION" property="nation" jdbcType="VARCHAR" />
+    <result column="NATIVE_PLACE" property="nativePlace" jdbcType="VARCHAR" />
+    <result column="HEIGHT" property="height" jdbcType="VARCHAR" />
+    <result column="EDUCATION" property="education" jdbcType="VARCHAR" />
+    <result column="TRUENAME" property="truename" jdbcType="VARCHAR" />
+    <result column="IS_DUTY" property="isDuty" jdbcType="VARCHAR" />
+    <result column="LON" property="lon" jdbcType="VARCHAR" />
+    <result column="LAT" property="lat" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+    <result column="EXT6" property="ext6" jdbcType="VARCHAR" />
+    <result column="EXT7" property="ext7" jdbcType="VARCHAR" />
+    <result column="EXT8" property="ext8" jdbcType="VARCHAR" />
+    <result column="EXT9" property="ext9" jdbcType="VARCHAR" />
+    <result column="EXT10" property="ext10" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <resultMap id="LoginResultMap" type="com.ztman.model.entity.UserAssist" >
+    <id column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="DEPT_NAME" property="deptName" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="POLITICAL_AFFIL" property="politicalAffil" jdbcType="VARCHAR" />
+    <result column="EX_SERVICEMAN" property="exServiceman" jdbcType="VARCHAR" />
+    <result column="COMPANY" property="company" jdbcType="VARCHAR" />
+    <result column="NATION" property="nation" jdbcType="VARCHAR" />
+    <result column="NATIVE_PLACE" property="nativePlace" jdbcType="VARCHAR" />
+    <result column="HEIGHT" property="height" jdbcType="VARCHAR" />
+    <result column="EDUCATION" property="education" jdbcType="VARCHAR" />
+    <result column="TRUENAME" property="truename" jdbcType="VARCHAR" />
+    <result column="IS_DUTY" property="isDuty" jdbcType="VARCHAR" />
+    <result column="LON" property="lon" jdbcType="VARCHAR" />
+    <result column="LAT" property="lat" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="ROLE_ID" property="roleId" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    USER_ID, USERNAME, PASSWORD, DEPT_ID, EMAIL, MOBILE, STATUS, CREATE_TIME, MODIFY_TIME,
+    LAST_LOGIN_TIME, SSEX, IS_TAB, THEME, AVATAR, DESCRIPTION, POLITICAL_AFFIL, EX_SERVICEMAN,
+    SYSTEM_ID, SYSTEM_NAME, ADIVISION_ID, ADIVISION_NAME, BUSINESS_ID, BUSINESS_NAME,
+    COMPANY_ID, COMPANY, POST_ID, POST_NAME, NATION, NATIVE_PLACE, HEIGHT, EDUCATION,
+    TRUENAME, IS_DUTY, LON, LAT, EXT1, EXT2, EXT3, EXT4, EXT5, EXT6, EXT7, EXT8, EXT9,
+    EXT10
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.User" >
+    insert into t_user (USER_ID, USERNAME, PASSWORD,
+      DEPT_ID, EMAIL, MOBILE,
+      STATUS, CREATE_TIME, MODIFY_TIME,
+      LAST_LOGIN_TIME, SSEX, IS_TAB,
+      THEME, AVATAR, DESCRIPTION,
+      POLITICAL_AFFIL, EX_SERVICEMAN, SYSTEM_ID,
+      SYSTEM_NAME, ADIVISION_ID, ADIVISION_NAME,
+      BUSINESS_ID, BUSINESS_NAME, COMPANY_ID,
+      COMPANY, POST_ID, POST_NAME,
+      NATION, NATIVE_PLACE, HEIGHT,
+      EDUCATION, TRUENAME, IS_DUTY,
+      LON, LAT, EXT1, EXT2,
+      EXT3, EXT4, EXT5, EXT6,
+      EXT7, EXT8, EXT9, EXT10
+      )
+    values (#{userId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{deptId,jdbcType=BIGINT}, #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR},
+      #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP},
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{ssex,jdbcType=CHAR}, #{isTab,jdbcType=CHAR},
+      #{theme,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
+      #{politicalAffil,jdbcType=VARCHAR}, #{exServiceman,jdbcType=VARCHAR}, #{systemId,jdbcType=BIGINT},
+      #{systemName,jdbcType=VARCHAR}, #{adivisionId,jdbcType=BIGINT}, #{adivisionName,jdbcType=VARCHAR},
+      #{businessId,jdbcType=BIGINT}, #{businessName,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT},
+      #{company,jdbcType=VARCHAR}, #{postId,jdbcType=BIGINT}, #{postName,jdbcType=VARCHAR},
+      #{nation,jdbcType=VARCHAR}, #{nativePlace,jdbcType=VARCHAR}, #{height,jdbcType=VARCHAR},
+      #{education,jdbcType=VARCHAR}, #{truename,jdbcType=VARCHAR}, #{isDuty,jdbcType=VARCHAR},
+      #{lon,jdbcType=VARCHAR}, #{lat,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR},
+      #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}, #{ext6,jdbcType=VARCHAR},
+      #{ext7,jdbcType=VARCHAR}, #{ext8,jdbcType=VARCHAR}, #{ext9,jdbcType=VARCHAR}, #{ext10,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.User" >
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="mobile != null" >
+        MOBILE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME,
+      </if>
+      <if test="lastLoginTime != null" >
+        LAST_LOGIN_TIME,
+      </if>
+      <if test="ssex != null" >
+        SSEX,
+      </if>
+      <if test="isTab != null" >
+        IS_TAB,
+      </if>
+      <if test="theme != null" >
+        THEME,
+      </if>
+      <if test="avatar != null" >
+        AVATAR,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="politicalAffil != null" >
+        POLITICAL_AFFIL,
+      </if>
+      <if test="exServiceman != null" >
+        EX_SERVICEMAN,
+      </if>
+      <if test="systemId != null" >
+        SYSTEM_ID,
+      </if>
+      <if test="systemName != null" >
+        SYSTEM_NAME,
+      </if>
+      <if test="adivisionId != null" >
+        ADIVISION_ID,
+      </if>
+      <if test="adivisionName != null" >
+        ADIVISION_NAME,
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID,
+      </if>
+      <if test="businessName != null" >
+        BUSINESS_NAME,
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID,
+      </if>
+      <if test="company != null" >
+        COMPANY,
+      </if>
+      <if test="postId != null" >
+        POST_ID,
+      </if>
+      <if test="postName != null" >
+        POST_NAME,
+      </if>
+      <if test="nation != null" >
+        NATION,
+      </if>
+      <if test="nativePlace != null" >
+        NATIVE_PLACE,
+      </if>
+      <if test="height != null" >
+        HEIGHT,
+      </if>
+      <if test="education != null" >
+        EDUCATION,
+      </if>
+      <if test="truename != null" >
+        TRUENAME,
+      </if>
+      <if test="isDuty != null" >
+        IS_DUTY,
+      </if>
+      <if test="lon != null" >
+        LON,
+      </if>
+      <if test="lat != null" >
+        LAT,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+      <if test="ext4 != null" >
+        EXT4,
+      </if>
+      <if test="ext5 != null" >
+        EXT5,
+      </if>
+      <if test="ext6 != null" >
+        EXT6,
+      </if>
+      <if test="ext7 != null" >
+        EXT7,
+      </if>
+      <if test="ext8 != null" >
+        EXT8,
+      </if>
+      <if test="ext9 != null" >
+        EXT9,
+      </if>
+      <if test="ext10 != null" >
+        EXT10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ssex != null" >
+        #{ssex,jdbcType=CHAR},
+      </if>
+      <if test="isTab != null" >
+        #{isTab,jdbcType=CHAR},
+      </if>
+      <if test="theme != null" >
+        #{theme,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="politicalAffil != null" >
+        #{politicalAffil,jdbcType=VARCHAR},
+      </if>
+      <if test="exServiceman != null" >
+        #{exServiceman,jdbcType=VARCHAR},
+      </if>
+      <if test="systemId != null" >
+        #{systemId,jdbcType=BIGINT},
+      </if>
+      <if test="systemName != null" >
+        #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="adivisionId != null" >
+        #{adivisionId,jdbcType=BIGINT},
+      </if>
+      <if test="adivisionName != null" >
+        #{adivisionName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessName != null" >
+        #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="postId != null" >
+        #{postId,jdbcType=BIGINT},
+      </if>
+      <if test="postName != null" >
+        #{postName,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null" >
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null" >
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="truename != null" >
+        #{truename,jdbcType=VARCHAR},
+      </if>
+      <if test="isDuty != null" >
+        #{isDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        #{lon,jdbcType=VARCHAR},
+      </if>
+      <if test="lat != null" >
+        #{lat,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        #{ext10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.User" >
+    update t_user
+    <set >
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID = #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ssex != null" >
+        SSEX = #{ssex,jdbcType=CHAR},
+      </if>
+      <if test="isTab != null" >
+        IS_TAB = #{isTab,jdbcType=CHAR},
+      </if>
+      <if test="theme != null" >
+        THEME = #{theme,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        AVATAR = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="politicalAffil != null" >
+        POLITICAL_AFFIL = #{politicalAffil,jdbcType=VARCHAR},
+      </if>
+      <if test="exServiceman != null" >
+        EX_SERVICEMAN = #{exServiceman,jdbcType=VARCHAR},
+      </if>
+      <if test="systemId != null" >
+        SYSTEM_ID = #{systemId,jdbcType=BIGINT},
+      </if>
+      <if test="systemName != null" >
+        SYSTEM_NAME = #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="adivisionId != null" >
+        ADIVISION_ID = #{adivisionId,jdbcType=BIGINT},
+      </if>
+      <if test="adivisionName != null" >
+        ADIVISION_NAME = #{adivisionName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID = #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessName != null" >
+        BUSINESS_NAME = #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="company != null" >
+        COMPANY = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="postId != null" >
+        POST_ID = #{postId,jdbcType=BIGINT},
+      </if>
+      <if test="postName != null" >
+        POST_NAME = #{postName,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null" >
+        NATION = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null" >
+        NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        HEIGHT = #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        EDUCATION = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="truename != null" >
+        TRUENAME = #{truename,jdbcType=VARCHAR},
+      </if>
+      <if test="isDuty != null" >
+        IS_DUTY = #{isDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        LON = #{lon,jdbcType=VARCHAR},
+      </if>
+      <if test="lat != null" >
+        LAT = #{lat,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        EXT6 = #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        EXT7 = #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        EXT8 = #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        EXT9 = #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        EXT10 = #{ext10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.User" >
+    update t_user
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      DEPT_ID = #{deptId,jdbcType=BIGINT},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=CHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+      SSEX = #{ssex,jdbcType=CHAR},
+      IS_TAB = #{isTab,jdbcType=CHAR},
+      THEME = #{theme,jdbcType=VARCHAR},
+      AVATAR = #{avatar,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      POLITICAL_AFFIL = #{politicalAffil,jdbcType=VARCHAR},
+      EX_SERVICEMAN = #{exServiceman,jdbcType=VARCHAR},
+      SYSTEM_ID = #{systemId,jdbcType=BIGINT},
+      SYSTEM_NAME = #{systemName,jdbcType=VARCHAR},
+      ADIVISION_ID = #{adivisionId,jdbcType=BIGINT},
+      ADIVISION_NAME = #{adivisionName,jdbcType=VARCHAR},
+      BUSINESS_ID = #{businessId,jdbcType=BIGINT},
+      BUSINESS_NAME = #{businessName,jdbcType=VARCHAR},
+      COMPANY_ID = #{companyId,jdbcType=BIGINT},
+      COMPANY = #{company,jdbcType=VARCHAR},
+      POST_ID = #{postId,jdbcType=BIGINT},
+      POST_NAME = #{postName,jdbcType=VARCHAR},
+      NATION = #{nation,jdbcType=VARCHAR},
+      NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR},
+      HEIGHT = #{height,jdbcType=VARCHAR},
+      EDUCATION = #{education,jdbcType=VARCHAR},
+      TRUENAME = #{truename,jdbcType=VARCHAR},
+      IS_DUTY = #{isDuty,jdbcType=VARCHAR},
+      LON = #{lon,jdbcType=VARCHAR},
+      LAT = #{lat,jdbcType=VARCHAR},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR},
+      EXT4 = #{ext4,jdbcType=VARCHAR},
+      EXT5 = #{ext5,jdbcType=VARCHAR},
+      EXT6 = #{ext6,jdbcType=VARCHAR},
+      EXT7 = #{ext7,jdbcType=VARCHAR},
+      EXT8 = #{ext8,jdbcType=VARCHAR},
+      EXT9 = #{ext9,jdbcType=VARCHAR},
+      EXT10 = #{ext10,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="login" parameterType="com.ztman.model.entity.User" resultMap="LoginResultMap">
+    SELECT
+        u.USER_ID,
+        USERNAME,
+        d.DEPT_NAME,
+        EMAIL,
+        MOBILE,
+        STATUS,
+        POLITICAL_AFFIL,
+        EX_SERVICEMAN,
+        COMPANY,
+        NATION,
+        NATIVE_PLACE,
+        HEIGHT,
+        EDUCATION,
+        TRUENAME,
+        IS_DUTY,
+        LON,
+        LAT,
+        EXT1,
+        EXT2,
+        r.ROLE_ID
+    FROM
+        t_user u
+    LEFT JOIN t_dept d ON u.dept_id = d.dept_id
+    LEFT JOIN t_user_role r ON u.user_id = r.user_id
+    where u.username = #{username} and u.password = #{password}
+    LIMIT 1
+  </select>
+
+  <select id="selectUserCount" resultType="java.util.HashMap">
+    SELECT
+        u.TRUENAME name,
+        u.USER_ID user_id,
+        u.USERNAME username,
+        u.LON lon,
+        u.LAT lat,
+        u.MOBILE mobile,
+        u.IS_DUTY isDuty,
+        p.NAME site_name,
+        DATE_FORMAT(d.DUTY_START_TIME,'%Y-%m-%d %H:%i') duty_start_time,
+        DATE_FORMAT(d.DUTY_END_TIME,'%Y-%m-%d %H:%i') duty_end_time
+    FROM
+        (
+            SELECT
+                b. NAME,
+                p.dept_id,
+                p.lon,
+                p.lat
+            FROM
+                t_project_info p
+            LEFT JOIN t_business_org b ON p.borg_id = b.id
+            WHERE
+                LEVEL = 4
+        ) p
+    LEFT JOIN t_user u ON u.DEPT_ID = p.dept_id
+    LEFT JOIN (
+        SELECT
+            DUTY_START_TIME,DUTY_END_TIME,DUTY_USER_ID
+        FROM
+            t_duty_info
+        WHERE
+            DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d') = DATE_FORMAT(NOW(), '%Y-%m-%d')
+    ) d ON u.user_id = d.duty_user_id
+  </select>
+
+  <select id="selectUserBySite" resultType="java.util.HashMap">
+    SELECT
+        p.id,
+        p.name name,
+        count(*) count
+    FROM
+        (
+            SELECT
+                b.id,
+                b.name,
+                p.dept_id
+            FROM
+                t_project_info p
+            LEFT JOIN t_business_org b ON p.borg_id = b.id
+            WHERE
+                LEVEL = 3
+        ) p
+    LEFT JOIN t_user u ON u.DEPT_ID = p.dept_id
+    GROUP BY p. NAME
+  </select>
+
+  <select id="selectUserCountBySite" parameterType="java.lang.Long" resultType="java.lang.Long">
+    SELECT
+        count(*) count
+    FROM
+        (
+            SELECT
+                p.dept_id
+            FROM
+                t_project_info p
+            LEFT JOIN t_business_org b ON p.borg_id = b.id
+            WHERE
+                PARENT_ID=#{id}
+        ) p
+    LEFT JOIN t_user u ON u.DEPT_ID = p.dept_id
+  </select>
+
+  <update id="updateDutyStatus" parameterType="java.util.Map" >
+    update t_user
+    set
+    IS_DUTY = #{isDuty,jdbcType=VARCHAR},
+    LON = #{lon,jdbcType=VARCHAR},
+    LAT = #{lat,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+
+  <update id="changePw" parameterType="java.util.Map" >
+    update t_user set password=#{pw} where username=#{username}
+  </update>
+
+  <select id="queryCqts" parameterType="java.util.Map" resultType="java.lang.Integer">
+    SELECT
+        count(*) cqts
+    FROM
+        t_attendance
+    WHERE
+        DATE_FORMAT(at_time, '%Y-%m') = DATE_FORMAT(
+            STR_TO_DATE(
+                #{month},'%Y-%m'), '%Y-%m') and user_id=#{userId}
+  </select>
+
+  <select id="queryCqbc" parameterType="java.util.Map" resultType="java.lang.Integer">
+    SELECT
+        count(*) cqbc
+    FROM
+        t_duty_info
+    WHERE
+        DATE_FORMAT(duty_start_time, '%Y-%m') IN (
+            SELECT
+                DATE_FORMAT(
+                    STR_TO_DATE(
+                        #{month},'%Y-%m'),'%Y-%m') from t_attendance where USER_ID=#{userId})
+                        AND duty_user_id = #{userId}
+  </select>
+
+  <select id="queryCdcs" parameterType="java.util.Map" resultType="java.lang.Integer">
+    SELECT
+        count(*) cdcs
+    FROM
+        t_attendance
+    WHERE
+        DATE_FORMAT(at_time, '%Y-%m') = DATE_FORMAT(STR_TO_DATE(#{month},'%Y-%m'), '%Y-%m')
+                AND ABNORMAL = 1
+                AND TYPE = 1
+                AND USER_ID = #{userId}
+  </select>
+
+  <select id="queryZtcs" parameterType="java.util.Map" resultType="java.lang.Integer">
+    SELECT
+        count(*) ztcs
+    FROM
+        t_attendance
+    WHERE
+        DATE_FORMAT(at_time, '%Y-%m') = DATE_FORMAT(STR_TO_DATE(#{month},'%Y-%m'), '%Y-%m')
+                AND ABNORMAL = 1
+                AND TYPE = 0
+                AND USER_ID = #{userId}
+  </select>
+
+  <select id="selectUserMobileByDeptId" resultType="java.lang.String" parameterType="java.lang.Long">
+    select t.mobile from t_user t where t.status='1' and t.dept_id=#{deptId}
+  </select>
+
+  <select id="queryUserMobileByDeptId" resultType="java.lang.String" parameterType="java.lang.Long">
+    SELECT
+    mobile
+    FROM
+    t_user t
+    WHERE
+    t.dept_id = #{deptId}
+    AND t.STATUS = '1'
+  </select>
+
+  <select id="queryDeptByParentId" parameterType="java.lang.Long" resultType="java.util.HashMap">
+    SELECT
+    t.dept_id id
+    FROM
+    t_dept t
+    WHERE
+    t.parent_id = #{deptId}
+  </select>
+
+
+  <select id="selectUser" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_user where password=''
+  </select>
+
+  <update id="resetPw" parameterType="java.util.HashMap">
+    update t_user t set t.password=#{pw} where t.user_id=${userId}
+  </update>
+
+  <select id="queryByDeptId" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    SELECT
+        '' avavar,
+        t.truename,
+        t.mobile,
+        t.lon,
+        t.lat,
+        t.is_duty,
+        DATE_FORMAT(d.DUTY_START_TIME,'%Y-%m-%d %H:%i') duty_start_time,
+        DATE_FORMAT(d.DUTY_END_TIME,'%Y-%m-%d %H:%i') duty_end_time
+    FROM
+        t_user t
+    LEFT JOIN (
+        SELECT
+            *
+        FROM
+            t_duty_info
+        WHERE
+            DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d') = DATE_FORMAT(NOW(), '%Y-%m-%d')
+    ) d ON t.user_id = d.duty_user_id
+    WHERE
+        dept_id = #{deptId}
+  </select>
+
+  <select id="selectUserByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from t_user where username=#{phone}
+  </select>
+
+  <select id="getAdivision" resultType="java.util.HashMap">
+    select id,name from t_adivision t where t.status='1'
+  </select>
+
+  <select id="getBnsSystem" parameterType="java.lang.Long" resultType="java.util.HashMap">
+    select id,name from t_business_system t where t.status='1' and t.adivision_id=#{adivisionId}
+  </select>
+
+  <select id="getCompany" parameterType="java.lang.Long" resultType="java.util.HashMap">
+    select id,company_name name from t_company t where t.status='1' and t.bns_system_id=#{bnsSystemId}
+  </select>
+
+  <select id="getCompanyTeam" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    select dept_id id,dept_name name from t_dept t where t.company_id=#{companyId} and t.parent_id=#{parentId}
+  </select>
+
+  <select id="getPostiton" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    select id,post_code name from t_post t where t.adivision_id=#{adivisionId} and t.business_id=#{bnsSystemId} and company_id=#{companyId}
+  </select>
+
+
+  <insert id="register" parameterType="com.ztman.model.entity.RegisterUser" useGeneratedKeys="true" keyProperty="userId">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID,
+      </if>
+      <if test="mobile != null" >
+        MOBILE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="ssex != null" >
+        SSEX,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="exServiceman != null" >
+        EX_SERVICEMAN,
+      </if>
+      <if test="systemId != null" >
+        SYSTEM_ID,
+      </if>
+      <if test="systemName != null" >
+        SYSTEM_NAME,
+      </if>
+      <if test="adivisionId != null" >
+        ADIVISION_ID,
+      </if>
+      <if test="adivisionName != null" >
+        ADIVISION_NAME,
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID,
+      </if>
+      <if test="businessName != null" >
+        BUSINESS_NAME,
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID,
+      </if>
+      <if test="company != null" >
+        COMPANY,
+      </if>
+      <if test="postId != null" >
+        POST_ID,
+      </if>
+      <if test="postName != null" >
+        POST_NAME,
+      </if>
+      <if test="nation != null" >
+        NATION,
+      </if>
+      <if test="nativePlace != null" >
+        NATIVE_PLACE,
+      </if>
+      <if test="height != null" >
+        HEIGHT,
+      </if>
+      <if test="education != null" >
+        EDUCATION,
+      </if>
+      <if test="truename != null" >
+        TRUENAME,
+      </if>
+      <if test="isDuty != null" >
+        IS_DUTY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ssex != null" >
+        #{ssex,jdbcType=CHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="exServiceman != null" >
+        #{exServiceman,jdbcType=VARCHAR},
+      </if>
+      <if test="systemId != null" >
+        #{systemId,jdbcType=BIGINT},
+      </if>
+      <if test="systemName != null" >
+        #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="adivisionId != null" >
+        #{adivisionId,jdbcType=BIGINT},
+      </if>
+      <if test="adivisionName != null" >
+        #{adivisionName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessName != null" >
+        #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="postId != null" >
+        #{postId,jdbcType=BIGINT},
+      </if>
+      <if test="postName != null" >
+        #{postName,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null" >
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null" >
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="truename != null" >
+        #{truename,jdbcType=VARCHAR},
+      </if>
+      <if test="isDuty != null" >
+        #{isDuty,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updatePwd" parameterType="java.util.HashMap">
+    update t_user t set t.password=#{pwd} where t.user_id=#{userId}
+  </update>
+</mapper>

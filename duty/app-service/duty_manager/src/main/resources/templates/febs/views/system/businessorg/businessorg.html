@@ -1,0 +1,218 @@
+<div class="layui-fluid layui-anim febs-anim" id="febs-businessorg" lay-title="组织架构管理">
+    <div class="layui-row febs-container">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body febs-table-full">
+                    <form class="layui-form layui-table-form" lay-filter="user-table-form">
+                        <div class="layui-row">
+                            <div class="layui-col-md10">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label layui-form-label-sm" style="width: 100px">业务机构名称</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="businessorgName" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-md2 layui-col-sm12 layui-col-xs12 table-action-area">
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                                    <i class="layui-icon">&#xe848;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="reset">
+                                    <i class="layui-icon">&#xe79b;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action action-more"
+                                     shiro:hasAnyPermissions="businessorg:add,businessorg:update,businessorg:export">
+                                    <i class="layui-icon">&#xe875;</i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <table lay-filter="businessorgTable" lay-data="{id: 'businessorgTable'}"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--下拉、序号等-->
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+
+
+<!--列表操作项-->
+<script type="text/html" id="businessorg-option">
+    <span shiro:lacksPermission="businessorg:view,businessorg:update,businessorg:delete">
+        <span class="layui-badge-dot febs-bg-orange"></span> 无权限
+    </span>
+    <a lay-event="detail" shiro:hasPermission="businessorg:view"><i
+            class="layui-icon febs-edit-area febs-green">&#xe7a5;</i></a>
+    <a lay-event="edit" shiro:hasPermission="businessorg:update"><i
+            class="layui-icon febs-edit-area febs-blue">&#xe7a4;</i></a>
+    <a lay-event="del" shiro:hasPermission="businessorg:delete"><i class="layui-icon febs-edit-area febs-red">&#xe7f9;</i></a>
+</script>
+<script data-th-inline="none" type="text/javascript">
+    layui.use(['dropdown', 'jquery', 'laydate', 'form', 'table', 'febs', 'treeSelect'], function () {
+        var $ = layui.jquery,
+                laydate = layui.laydate,
+                febs = layui.febs,
+                form = layui.form,
+                table = layui.table,
+                treeSelect = layui.treeSelect,
+                dropdown = layui.dropdown,
+                $view = $('#febs-businessorg'),
+                $query = $view.find('#query'),
+                $reset = $view.find('#reset'),
+                $searchForm = $view.find('form'),
+                sortObject = {field: 'createTime', type: null},
+                tableIns;
+
+
+        form.render();
+
+        /*  加载列表*/
+        initTable();
+        function initTable() {
+            tableIns = febs.table.init({
+                elem: $view.find('table'),
+                id: 'businessorgTable',
+                url: ctx + 'businessorg/list',
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'zizeng', title: '序号',type:'numbers'},
+                    {field: 'name', title: '业务机构名称'},
+//                    {field: 'address', title: '机构地址'},
+                    {field: 'type', title: '业务类型'},
+                    {field: 'levelname', title: '机构层级'},
+                    {field: 'parentName', title: '上级机构'},
+                    {field: 'description', title: '机构描述'},
+                    {field: 'truename', title: '创建人'},
+                    {field: 'createTime', title: '创建时间', sort: true},
+                    {title: '操作', toolbar: '#businessorg-option', minWidth: 140}
+                ]]
+            });
+        }
+
+        /*下拉按钮功能*/
+        dropdown.render({
+            elem: $view.find('.action-more'),
+            click: function (name, elem, event) {
+                var checkStatus = table.checkStatus('businessorgTable');
+                if (name === 'add') {
+                    febs.modal.open('新增业务机构', 'system/businessorg/add', {
+                        btn: ['提交', '重置'],
+                        area: $(window).width() <= 750 ? '95%' : '50%',
+                        yes: function (index, layero) {
+                            $('#businessorg-add').find('#submit').trigger('click');
+                        },
+                        btn2: function () {
+                            $('#businessorg-add').find('#reset').trigger('click');
+                            return false;
+                        }
+                    });
+                }
+                if (name === 'delete') {
+                    console.log(checkStatus);
+                    if (!checkStatus.data.length) {
+                        febs.alert.warn('请选择需要删除的业务机构');
+                    } else {
+                        febs.modal.confirm('删除业务机构', '确定删除该业务机构？', function () {
+                            var businessorgIds = [];
+                            layui.each(checkStatus.data, function (key, item) {
+                                businessorgIds.push(item.id)
+                            });
+                            deletebusinessorgs(businessorgIds.join(','));
+                        });
+                    }
+                }
+                if (name === 'export') {
+                    var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+                    params.pageSize = $view.find(".layui-laypage-limits option:selected").val();
+                    params.pageNum = $view.find(".layui-laypage-em").next().html();
+                    febs.download(ctx + 'businessorg/excel', params, '业务机构信息表.xlsx');
+                }
+            },
+            options: [{
+                name: 'add',
+                title: '新增业务机构',
+                perms: 'businessorg:add'
+            }, {
+                name: 'delete',
+                title: '删除业务机构',
+                perms: 'businessorg:delete'
+            },  {
+                name: 'export',
+                title: '导出Excel',
+                perms: 'businessorg:export'
+            }]
+        });
+
+        /*列表操作按钮功能*/
+        table.on('tool(businessorgTable)', function (obj) {
+            var data = obj.data,
+                    layEvent = obj.event;
+            if (layEvent === 'detail') {
+                febs.modal.view('业务机构信息', 'system/businessorg/detail/' + data.id, {
+                    area: $(window).width() <= 750 ? '95%' : '660px'
+                });
+            }
+            if (layEvent === 'del') {
+                febs.modal.confirm('删除业务机构', '确定删除该业务机构？', function () {
+                    deletebusinessorgs(data.id);
+                });
+            }
+            if (layEvent === 'edit') {
+                febs.modal.open('修改业务机构', 'system/businessorg/update/' + data.id, {
+                    area: $(window).width() <= 750 ? '90%' : '50%',
+                    btn: ['提交', '取消'],
+                    yes: function (index, layero) {
+                        $('#businessorg-update').find('#submit').trigger('click');
+                    },
+                    btn2: function () {
+                        layer.closeAll();
+                    }
+                });
+            }
+        });
+
+        /*搜索功能*/
+        $query.on('click', function () {
+            var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+            tableIns.reload({where: params, page: {curr: 1}});
+        });
+        function getQueryParams() {
+            return {
+                name: $searchForm.find('input[name="businessorgName"]').val().trim()
+            };
+        }
+
+        /*重置搜索项*/
+        $reset.on('click', function () {
+            $searchForm[0].reset();
+            sortObject.type = 'null';
+            tableIns.reload({where: getQueryParams(), page: {curr: 1}, initSort: sortObject});
+        });
+
+        /*删除*/
+        function deletebusinessorgs(businessorgIds) {
+            febs.get(ctx + 'businessorg/delete/' + businessorgIds, null, function () {
+                febs.alert.success('删除业务机构成功');
+                $query.click();
+            });
+        }
+
+        /*排序功能*/
+        table.on('sort(businessorgTable)', function (obj) {
+            sortObject = obj;
+            tableIns.reload({
+                initSort: obj,
+                where: $.extend(getQueryParams(), {
+                    field: obj.field,
+                    order: obj.type
+                })
+            });
+        });
+    })
+</script>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.DeptMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.Dept" >
+    <id column="DEPT_ID" property="deptId" jdbcType="BIGINT" />
+    <result column="PARENT_ID" property="parentId" jdbcType="BIGINT" />
+    <result column="DEPT_NAME" property="deptName" jdbcType="VARCHAR" />
+    <result column="ORDER_NUM" property="orderNum" jdbcType="BIGINT" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="LEVEL" property="level" jdbcType="BIGINT" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+    <result column="SYSTEM_ID" property="systemId" jdbcType="BIGINT" />
+    <result column="SYSTEM_NAME" property="systemName" jdbcType="VARCHAR" />
+    <result column="ADIVISION_ID" property="adivisionId" jdbcType="BIGINT" />
+    <result column="ADIVISION_NAME" property="adivisionName" jdbcType="VARCHAR" />
+    <result column="BUSINESS_ID" property="businessId" jdbcType="BIGINT" />
+    <result column="BUSINESS_NAME" property="businessName" jdbcType="VARCHAR" />
+    <result column="COMPANY_ID" property="companyId" jdbcType="BIGINT" />
+    <result column="COMPANY_NAME" property="companyName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DEPT_ID, PARENT_ID, DEPT_NAME, ORDER_NUM, CREATE_TIME, MODIFY_TIME, LEVEL, DESCRIPTION,
+    SYSTEM_ID, SYSTEM_NAME, ADIVISION_ID, ADIVISION_NAME, BUSINESS_ID, BUSINESS_NAME,
+    COMPANY_ID, COMPANY_NAME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_dept
+    where DEPT_ID = #{deptId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_dept
+    where DEPT_ID = #{deptId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.Dept" >
+    insert into t_dept (DEPT_ID, PARENT_ID, DEPT_NAME,
+    ORDER_NUM, CREATE_TIME, MODIFY_TIME,
+    LEVEL, DESCRIPTION, SYSTEM_ID,
+    SYSTEM_NAME, ADIVISION_ID, ADIVISION_NAME,
+    BUSINESS_ID, BUSINESS_NAME, COMPANY_ID,
+    COMPANY_NAME)
+    values (#{deptId,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{deptName,jdbcType=VARCHAR},
+    #{orderNum,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP},
+    #{level,jdbcType=BIGINT}, #{description,jdbcType=VARCHAR}, #{systemId,jdbcType=BIGINT},
+    #{systemName,jdbcType=VARCHAR}, #{adivisionId,jdbcType=BIGINT}, #{adivisionName,jdbcType=VARCHAR},
+    #{businessId,jdbcType=BIGINT}, #{businessName,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT},
+    #{companyName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.Dept" >
+    insert into t_dept
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="deptId != null" >
+        DEPT_ID,
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID,
+      </if>
+      <if test="deptName != null" >
+        DEPT_NAME,
+      </if>
+      <if test="orderNum != null" >
+        ORDER_NUM,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME,
+      </if>
+      <if test="level != null" >
+        LEVEL,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="systemId != null" >
+        SYSTEM_ID,
+      </if>
+      <if test="systemName != null" >
+        SYSTEM_NAME,
+      </if>
+      <if test="adivisionId != null" >
+        ADIVISION_ID,
+      </if>
+      <if test="adivisionName != null" >
+        ADIVISION_NAME,
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID,
+      </if>
+      <if test="businessName != null" >
+        BUSINESS_NAME,
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID,
+      </if>
+      <if test="companyName != null" >
+        COMPANY_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="deptId != null" >
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="deptName != null" >
+        #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNum != null" >
+        #{orderNum,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="systemId != null" >
+        #{systemId,jdbcType=BIGINT},
+      </if>
+      <if test="systemName != null" >
+        #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="adivisionId != null" >
+        #{adivisionId,jdbcType=BIGINT},
+      </if>
+      <if test="adivisionName != null" >
+        #{adivisionName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessName != null" >
+        #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.Dept" >
+    update t_dept
+    <set >
+      <if test="parentId != null" >
+        PARENT_ID = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="deptName != null" >
+        DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNum != null" >
+        ORDER_NUM = #{orderNum,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="level != null" >
+        LEVEL = #{level,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="systemId != null" >
+        SYSTEM_ID = #{systemId,jdbcType=BIGINT},
+      </if>
+      <if test="systemName != null" >
+        SYSTEM_NAME = #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="adivisionId != null" >
+        ADIVISION_ID = #{adivisionId,jdbcType=BIGINT},
+      </if>
+      <if test="adivisionName != null" >
+        ADIVISION_NAME = #{adivisionName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID = #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessName != null" >
+        BUSINESS_NAME = #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null" >
+        COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DEPT_ID = #{deptId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.Dept" >
+    update t_dept
+    set PARENT_ID = #{parentId,jdbcType=BIGINT},
+      DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      ORDER_NUM = #{orderNum,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      LEVEL = #{level,jdbcType=BIGINT},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      SYSTEM_ID = #{systemId,jdbcType=BIGINT},
+      SYSTEM_NAME = #{systemName,jdbcType=VARCHAR},
+      ADIVISION_ID = #{adivisionId,jdbcType=BIGINT},
+      ADIVISION_NAME = #{adivisionName,jdbcType=VARCHAR},
+      BUSINESS_ID = #{businessId,jdbcType=BIGINT},
+      BUSINESS_NAME = #{businessName,jdbcType=VARCHAR},
+      COMPANY_ID = #{companyId,jdbcType=BIGINT},
+      COMPANY_NAME = #{companyName,jdbcType=VARCHAR}
+    where DEPT_ID = #{deptId,jdbcType=BIGINT}
+  </update>
+</mapper>

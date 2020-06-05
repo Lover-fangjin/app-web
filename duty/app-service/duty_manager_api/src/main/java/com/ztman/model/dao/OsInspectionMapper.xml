@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.OsInspectionMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.OsInspection" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="I_SUM" property="iSum" jdbcType="VARCHAR" />
+    <result column="FASHAO" property="fashao" jdbcType="VARCHAR" />
+    <result column="WUYICHANG" property="wuyichang" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, I_SUM, FASHAO, WUYICHANG, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_os_inspection
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_os_inspection
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.OsInspection" >
+    insert into t_os_inspection (ID, I_SUM, FASHAO, 
+      WUYICHANG, CREATE_TIME)
+    values (#{id,jdbcType=BIGINT}, #{iSum,jdbcType=VARCHAR}, #{fashao,jdbcType=VARCHAR}, 
+      #{wuyichang,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.OsInspection" >
+    insert into t_os_inspection
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="iSum != null" >
+        I_SUM,
+      </if>
+      <if test="fashao != null" >
+        FASHAO,
+      </if>
+      <if test="wuyichang != null" >
+        WUYICHANG,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="iSum != null" >
+        #{iSum,jdbcType=VARCHAR},
+      </if>
+      <if test="fashao != null" >
+        #{fashao,jdbcType=VARCHAR},
+      </if>
+      <if test="wuyichang != null" >
+        #{wuyichang,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.OsInspection" >
+    update t_os_inspection
+    <set >
+      <if test="iSum != null" >
+        I_SUM = #{iSum,jdbcType=VARCHAR},
+      </if>
+      <if test="fashao != null" >
+        FASHAO = #{fashao,jdbcType=VARCHAR},
+      </if>
+      <if test="wuyichang != null" >
+        WUYICHANG = #{wuyichang,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.OsInspection" >
+    update t_os_inspection
+    set I_SUM = #{iSum,jdbcType=VARCHAR},
+      FASHAO = #{fashao,jdbcType=VARCHAR},
+      WUYICHANG = #{wuyichang,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectUpToDate" resultType="java.util.HashMap">
+    SELECT
+        i_sum sum,
+        fashao,
+        wuyichang
+    FROM
+        t_os_inspection
+    ORDER BY
+        create_time DESC
+    LIMIT 1
+  </select>
+</mapper>

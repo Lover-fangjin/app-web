@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.event.mapper.EventReportMapper">
+
+    <resultMap id="ExportResultMap" type="cc.mrbird.febs.event.entity.EventReportExport">
+        <result column="REPORT_NO" property="reportNo" jdbcType="BIGINT" />
+        <result column="EVENT_CLASS" property="eventClass" jdbcType="VARCHAR" />
+        <result column="EVENT_TYPE" property="eventType" jdbcType="VARCHAR" />
+        <result column="HAPPEN_DATE" property="happenDate" jdbcType="VARCHAR" />
+        <result column="TRUENAME" property="truename" jdbcType="TIMESTAMP" />
+        <result column="MOBILE" property="mobile" jdbcType="TIMESTAMP" />
+        <result column="DEPT_NAME" property="deptName" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+    <select id="findEventReportsList" parameterType="eventReport" resultType="eventReport">
+        select
+            ter.id,
+            ter.report_no  reportNo,
+            ter.location,
+            ter.event_type_id eventTypeId,
+            (select event_name from t_event_dict where id=event_class_id) eventClass,
+            (select event_name from t_event_dict where id=event_type_id) eventType,
+            ter.happen_date happenDate,
+            tu.truename,
+            tu.mobile,
+            td.dept_name deptName,
+            tu.dept_id deptId
+        from t_event_report ter
+        left join t_user tu on tu.user_id=ter.user_id
+        left join t_dept td on td.dept_id=tu.dept_id
+        WHERE 1 = 1
+        <if test="eventReport.deptId != null and eventReport.deptId != ''">
+            AND tu.dept_id =#{eventReport.deptId}
+        </if>
+        <if test="eventReport.eventClassId != null and eventReport.eventClassId != ''">
+            AND ter.event_class_id = #{eventReport.eventClassId}
+        </if>
+        <if test="eventReport.eventTypeId != null and eventReport.eventTypeId != ''">
+            AND ter.event_type_id = #{eventReport.eventTypeId}
+        </if>
+        <if test="eventReport.ext1 != null and eventReport.ext1 != ''">
+            AND ter.location   like CONCAT('%',#{eventReport.ext1},'%')
+        </if>
+        <if test="user.deptId != null and user.deptId != ''">
+            AND find_in_set(tu.dept_id,getDepts(#{user.deptId}))
+        </if>
+        order by happenDate desc
+    </select>
+
+
+    <select id="findById" parameterType="java.lang.Long" resultType="eventReport">
+         select
+            ter.*,
+
+            tu.truename,
+            tu.mobile,
+            td.dept_name deptName,
+            tu.dept_id deptId,
+            (select event_name from t_event_dict where id=event_class_id) eventClass,
+            (select event_name from t_event_dict where id=event_type_id) eventType
+        from t_event_report ter
+        left join t_event_dict ted on ted.id=ter.event_type_id
+        left join t_user tu on tu.user_id=ter.user_id
+        left join t_dept td on td.dept_id=tu.dept_id
+        where ter.id=#{id}
+    </select>
+
+    <select id="findEventReportsListByExport" parameterType="cc.mrbird.febs.event.entity.EventReport" resultMap="ExportResultMap">
+        select
+        ter.REPORT_NO,
+        (select event_name from t_event_dict where id=event_class_id) EVENT_CLASS,
+        (select event_name from t_event_dict where id=event_type_id) EVENT_TYPE,
+        DATE_FORMAT(ter.HAPPEN_DATE,'%Y-%m-%d %H:%i:%s') HAPPEN_DATE,
+        tu.TRUENAME,
+        tu.MOBILE,
+        td.DEPT_NAME
+        from t_event_report ter
+        left join t_event_dict ted on ted.id=ter.event_type_id
+        left join t_user tu on tu.user_id=ter.user_id
+        left join t_dept td on td.dept_id=tu.dept_id
+        WHERE 1 = 1
+        <if test="eventReport.deptId != null and eventReport.deptId != ''">
+            AND tu.dept_id =#{eventReport.deptId}
+        </if>
+        <if test="eventReport.eventClassId != null and eventReport.eventClassId != ''">
+            AND ter.event_class_id = #{eventReport.eventClassId}
+        </if>
+        <if test="eventReport.eventTypeId != null and eventReport.eventTypeId != ''">
+            AND ter.event_type_id = #{eventReport.eventTypeId}
+        </if>
+        <if test="eventReport.ext1 != null and eventReport.ext1 != ''">
+            AND ter.location   like CONCAT('%',#{eventReport.ext1},'%')
+        </if>
+        <if test="user.deptId != null and user.deptId != ''">
+            AND find_in_set(tu.dept_id,getDepts(#{user.deptId}))
+        </if>
+        order by HAPPEN_DATE desc
+    </select>
+
+    <select id="findImgsById" parameterType="java.lang.Long" resultType="java.lang.String">
+        select url from t_attachment where data_id=#{id}
+    </select>
+</mapper>

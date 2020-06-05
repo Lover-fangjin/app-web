@@ -1,0 +1,48 @@
+app.js
+1. globalData中初始化用户头像信息  以及其他信息（姓名 地区等 按自己需要保存）
+globalData: {
+    userInfo: null,
+    latitude:'',
+    longitude:'',
+    userId:'',
+    mobile:'',
+    avatarUrl:'',  //获取用户头像
+    username:'',  //角色
+    isDuty:'', // 1 上岗 2 离岗
+  },
+
+2. 在登陆页面 判断是否授权  login.js
+onLoad: function () {
+   let me = this;
+    // 查看是否授权
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              app.globalData.avatarUrl = res.userInfo.avatarUrl;  //头像
+              me.setData({
+                showView: true,
+                avatarUrl: app.globalData.avatarUrl  //头像默认显示授权以后的微信头像
+              })
+            }
+          })
+        }
+      }
+    })
+  },
+
+如未授权 点击授权的方法
+ bindGetUserInfo(e) {
+    let me = this;
+    if (e.detail.userInfo.avatarUrl){
+      me.setData({
+        avatarUrl: e.detail.userInfo.avatarUrl,
+        showView:true
+      })
+    }
+  },
+
+3.login.wxml 
+<button wx:if="{{!showView}}" id='getUserInfo' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>

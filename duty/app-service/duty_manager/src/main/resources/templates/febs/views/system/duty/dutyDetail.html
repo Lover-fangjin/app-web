@@ -1,0 +1,189 @@
+<style>
+    #user-update {
+        padding: 20px 25px 25px 0;
+    }
+
+    #user-update .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+    /*不显示秒*/
+    .layui-laydate-content>.layui-laydate-list {
+        padding-bottom: 0px;
+        overflow: hidden;
+    }
+    .layui-laydate-content>.layui-laydate-list>li{
+        width:50%
+    }
+
+    .merge-box .scrollbox .merge-list {
+        padding-bottom: 5px;
+    }
+    .xm-select-tips {
+        display: none;
+    }
+    .layui-layer-content{
+        padding: 10px 0px;
+    }
+</style>
+<div class="layui-fluid" id="duty-update" style="width:960px!important;height:500px;overflow-y: auto;">
+    <form class="layui-form" action="" lay-filter="duty-update-form">
+        <div class="layui-form-item febs-hide">
+            <label class="layui-form-label febs-form-item-require">记录Id：</label>
+            <div class="layui-input-block">
+                <input type="text" name="id" data-th-value="${duty.id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">项目地点：</label>
+            <div class="layui-input-block">
+                <input type="text" name="address"   lay-verify="address"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">值班主体：</label>
+            <div class="layui-input-block">
+                <input type="text" name="dutyDeptId" id="dutyDeptId" class="layui-input" lay-filter="dutyDeptId">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">值班任务：</label>
+            <div class="layui-input-block">
+                <input type="text" name="task" id="task" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label febs-form-item-require">值班周期：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="startTime" id="febs-form-group-startdate" lay-verify="startdate"
+                           placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline">
+                    <input type="text" name="endTime" id="febs-form-group-enddate" lay-verify="enddate"
+                           placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">任务循环：</label>
+            <div class="layui-input-block">
+                <input type="checkbox" checked="" name="taskCycle" lay-skin="switch"
+                       lay-filter="febs-form-group-switch" lay-text="开|关">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">值班班次：</label>
+            <div class="layui-input-block">
+                <select name="shift"  id="shift">
+                    <option value="">请选择</option>
+                    <option value="1">1天1班</option>
+                    <option value="2">1天2班</option>
+                    <option value="3">1天3班</option>
+                    <option value="4">1天4班</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">值班信息：</label>
+            <div class="layui-input-inline" style="width: 40px;">
+                <!--<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" id="user-add-btn"><i class="layui-icon">&#xe624;</i></button>-->
+            </div>
+            <!--<div class="layui-form-mid layui-word-aux">点击“添加”显示添加人员和添加时段的信息</div>-->
+        </div>
+
+        <div class="layui-form-item" id="user-add-div-0" style="margin-left: 80px;">
+            <label class="layui-form-label">人员：</label>
+            <div class="layui-input-block">
+                <input type="text" name="ext1" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item" id="user-add-div-1" style="margin-left: 80px;">
+            <div class="layui-inline">
+                <div class="layui-inline">
+                    <label class="layui-form-label">时段：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="ext2" class="layui-input" id="user-add-sd-0" placeholder=" - ">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="duty-update-form-submit" id="submit"></button>
+            <button type="reset" class="layui-btn" id="reset"></button>
+        </div>
+    </form>
+</div>
+
+<script data-th-inline="javascript">
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect'], function () {
+        var $ = layui.$,
+                febs = layui.febs,
+                layer = layui.layer,
+                formSelects = layui.formSelects,
+                treeSelect = layui.treeSelect,
+                form = layui.form,
+                $view = $('#duty-update'),
+                duty = [[${duty}]],
+                validate = layui.validate;
+
+        form.verify(validate);
+        form.render();
+        formSelects.render();
+//        initselect();
+        initdutyValue();
+
+        treeSelect.render({
+            elem: $view.find('#dutyDeptId'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            async: false,
+            search: false,
+            success: function () {
+                treeSelect.checkNode('dutyDeptId', duty.dutyDeptId);
+            }
+        });
+
+
+
+
+        function initselect()
+        {
+            $.ajax({
+                type: 'GET',
+                url: ctx+'duty/userlist/'+duty.dutyDeptId,
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    $("#ext1").empty();
+                    $.each(data.data, function (key, val) {
+                        var option2 = $("<option>").val(val.userId).text(val.truename);
+                        //通过LayUI.jQuery添加列表项
+                        $("#ext1").append(option2);
+                    });
+                    layui.form.render('select');
+                }
+            });
+
+        }
+
+
+        function initdutyValue() {
+            form.val("duty-update-form", {
+                "address": duty.address,
+                "task": duty.task,
+                "startTime": duty.startTime,
+                "endTime": duty.endTime,
+                "taskCycle": duty.taskCycle,
+                "shift": duty.shift,
+                "ext1": duty.ext1,
+                "ext2": duty.ext2
+            });
+        }
+
+
+    });
+</script>

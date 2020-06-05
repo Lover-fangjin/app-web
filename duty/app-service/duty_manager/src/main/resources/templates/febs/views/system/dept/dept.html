@@ -1,0 +1,228 @@
+<div class="layui-fluid layui-anim febs-anim" id="febs-dept" lay-title="组织架构管理">
+    <div class="layui-row febs-container">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body febs-table-full">
+                    <form class="layui-form layui-table-form" lay-filter="user-table-form">
+                        <div class="layui-row">
+                            <div class="layui-col-md10">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label layui-form-label-sm">队伍名称</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="deptName" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-md2 layui-col-sm12 layui-col-xs12 table-action-area">
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                                    <i class="layui-icon">&#xe848;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="reset">
+                                    <i class="layui-icon">&#xe79b;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action action-more"
+                                     shiro:hasAnyPermissions="dept:add,dept:update,dept:export">
+                                    <i class="layui-icon">&#xe875;</i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <table lay-filter="deptTable" lay-data="{id: 'deptTable'}"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--下拉、序号等-->
+<script type="text/html" id="dept-level">
+    {{#
+    var level = {
+    null:{title: ''},
+    4: {title: '小队'},
+    3: {title: '分队'},
+    2: {title: '中队'},
+    1: {title: '大队'}
+    }[d.level];
+    }}
+    <span>{{ level.title }}</span>
+</script>
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+
+
+<!--列表操作项-->
+<script type="text/html" id="dept-option">
+    <span shiro:lacksPermission="dept:view,dept:update,dept:delete">
+        <span class="layui-badge-dot febs-bg-orange"></span> 无权限
+    </span>
+    <a lay-event="detail" shiro:hasPermission="dept:view"><i
+            class="layui-icon febs-edit-area febs-green">&#xe7a5;</i></a>
+    <a lay-event="edit" shiro:hasPermission="dept:update"><i
+            class="layui-icon febs-edit-area febs-blue">&#xe7a4;</i></a>
+    <a lay-event="del" shiro:hasPermission="dept:delete"><i class="layui-icon febs-edit-area febs-red">&#xe7f9;</i></a>
+</script>
+<script data-th-inline="none" type="text/javascript">
+    layui.use(['dropdown', 'jquery', 'laydate', 'form', 'table', 'febs', 'treeSelect'], function () {
+        var $ = layui.jquery,
+                laydate = layui.laydate,
+                febs = layui.febs,
+                form = layui.form,
+                table = layui.table,
+                treeSelect = layui.treeSelect,
+                dropdown = layui.dropdown,
+                $view = $('#febs-dept'),
+                $query = $view.find('#query'),
+                $reset = $view.find('#reset'),
+                $searchForm = $view.find('form'),
+                sortObject = {field: 'createTime', type: null},
+                tableIns;
+
+
+        form.render();
+
+        /*  加载列表*/
+        initTable();
+        function initTable() {
+            tableIns = febs.table.init({
+                elem: $view.find('table'),
+                id: 'deptTable',
+                url: ctx + 'dept/list',
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'zizeng', title: '序号',type:'numbers'},
+                    {field: 'deptName', title: '队伍名称'},
+                    {title: '队伍等级', templet: '#dept-level'},
+                    {field: 'parentName', title: '上级队伍'},
+                    {field: 'personcount', title: '队伍人数（人）'},
+                    {field: 'description', title: '队伍描述'},
+                    {field: 'createTime', title: '创建时间', minWidth: 180, sort: true},
+                    {title: '操作', toolbar: '#dept-option', minWidth: 140}
+                ]]
+            });
+        }
+
+        /*下拉按钮功能*/
+        dropdown.render({
+            elem: $view.find('.action-more'),
+            click: function (name, elem, event) {
+                var checkStatus = table.checkStatus('deptTable');
+                if (name === 'add') {
+                    febs.modal.open('新增队伍', 'system/dept/add', {
+                        btn: ['提交', '重置'],
+                        area: $(window).width() <= 750 ? '95%' : '50%',
+                        yes: function (index, layero) {
+                            $('#dept-add').find('#submit').trigger('click');
+                        },
+                        btn2: function () {
+                            $('#dept-add').find('#reset').trigger('click');
+                            return false;
+                        }
+                    });
+                }
+                if (name === 'delete') {
+                    console.log(checkStatus);
+                    if (!checkStatus.data.length) {
+                        febs.alert.warn('请选择需要删除的队伍');
+                    } else {
+                        febs.modal.confirm('删除队伍', '确定删除该队伍？', function () {
+                            var deptIds = [];
+                            layui.each(checkStatus.data, function (key, item) {
+                                deptIds.push(item.deptId)
+                            });
+                            deleteDepts(deptIds.join(','));
+                        });
+                    }
+                }
+                if (name === 'export') {
+                    var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+                    params.pageSize = $view.find(".layui-laypage-limits option:selected").val();
+                    params.pageNum = $view.find(".layui-laypage-em").next().html();
+                    febs.download(ctx + 'dept/excel', params, '队伍信息表.xlsx');
+                }
+            },
+            options: [{
+                name: 'add',
+                title: '新增队伍',
+                perms: 'dept:add'
+            }, {
+                name: 'delete',
+                title: '删除队伍',
+                perms: 'dept:delete'
+            },  {
+                name: 'export',
+                title: '导出Excel',
+                perms: 'dept:export'
+            }]
+        });
+
+        /*列表操作按钮功能*/
+        table.on('tool(deptTable)', function (obj) {
+            var data = obj.data,
+                    layEvent = obj.event;
+            if (layEvent === 'detail') {
+                febs.modal.view('队伍信息', 'system/dept/detail/' + data.deptId, {
+                    area: $(window).width() <= 750 ? '95%' : '660px'
+                });
+            }
+            if (layEvent === 'del') {
+                febs.modal.confirm('删除队伍', '确定删除该队伍？', function () {
+                    deleteDepts(data.deptId);
+                });
+            }
+            if (layEvent === 'edit') {
+                febs.modal.open('修改队伍', 'system/dept/update/' + data.deptId, {
+                    area: $(window).width() <= 750 ? '90%' : '50%',
+                    btn: ['提交', '取消'],
+                    yes: function (index, layero) {
+                        $('#dept-update').find('#submit').trigger('click');
+                    },
+                    btn2: function () {
+                        layer.closeAll();
+                    }
+                });
+            }
+        });
+
+        /*搜索功能*/
+        $query.on('click', function () {
+            var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+            tableIns.reload({where: params, page: {curr: 1}});
+        });
+        function getQueryParams() {
+            return {
+                deptName: $searchForm.find('input[name="deptName"]').val().trim()
+            };
+        }
+
+        /*重置搜索项*/
+        $reset.on('click', function () {
+            $searchForm[0].reset();
+            sortObject.type = 'null';
+            tableIns.reload({where: getQueryParams(), page: {curr: 1}, initSort: sortObject});
+        });
+
+        /*删除*/
+        function deleteDepts(deptIds) {
+            febs.get(ctx + 'dept/delete/' + deptIds, null, function () {
+                febs.alert.success('删除用户成功');
+                $query.click();
+            });
+        }
+
+        /*排序功能*/
+        table.on('sort(deptTable)', function (obj) {
+            sortObject = obj;
+            tableIns.reload({
+                initSort: obj,
+                where: $.extend(getQueryParams(), {
+                    field: obj.field,
+                    order: obj.type
+                })
+            });
+        });
+    })
+</script>

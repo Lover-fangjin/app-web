@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.SiteMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.Site" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="PROJECT_ID" property="projectId" jdbcType="BIGINT" />
+    <result column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="MEMBER_NAME" property="memberName" jdbcType="VARCHAR" />
+    <result column="MEMBER_TEL" property="memberTel" jdbcType="VARCHAR" />
+    <result column="LICATION" property="lication" jdbcType="VARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="VARCHAR" />
+    <result column="TEAM_NAME" property="teamName" jdbcType="VARCHAR" />
+    <result column="PROJECT_TYPE" property="projectType" jdbcType="VARCHAR" />
+    <result column="DUTY_CONTENT" property="dutyContent" jdbcType="VARCHAR" />
+    <result column="LON" property="lon" jdbcType="VARCHAR" />
+    <result column="LAT" property="lat" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+    <result column="EXT6" property="ext6" jdbcType="VARCHAR" />
+    <result column="EXT7" property="ext7" jdbcType="VARCHAR" />
+    <result column="EXT8" property="ext8" jdbcType="VARCHAR" />
+    <result column="EXT9" property="ext9" jdbcType="VARCHAR" />
+    <result column="EXT10" property="ext10" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NAME, PROJECT_ID, USER_ID, MEMBER_NAME, MEMBER_TEL, LICATION, REMARKS, TEAM_NAME,
+    PROJECT_TYPE, DUTY_CONTENT, LON, LAT, EXT1, EXT2, EXT3, EXT4, EXT5, EXT6, EXT7, EXT8,
+    EXT9, EXT10
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_site
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_site
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.Site" >
+    insert into t_site (ID, NAME, PROJECT_ID,
+    USER_ID, MEMBER_NAME, MEMBER_TEL,
+    LICATION, REMARKS, TEAM_NAME,
+    PROJECT_TYPE, DUTY_CONTENT, LON,
+    LAT, EXT1, EXT2, EXT3,
+    EXT4, EXT5, EXT6, EXT7,
+    EXT8, EXT9, EXT10)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{projectId,jdbcType=BIGINT},
+    #{userId,jdbcType=BIGINT}, #{memberName,jdbcType=VARCHAR}, #{memberTel,jdbcType=VARCHAR},
+    #{lication,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{teamName,jdbcType=VARCHAR},
+    #{projectType,jdbcType=VARCHAR}, #{dutyContent,jdbcType=VARCHAR}, #{lon,jdbcType=VARCHAR},
+    #{lat,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, #{ext3,jdbcType=VARCHAR},
+    #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}, #{ext6,jdbcType=VARCHAR}, #{ext7,jdbcType=VARCHAR},
+    #{ext8,jdbcType=VARCHAR}, #{ext9,jdbcType=VARCHAR}, #{ext10,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.Site" >
+    insert into t_site
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="projectId != null" >
+        PROJECT_ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="memberName != null" >
+        MEMBER_NAME,
+      </if>
+      <if test="memberTel != null" >
+        MEMBER_TEL,
+      </if>
+      <if test="lication != null" >
+        LICATION,
+      </if>
+      <if test="remarks != null" >
+        REMARKS,
+      </if>
+      <if test="teamName != null" >
+        TEAM_NAME,
+      </if>
+      <if test="projectType != null" >
+        PROJECT_TYPE,
+      </if>
+      <if test="dutyContent != null" >
+        DUTY_CONTENT,
+      </if>
+      <if test="lon != null" >
+        LON,
+      </if>
+      <if test="lat != null" >
+        LAT,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+      <if test="ext4 != null" >
+        EXT4,
+      </if>
+      <if test="ext5 != null" >
+        EXT5,
+      </if>
+      <if test="ext6 != null" >
+        EXT6,
+      </if>
+      <if test="ext7 != null" >
+        EXT7,
+      </if>
+      <if test="ext8 != null" >
+        EXT8,
+      </if>
+      <if test="ext9 != null" >
+        EXT9,
+      </if>
+      <if test="ext10 != null" >
+        EXT10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="projectId != null" >
+        #{projectId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="memberName != null" >
+        #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberTel != null" >
+        #{memberTel,jdbcType=VARCHAR},
+      </if>
+      <if test="lication != null" >
+        #{lication,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="teamName != null" >
+        #{teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null" >
+        #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyContent != null" >
+        #{dutyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        #{lon,jdbcType=VARCHAR},
+      </if>
+      <if test="lat != null" >
+        #{lat,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        #{ext10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.Site" >
+    update t_site
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="projectId != null" >
+        PROJECT_ID = #{projectId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="memberName != null" >
+        MEMBER_NAME = #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberTel != null" >
+        MEMBER_TEL = #{memberTel,jdbcType=VARCHAR},
+      </if>
+      <if test="lication != null" >
+        LICATION = #{lication,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="teamName != null" >
+        TEAM_NAME = #{teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null" >
+        PROJECT_TYPE = #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyContent != null" >
+        DUTY_CONTENT = #{dutyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        LON = #{lon,jdbcType=VARCHAR},
+      </if>
+      <if test="lat != null" >
+        LAT = #{lat,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        EXT6 = #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        EXT7 = #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        EXT8 = #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        EXT9 = #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        EXT10 = #{ext10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.Site" >
+    update t_site
+    set NAME = #{name,jdbcType=VARCHAR},
+    PROJECT_ID = #{projectId,jdbcType=BIGINT},
+    USER_ID = #{userId,jdbcType=BIGINT},
+    MEMBER_NAME = #{memberName,jdbcType=VARCHAR},
+    MEMBER_TEL = #{memberTel,jdbcType=VARCHAR},
+    LICATION = #{lication,jdbcType=VARCHAR},
+    REMARKS = #{remarks,jdbcType=VARCHAR},
+    TEAM_NAME = #{teamName,jdbcType=VARCHAR},
+    PROJECT_TYPE = #{projectType,jdbcType=VARCHAR},
+    DUTY_CONTENT = #{dutyContent,jdbcType=VARCHAR},
+    LON = #{lon,jdbcType=VARCHAR},
+    LAT = #{lat,jdbcType=VARCHAR},
+    EXT1 = #{ext1,jdbcType=VARCHAR},
+    EXT2 = #{ext2,jdbcType=VARCHAR},
+    EXT3 = #{ext3,jdbcType=VARCHAR},
+    EXT4 = #{ext4,jdbcType=VARCHAR},
+    EXT5 = #{ext5,jdbcType=VARCHAR},
+    EXT6 = #{ext6,jdbcType=VARCHAR},
+    EXT7 = #{ext7,jdbcType=VARCHAR},
+    EXT8 = #{ext8,jdbcType=VARCHAR},
+    EXT9 = #{ext9,jdbcType=VARCHAR},
+    EXT10 = #{ext10,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="selectAll" resultType="java.util.HashMap">
+    SELECT
+        b.id,
+        b. NAME name,
+        u.TRUENAME member_name,
+        p.tel member_tel,
+        p.ADDRESS location,
+        p.lon,
+        p.lat,
+        p.dept_id,
+        u.IS_DUTY isDuty,
+        DATE_FORMAT(d.DUTY_START_TIME,'%Y-%m-%d %H:%i') dutyStartTime,
+        DATE_FORMAT(d.DUTY_END_TIME,'%Y-%m-%d %H:%i')  dutyEndTime
+    FROM
+        t_project_info p
+    LEFT JOIN t_business_org b ON p.borg_id = b.ID
+    LEFT JOIN t_user u ON p.charge_id = u.user_id
+    LEFT JOIN (
+        SELECT
+            *
+        FROM
+            t_duty_info
+        WHERE
+            DATE_FORMAT(DUTY_START_TIME, '%Y-%m-%d') = DATE_FORMAT(NOW(), '%Y-%m-%d')
+    ) d ON d.duty_user_id = u.user_id
+    WHERE
+        b.`LEVEL` = 4 AND b.parent_id = #{projectId}
+  </select>
+
+  <select id="dutyProportion" parameterType="java.lang.String" resultType="java.lang.String">
+    select concat(round((onduty.count/alld.count)*100,2),'%') from (select count(1) count from t_user where find_in_set(dept_id,#{deptIds}) and is_duty='1') onduty,
+    (select count(1) count from t_user where find_in_set(dept_id,#{deptIds})) alld
+  </select>
+</mapper>

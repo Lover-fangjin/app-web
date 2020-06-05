@@ -1,0 +1,236 @@
+<div class="layui-fluid layui-anim febs-anim" id="febs-eventreport" lay-title="应急处突业务">
+    <div class="layui-row febs-container">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body febs-table-full">
+                    <form class="layui-form layui-table-form" lay-filter="user-table-form">
+                        <div class="layui-row">
+                            <div class="layui-col-md10">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label layui-form-label-sm">地点</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="ext1" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label layui-form-label-sm">所属组织</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="dept" id="dept" lay-filter="dept"
+                                                   class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">事件类别：</label>
+                                        <div class="layui-input-block">
+                                            <select name="eventClassId" lay-filter="eventClass" id="eventClassId">
+                                                <option value="">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">事件类型：</label>
+                                        <div class="layui-input-block">
+                                            <select name="eventTypeId"  id="eventTypeId">
+                                                <option value="">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-md2 layui-col-sm12 layui-col-xs12 table-action-area">
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                                    <i class="layui-icon">&#xe848;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="reset">
+                                    <i class="layui-icon">&#xe79b;</i>
+                                </div>
+                                <div class="layui-btn layui-btn-sm layui-btn-primary table-action action-more"
+                                     shiro:hasAnyPermissions="eventreport:add,eventreport:update,eventreport:export">
+                                    <i class="layui-icon">&#xe875;</i>
+                                </div>
+                                <button class="layui-btn  layui-btn-sm layui-btn-primary" id="export"
+                                        shiro:hasPermission="eventreport:export">
+                                    <i class="layui-icon">&#xe7a8;</i> 导出Excel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <table lay-filter="eventreportTable" lay-data="{id: 'eventreportTable'}"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--下拉、序号等-->
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+
+
+<!--列表操作项-->
+<script type="text/html" id="eventreport-option">
+    <span shiro:lacksPermission="eventreport:view,eventreport:update,eventreport:delete">
+        <span class="layui-badge-dot febs-bg-orange"></span> 无权限
+    </span>
+    <a lay-event="detail" shiro:hasPermission="eventreport:view"><i
+            class="layui-icon febs-edit-area febs-green">&#xe7a5;</i></a>
+    <a lay-event="edit" shiro:hasPermission="eventreport:update"><i
+            class="layui-icon febs-edit-area febs-blue">&#xe7a4;</i></a>
+    <a lay-event="del" shiro:hasPermission="eventreport:delete"><i class="layui-icon febs-edit-area febs-red">&#xe7f9;</i></a>
+</script>
+<script data-th-inline="none" type="text/javascript">
+    layui.use(['dropdown', 'jquery', 'laydate', 'form', 'table', 'febs', 'treeSelect'], function () {
+        var $ = layui.jquery,
+                laydate = layui.laydate,
+                febs = layui.febs,
+                form = layui.form,
+                table = layui.table,
+                treeSelect = layui.treeSelect,
+                dropdown = layui.dropdown,
+                $view = $('#febs-eventreport'),
+                $query = $view.find('#query'),
+                $reset = $view.find('#reset'),
+                $searchForm = $view.find('form'),
+                sortObject = {field: 'createTime', type: null},
+                tableIns;
+
+
+
+            $.ajax({
+                type: 'GET',
+                url: ctx+'eventDict/select/-1',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data, function (key, val) {
+                        var option1 = $("<option>").val(val.id).text(val.eventName);
+                        //通过LayUI.jQuery添加列表项
+                        $("#eventClassId").append(option1);
+                    });
+                    layui.form.render('select');
+                }
+            });
+
+
+
+        form.render();
+
+        form.on('select(eventClass)', function(data){
+            $.ajax({
+                type: 'GET',
+                url: ctx+'eventDict/select/'+data.value,
+                dataType: 'json',
+                success: function (data) {
+                    $("#eventTypeId").html('');
+                    $("#eventTypeId").append($("<option>").val('').text('请选择'));
+                    $.each(data, function (key, val) {
+                        var option1 = $("<option>").val(val.id).text(val.eventName);
+                        //通过LayUI.jQuery添加列表项
+                        $("#eventTypeId").append(option1);
+                    });
+                    layui.form.render('select');
+                }
+            });
+        });
+
+        /*  加载列表*/
+        initTable();
+        function initTable() {
+            tableIns = febs.table.init({
+                elem: $view.find('table'),
+                id: 'eventreportTable',
+                url: ctx + 'eventreport/list',
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'zizeng', title: '序号',type:'numbers'},
+                    {field: 'reportNo', title: '事件编号'},
+                    {field: 'eventClass', title: '事件类别'},
+                    {field: 'eventType', title: '事件类型'},
+                    {field: 'happenDate', title: '上报时间', minWidth: 180, sort: true},
+                    {field: 'truename', title: '上报人'},
+                    {field: 'mobile', title: '联系方式'},
+                    {field: 'deptName', title: '所属组织'},
+                    {title: '操作', toolbar: '#eventreport-option', minWidth: 140}
+                ]]
+            });
+        }
+
+        treeSelect.render({
+            elem: $view.find('#dept'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            search: false
+        });
+
+        /*列表操作按钮功能*/
+        table.on('tool(eventreportTable)', function (obj) {
+            var data = obj.data,
+                    layEvent = obj.event;
+            if (layEvent === 'detail') {
+                febs.modal.view('信息详情', 'event/eventreport/detail/' + data.id, {
+                    area: [$(window).width() <= 750 ? '95%' : '660px','95%']
+                });
+            }
+            if (layEvent === 'del') {
+                febs.modal.confirm('删除信息', '确定删除该信息？', function () {
+                    deleteeventreports(data.id);
+                });
+            }
+        });
+
+        /*搜索功能*/
+        $query.on('click', function () {
+            var params = $.extend(getQueryParams(), {field: sortObject.field, order: sortObject.type});
+            tableIns.reload({where: params, page: {curr: 1}});
+        });
+        function getQueryParams() {
+            return {
+                ext1: $searchForm.find('input[name="ext1"]').val().trim(),
+                deptId: $searchForm.find('input[name="dept"]').val().trim(),
+                eventClassId: $searchForm.find('select[name="eventClassId"]').val().trim(),
+                eventTypeId: $searchForm.find('select[name="eventTypeId"]').val().trim()
+            };
+        }
+
+        /*重置搜索项*/
+        $reset.on('click', function () {
+            $searchForm[0].reset();
+            sortObject.type = 'null';
+            treeSelect.revokeNode('dept');
+            $searchForm.find('select[name="eventClassId"]').val('');
+            tableIns.reload({where: getQueryParams(), page: {curr: 1}, initSort: sortObject});
+        });
+
+        /*删除*/
+        function deleteeventreports(eventreportIds) {
+            febs.get(ctx + 'eventreport/delete/' + eventreportIds, null, function () {
+                febs.alert.success('删除成功');
+                $query.click();
+            });
+        }
+
+        $view.on('click', '#export', function () {
+            var params = {};
+            params.ext1 = $searchForm.find('input[name="ext1"]').val().trim();
+            params.deptId = $searchForm.find('input[name="dept"]').val().trim();
+            params.eventClassId = $searchForm.find('select[name="eventClassId"]').val().trim();
+            params.eventTypeId = $searchForm.find('select[name="eventTypeId"]').val().trim();
+            febs.download(ctx + 'eventreport/excel', params, '事件信息.xlsx');
+        });
+
+        /*排序功能*/
+        table.on('sort(eventreportTable)', function (obj) {
+            sortObject = obj;
+            tableIns.reload({
+                initSort: obj,
+                where: $.extend(getQueryParams(), {
+                    field: obj.field,
+                    order: obj.type
+                })
+            });
+        });
+
+    })
+</script>

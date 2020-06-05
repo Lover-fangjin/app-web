@@ -1,0 +1,99 @@
+<style>
+    #user-update {
+        padding: 20px 25px 25px 0;
+    }
+
+    #user-update .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+</style>
+<div class="layui-fluid" id="dept-update">
+    <form class="layui-form" action="" lay-filter="dept-update-form">
+        <div class="layui-form-item febs-hide">
+            <label class="layui-form-label febs-form-item-require">队伍id：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptId" data-th-value="${dept.deptId}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">队伍名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptName"  maxlength="50" lay-verify="deptName"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">队伍等级：</label>
+            <div class="layui-input-block">
+                <select name="level"  id="level">
+                    <option value="">请选择</option>
+                    <option value="1">大队</option>
+                    <option value="2">中队</option>
+                    <option value="3">分队</option>
+                    <option value="4">小队</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">上级队伍：</label>
+            <div class="layui-input-block">
+                <input type="text" name="parentId" id="parentdept" lay-filter="parentdept"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">队伍描述：</label>
+            <div class="layui-input-block">
+                <textarea name="description" maxlength="100" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="dept-update-form-submit" id="submit"></button>
+            <button type="reset" class="layui-btn" id="reset"></button>
+        </div>
+    </form>
+</div>
+
+<script data-th-inline="javascript">
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect'], function () {
+        var $ = layui.$,
+                febs = layui.febs,
+                layer = layui.layer,
+                formSelects = layui.formSelects,
+                treeSelect = layui.treeSelect,
+                form = layui.form,
+                dept = [[${dept}]],
+                $view = $('#dept-update'),
+                validate = layui.validate;
+
+        form.verify(validate);
+        form.render();
+
+        initDeptValue();
+
+        formSelects.render();
+
+
+        treeSelect.render({
+            elem: $view.find('#parentdept'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            search: false,
+            success: function () {
+                treeSelect.checkNode('parentdept', dept.parentId);
+            }
+        });
+
+
+        function initDeptValue() {
+            form.val("dept-update-form", {
+                "deptName": dept.deptName,
+                "level": dept.level,
+                "description": dept.description
+            });
+        }
+
+
+    });
+</script>

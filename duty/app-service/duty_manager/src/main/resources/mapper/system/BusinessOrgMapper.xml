@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.system.mapper.BusinessOrgMapper">
+
+    <select id="findBusinessOrgsList" parameterType="businessOrg" resultType="businessOrg">
+        select
+         tb.*,
+        (case tb.level when '1' then '总部业务部'
+        when '2' then '项目部'
+        when '3' then '项目'
+        when '4' then '站点'
+        else '' end) levelname,
+        tu.truename,
+        (select name from t_business_org where id=tb.parent_id) parentName
+        from t_business_org tb
+        left join t_user tu on tu.user_id=tb.create_id
+        WHERE 1 = 1
+        <if test="businessOrg.name != null and businessOrg.name != ''">
+            AND tb.name like CONCAT('%',#{businessOrg.name},'%')
+        </if>
+    </select>
+
+
+    <select id="findById" parameterType="java.lang.Long" resultType="businessOrg">
+        select
+         tb.*,
+        (case tb.level when '1' then '总部业务部'
+        when '2' then '项目部'
+        when '3' then '项目'
+        when '4' then '站点'
+        else '' end) levelname,
+        tu.truename,
+        (select name from t_business_org where id=tb.parent_id) parentName
+        from t_business_org tb
+        left join t_user tu on tu.user_id=tb.create_id
+         where tb.id=#{id}
+    </select>
+</mapper>

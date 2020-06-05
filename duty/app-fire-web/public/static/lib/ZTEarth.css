@@ -1,0 +1,120 @@
+.zt-popwin{
+	position: absolute;
+	min-height: 50px;
+	max-height: 360px;
+	width: 220px;
+	background-color: #fff;
+	padding: 20px 10px 10px;
+}
+.zt-popwin-arrow{
+	position: absolute;
+	bottom: -5px;
+	left: calc(50% - 5px);
+	overflow: hidden;
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	/* box-shadow: 0 3px 14px rgba(255,0,0,.4); */
+	transform: rotate(45deg);
+}
+.zt-popwin-close{
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;
+	background: transparent;
+	width: 12px;
+	height: 12px;
+}
+.zt-popwin-close:hover::before,.zt-popwin-close:hover::after{
+	background: #66ccee;
+}
+.zt-popwin-close:before{
+	content: "";
+	position:absolute;
+	top: 0;
+	left: 5px;
+	width:2px;
+	height:100%;
+	background: #333;
+	-webkit-transform: rotate(40deg);
+	-moz-transform: rotate(40deg);
+	-o-transform: rotate(40deg);
+	-ms-transform: rotate(40deg);
+	transform: rotate(40deg);
+	display: inline-block;
+}
+
+.zt-popwin-close:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5px;
+	width:2px;
+	height:100%;
+	border-radius: 3px;
+	background: #333;
+	-webkit-transform: rotate(-40deg);
+	-moz-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	-ms-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+}
+.zt-location{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	background: #303336;
+	border: 1px solid #444;
+	border-radius: 4px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.zt-location-but{
+    position: relative;
+	margin: 5px;
+	width: 23px;
+    height: 23px;
+    text-align: center;
+}
+.zt-location:hover{
+	color: #fff;
+	fill: #fff;
+	background: #48b;
+	border-color: #aef;
+	box-shadow: 0 0 8px #fff;
+}
+.zt-location-but svg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.zt-message{
+	position: fixed;
+	left: calc(50% - 120px);
+	top: 50px;
+	width: 240px;
+	height: 50px;
+	background-color: #f2f2f2;
+	box-shadow: 0 0 8px #fff;
+	border-radius: 3px;
+	text-align: center;
+}
+.twipsy{
+	position: absolute;
+}
+.zt-hawkeye{
+	position: absolute;
+	right: 10px;
+	bottom: 50px;
+	width: 140px;
+	height: 100px;
+	border: 1px solid #fff;
+	border-radius: 3px;
+}

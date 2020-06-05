@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.NormalReportMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.NormalReport" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="REPORT_NO" property="reportNo" jdbcType="BIGINT" />
+    <result column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="HAPPEN_DATE" property="happenDate" jdbcType="TIMESTAMP" />
+    <result column="TOTAL" property="total" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="CARD" property="card" jdbcType="VARCHAR" />
+    <result column="CAUSE" property="cause" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="REMARKE" property="remarke" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+    <result column="EXT6" property="ext6" jdbcType="VARCHAR" />
+    <result column="EXT7" property="ext7" jdbcType="VARCHAR" />
+    <result column="EXT8" property="ext8" jdbcType="VARCHAR" />
+    <result column="EXT9" property="ext9" jdbcType="VARCHAR" />
+    <result column="EXT10" property="ext10" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <resultMap id="AssistResultMap" type="com.ztman.model.entity.NormalReportAssist" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="DJ_NAME" property="djName" jdbcType="VARCHAR" />
+    <result column="DJ_TEL" property="djTel" jdbcType="VARCHAR" />
+    <result column="SITE_NAME" property="siteName" jdbcType="VARCHAR" />
+    <result column="HAPPEN_DATE" property="happendDate" jdbcType="TIMESTAMP" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="FK_NAME" property="fkName" jdbcType="VARCHAR" />
+    <result column="FK_TEL" property="fkTel" jdbcType="VARCHAR" />
+    <result column="FK_CAUSE" property="fkCause" jdbcType="VARCHAR" />
+    <result column="FK_REMARKE" property="fkRemarke" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    ID, REPORT_NO, USER_ID, HAPPEN_DATE, TOTAL, NAME, TEL, CARD, CAUSE, ADDRESS, REMARKE,
+    EXT1, EXT2, EXT3, EXT4, EXT5, EXT6, EXT7, EXT8, EXT9, EXT10
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="AssistResultMap" parameterType="java.lang.Long" >
+    SELECT
+        nr.ID,
+        u.TRUENAME DJ_NAME,
+        u.MOBILE DJ_TEL,
+        d.DEPT_NAME SITE_NAME,
+        nr.HAPPEN_DATE,
+        nr.ADDRESS,
+        nr.`NAME` FK_NAME,
+        nr.TEL FK_TEL,
+        nr.CAUSE FK_CAUSE,
+        nr.REMARKE FK_REMARKE
+    FROM
+        t_normal_report nr
+    LEFT JOIN t_user u ON nr.user_id = u.user_id
+    LEFT JOIN t_dept d ON u.dept_id = d.dept_id
+    WHERE
+        nr.id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_normal_report
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insert" parameterType="com.ztman.model.entity.NormalReport" >
+    insert into t_normal_report (ID, REPORT_NO, USER_ID,
+    HAPPEN_DATE, TOTAL, NAME,
+    TEL, CARD, CAUSE, ADDRESS,
+    REMARKE, EXT1, EXT2,
+    EXT3, EXT4, EXT5, EXT6,
+    EXT7, EXT8, EXT9, EXT10
+    )
+    values (#{id,jdbcType=BIGINT}, #{reportNo,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT},
+    #{happenDate,jdbcType=TIMESTAMP}, #{total,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+    #{tel,jdbcType=VARCHAR}, #{card,jdbcType=VARCHAR}, #{cause,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+    #{remarke,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR},
+    #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}, #{ext6,jdbcType=VARCHAR},
+    #{ext7,jdbcType=VARCHAR}, #{ext8,jdbcType=VARCHAR}, #{ext9,jdbcType=VARCHAR}, #{ext10,jdbcType=VARCHAR}
+    )
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.NormalReport" >
+    insert into t_normal_report
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="reportNo != null" >
+        REPORT_NO,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="happenDate != null" >
+        HAPPEN_DATE,
+      </if>
+      <if test="total != null" >
+        TOTAL,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="tel != null" >
+        TEL,
+      </if>
+      <if test="card != null" >
+        CARD,
+      </if>
+      <if test="cause != null" >
+        CAUSE,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="remarke != null" >
+        REMARKE,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+      <if test="ext4 != null" >
+        EXT4,
+      </if>
+      <if test="ext5 != null" >
+        EXT5,
+      </if>
+      <if test="ext6 != null" >
+        EXT6,
+      </if>
+      <if test="ext7 != null" >
+        EXT7,
+      </if>
+      <if test="ext8 != null" >
+        EXT8,
+      </if>
+      <if test="ext9 != null" >
+        EXT9,
+      </if>
+      <if test="ext10 != null" >
+        EXT10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="reportNo != null" >
+        #{reportNo,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="happenDate != null" >
+        #{happenDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="total != null" >
+        #{total,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="card != null" >
+        #{card,jdbcType=VARCHAR},
+      </if>
+      <if test="cause != null" >
+        #{cause,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="remarke != null" >
+        #{remarke,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        #{ext10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.NormalReport" >
+    update t_normal_report
+    <set >
+      <if test="reportNo != null" >
+        REPORT_NO = #{reportNo,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="happenDate != null" >
+        HAPPEN_DATE = #{happenDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="total != null" >
+        TOTAL = #{total,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        TEL = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="card != null" >
+        CARD = #{card,jdbcType=VARCHAR},
+      </if>
+      <if test="cause != null" >
+        CAUSE = #{cause,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="remarke != null" >
+        REMARKE = #{remarke,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        EXT6 = #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        EXT7 = #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        EXT8 = #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        EXT9 = #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        EXT10 = #{ext10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.NormalReport" >
+    update t_normal_report
+    set REPORT_NO = #{reportNo,jdbcType=BIGINT},
+      USER_ID = #{userId,jdbcType=BIGINT},
+      HAPPEN_DATE = #{happenDate,jdbcType=TIMESTAMP},
+      TOTAL = #{total,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      TEL = #{tel,jdbcType=VARCHAR},
+      CARD = #{card,jdbcType=VARCHAR},
+      CAUSE = #{cause,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      REMARKE = #{remarke,jdbcType=VARCHAR},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR},
+      EXT4 = #{ext4,jdbcType=VARCHAR},
+      EXT5 = #{ext5,jdbcType=VARCHAR},
+      EXT6 = #{ext6,jdbcType=VARCHAR},
+      EXT7 = #{ext7,jdbcType=VARCHAR},
+      EXT8 = #{ext8,jdbcType=VARCHAR},
+      EXT9 = #{ext9,jdbcType=VARCHAR},
+      EXT10 = #{ext10,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="selectAll" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+    SELECT
+        id,
+        NAME,
+        tel,
+        address
+    FROM
+        t_normal_report nr
+    LEFT JOIN t_user u ON nr.user_id = u.user_id
+    WHERE
+        1 = 1
+    <if test="userId != null" >
+      and nr.user_id = #{userId}
+    </if>
+    ORDER BY
+        nr.happen_date DESC
+  </select>
+
+  <select id="todayTotalByUser" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) total from t_normal_report where DATE_FORMAT(HAPPEN_DATE, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d') and USER_ID=#{userId}
+  </select>
+
+  <select id="todayTotal" resultType="java.lang.Integer">
+    select count(*) total from t_normal_report where DATE_FORMAT(HAPPEN_DATE, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+  </select>
+</mapper>

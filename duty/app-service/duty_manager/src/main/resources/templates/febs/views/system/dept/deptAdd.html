@@ -1,0 +1,84 @@
+<style>
+    #user-add {
+        padding: 20px 25px 25px 0;
+    }
+    #user-add .layui-treeSelect .ztree li a, .ztree li span {
+        margin: 0 0 2px 3px !important;
+    }
+</style>
+<div class="layui-fluid" id="dept-add">
+    <form class="layui-form" action="" lay-filter="dept-add-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">队伍名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="deptName"  maxlength="50" lay-verify="deptName"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">队伍等级：</label>
+            <div class="layui-input-block">
+                <select name="level"  id="level">
+                    <option value="">请选择</option>
+                    <option value="1">大队</option>
+                    <option value="2">中队</option>
+                    <option value="3">分队</option>
+                    <option value="4">小队</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label febs-form-item-require">上级队伍：</label>
+            <div class="layui-input-block">
+                <input type="text" name="parentId" id="parentdept" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">队伍描述：</label>
+            <div class="layui-input-block">
+                <textarea name="description" maxlength="100" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item febs-hide">
+            <button class="layui-btn" lay-submit="" lay-filter="dept-add-form-submit" id="submit"></button>
+            <button type="reset" class="layui-btn" id="reset"></button>
+        </div>
+    </form>
+</div>
+
+<script>
+    layui.use(['febs', 'form', 'formSelects', 'validate', 'treeSelect'], function () {
+        var $ = layui.$,
+            febs = layui.febs,
+            layer = layui.layer,
+            formSelects = layui.formSelects,
+            treeSelect = layui.treeSelect,
+            form = layui.form,
+            $view = $('#dept-add'),
+            validate = layui.validate;
+
+        form.verify(validate);
+        form.render();
+
+        formSelects.render();
+
+        treeSelect.render({
+            elem: $view.find('#parentdept'),
+            type: 'get',
+            data: ctx + 'dept/select/tree',
+            placeholder: '请选择',
+            search: false
+        });
+
+
+
+        form.on('submit(dept-add-form-submit)', function (data) {
+            febs.post(ctx + 'dept', data.field, function () {
+                layer.closeAll();
+                febs.alert.success('新增队伍成功');
+                $('#febs-dept').find('#query').click();
+            });
+            return false;
+        });
+    });
+</script>

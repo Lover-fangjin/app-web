@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.event.mapper.NormalReportMapper">
+
+    <select id="findNormalReportsList" parameterType="normalReport" resultType="normalReport">
+        select
+            ter.id,
+            ter.report_no  reportNo,
+            ter.user_id userId,
+            ter.happen_date happenDate,
+            ter.name,
+            ter.tel,
+            ter.card,
+            ter.address,
+            tu.truename,
+            tu.mobile,
+            tu.dept_id deptId,
+            td.dept_name deptName
+        from t_normal_report ter
+        left join t_user tu on tu.user_id=ter.user_id
+        left join t_dept td on td.dept_id=tu.dept_id
+        WHERE 1 = 1
+        <if test="normalReport.deptId != null and normalReport.deptId != ''">
+            AND tu.dept_id =#{normalReport.deptId}
+        </if>
+        <if test="user.deptId != null and user.deptId != ''">
+            AND find_in_set(tu.dept_id,getDepts(#{user.deptId}))
+        </if>
+    </select>
+
+
+    <select id="findById" parameterType="java.lang.Long" resultType="normalReport">
+        select
+        ter.*,
+
+        tu.truename,
+        tu.mobile,
+        td.dept_name deptName,
+        tu.dept_id deptId
+        from t_normal_report ter
+        left join t_user tu on tu.user_id=ter.user_id
+        left join t_dept td on td.dept_id=tu.dept_id
+        where ter.id=#{id}
+    </select>
+</mapper>

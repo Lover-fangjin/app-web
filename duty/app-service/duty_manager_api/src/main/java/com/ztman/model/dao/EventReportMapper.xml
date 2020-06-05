@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.EventReportMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.EventReport" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="REPORT_NO" property="reportNo" jdbcType="BIGINT" />
+    <result column="EVENT_CLASS_ID" property="eventClassId" jdbcType="VARCHAR" />
+    <result column="EVENT_TYPE_ID" property="eventTypeId" jdbcType="VARCHAR" />
+    <result column="HAPPEN_DATE" property="happenDate" jdbcType="TIMESTAMP" />
+    <result column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="TOTAL" property="total" jdbcType="VARCHAR" />
+    <result column="LOCATION" property="location" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="CARD" property="card" jdbcType="VARCHAR" />
+    <result column="HCODE_STATUS" property="hcodeStatus" jdbcType="VARCHAR" />
+    <result column="TEMPERATURE" property="temperature" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="RECORD" property="record" jdbcType="VARCHAR" />
+    <result column="ARRIVAL" property="arrival" jdbcType="VARCHAR" />
+    <result column="SITE_ID" property="siteId" jdbcType="BIGINT" />
+    <result column="DETAILS" property="details" jdbcType="VARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+    <result column="EXT6" property="ext6" jdbcType="VARCHAR" />
+    <result column="EXT7" property="ext7" jdbcType="VARCHAR" />
+    <result column="EXT8" property="ext8" jdbcType="VARCHAR" />
+    <result column="EXT9" property="ext9" jdbcType="VARCHAR" />
+    <result column="EXT10" property="ext10" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <resultMap id="AssistResultMap" type="com.ztman.model.entity.EventReportAssist" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="REPORT_NO" property="reportNo" jdbcType="BIGINT" />
+    <result column="EVENT_CLASS_ID" property="eventClassId" jdbcType="VARCHAR" />
+    <result column="EVENT_TYPE_ID" property="eventTypeId" jdbcType="VARCHAR" />
+    <result column="HAPPEN_DATE" property="happenDate" jdbcType="TIMESTAMP" />
+    <result column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="TOTAL" property="total" jdbcType="VARCHAR" />
+    <result column="LOCATION" property="location" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="CARD" property="card" jdbcType="VARCHAR" />
+    <result column="HCODE_STATUS" property="hcodeStatus" jdbcType="VARCHAR" />
+    <result column="TEMPERATURE" property="temperature" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="RECORD" property="record" jdbcType="VARCHAR" />
+    <result column="ARRIVAL" property="arrival" jdbcType="VARCHAR" />
+    <result column="SITE_ID" property="siteId" jdbcType="BIGINT" />
+    <result column="DETAILS" property="details" jdbcType="VARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="VARCHAR" />
+    <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+    <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    <result column="EXT3" property="ext3" jdbcType="VARCHAR" />
+    <result column="EXT4" property="ext4" jdbcType="VARCHAR" />
+    <result column="EXT5" property="ext5" jdbcType="VARCHAR" />
+    <result column="EXT6" property="ext6" jdbcType="VARCHAR" />
+    <result column="EXT7" property="ext7" jdbcType="VARCHAR" />
+    <result column="EXT8" property="ext8" jdbcType="VARCHAR" />
+    <result column="EXT9" property="ext9" jdbcType="VARCHAR" />
+    <result column="EXT10" property="ext10" jdbcType="VARCHAR" />
+    <result column="TRUENAME" property="truename" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="EVENT_CLASS" property="eventClass" jdbcType="VARCHAR" />
+    <result column="EVENT_TYPE" property="eventType" jdbcType="VARCHAR" />
+    <result column="SITE_NAME" property="siteName" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    ID, REPORT_NO, EVENT_CLASS_ID, EVENT_TYPE_ID, HAPPEN_DATE, USER_ID, TOTAL, LOCATION,
+    NAME, TEL, CARD, HCODE_STATUS, TEMPERATURE, ADDRESS, RECORD, ARRIVAL, SITE_ID, DETAILS,
+    REMARKS, EXT1, EXT2, EXT3, EXT4, EXT5, EXT6, EXT7, EXT8, EXT9, EXT10
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="AssistResultMap" parameterType="java.lang.Long" >
+    SELECT
+        r.ID,
+        r.REPORT_NO,
+        r.EVENT_CLASS_ID,
+        r.EVENT_TYPE_ID,
+        r.HAPPEN_DATE,
+        r.USER_ID,
+        r.TOTAL,
+        r.LOCATION,
+        r. NAME,
+        r.TEL,
+        r.CARD,
+        r.HCODE_STATUS,
+        r.TEMPERATURE,
+        r.ADDRESS,
+        r.RECORD,
+        r.ARRIVAL,
+        r.SITE_ID,
+        r.DETAILS,
+        r.REMARKS,
+        r.EXT1,
+        r.EXT2,
+        r.EXT3,
+        r.EXT4,
+        r.EXT5,
+        r.EXT6,
+        r.EXT7,
+        r.EXT8,
+        r.EXT9,
+        r.EXT10,
+        u.TRUENAME,
+        u.MOBILE,
+        (select d.event_name from t_event_dict d where d.id=r.event_class_id) EVENT_CLASS,
+        (select d.event_name from t_event_dict d where d.id=r.event_type_id) EVENT_TYPE,
+        b.`NAME` SITE_NAME
+    FROM
+        t_event_report r
+    LEFT JOIN t_user u ON u.user_id = r.user_id
+    LEFT JOIN t_project_info p ON r.USER_ID = p.CHARGE_ID
+    LEFT JOIN t_business_org b ON p.BORG_ID = b.ID
+    where r.ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_event_report
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.EventReport" >
+    insert into t_event_report (ID, REPORT_NO, EVENT_CLASS_ID,
+      EVENT_TYPE_ID, HAPPEN_DATE, USER_ID,
+      TOTAL, LOCATION, NAME,
+      TEL, CARD, HCODE_STATUS,
+      TEMPERATURE, ADDRESS, RECORD,
+      ARRIVAL, SITE_ID, DETAILS,
+      REMARKS, EXT1, EXT2,
+      EXT3, EXT4, EXT5, EXT6,
+      EXT7, EXT8, EXT9, EXT10
+      )
+    values (#{id,jdbcType=BIGINT}, #{reportNo,jdbcType=BIGINT}, #{eventClassId,jdbcType=VARCHAR},
+      #{eventTypeId,jdbcType=VARCHAR}, #{happenDate,jdbcType=TIMESTAMP}, #{userId,jdbcType=BIGINT},
+      #{total,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{tel,jdbcType=VARCHAR}, #{card,jdbcType=VARCHAR}, #{hcodeStatus,jdbcType=VARCHAR},
+      #{temperature,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{record,jdbcType=VARCHAR},
+      #{arrival,jdbcType=VARCHAR}, #{siteId,jdbcType=BIGINT}, #{details,jdbcType=VARCHAR},
+      #{remarks,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR},
+      #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}, #{ext6,jdbcType=VARCHAR},
+      #{ext7,jdbcType=VARCHAR}, #{ext8,jdbcType=VARCHAR}, #{ext9,jdbcType=VARCHAR}, #{ext10,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.EventReport" useGeneratedKeys="true" keyProperty="id">
+    insert into t_event_report
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="reportNo != null" >
+        REPORT_NO,
+      </if>
+      <if test="eventClassId != null" >
+        EVENT_CLASS_ID,
+      </if>
+      <if test="eventTypeId != null" >
+        EVENT_TYPE_ID,
+      </if>
+      <if test="happenDate != null" >
+        HAPPEN_DATE,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="total != null" >
+        TOTAL,
+      </if>
+      <if test="location != null" >
+        LOCATION,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="tel != null" >
+        TEL,
+      </if>
+      <if test="card != null" >
+        CARD,
+      </if>
+      <if test="hcodeStatus != null" >
+        HCODE_STATUS,
+      </if>
+      <if test="temperature != null" >
+        TEMPERATURE,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="record != null" >
+        RECORD,
+      </if>
+      <if test="arrival != null" >
+        ARRIVAL,
+      </if>
+      <if test="siteId != null" >
+        SITE_ID,
+      </if>
+      <if test="details != null" >
+        DETAILS,
+      </if>
+      <if test="remarks != null" >
+        REMARKS,
+      </if>
+      <if test="ext1 != null" >
+        EXT1,
+      </if>
+      <if test="ext2 != null" >
+        EXT2,
+      </if>
+      <if test="ext3 != null" >
+        EXT3,
+      </if>
+      <if test="ext4 != null" >
+        EXT4,
+      </if>
+      <if test="ext5 != null" >
+        EXT5,
+      </if>
+      <if test="ext6 != null" >
+        EXT6,
+      </if>
+      <if test="ext7 != null" >
+        EXT7,
+      </if>
+      <if test="ext8 != null" >
+        EXT8,
+      </if>
+      <if test="ext9 != null" >
+        EXT9,
+      </if>
+      <if test="ext10 != null" >
+        EXT10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="reportNo != null" >
+        #{reportNo,jdbcType=BIGINT},
+      </if>
+      <if test="eventClassId != null" >
+        #{eventClassId,jdbcType=VARCHAR},
+      </if>
+      <if test="eventTypeId != null" >
+        #{eventTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="happenDate != null" >
+        #{happenDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="total != null" >
+        #{total,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="card != null" >
+        #{card,jdbcType=VARCHAR},
+      </if>
+      <if test="hcodeStatus != null" >
+        #{hcodeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null" >
+        #{temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="record != null" >
+        #{record,jdbcType=VARCHAR},
+      </if>
+      <if test="arrival != null" >
+        #{arrival,jdbcType=VARCHAR},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="details != null" >
+        #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        #{ext10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.EventReport" >
+    update t_event_report
+    <set >
+      <if test="reportNo != null" >
+        REPORT_NO = #{reportNo,jdbcType=BIGINT},
+      </if>
+      <if test="eventClassId != null" >
+        EVENT_CLASS_ID = #{eventClassId,jdbcType=VARCHAR},
+      </if>
+      <if test="eventTypeId != null" >
+        EVENT_TYPE_ID = #{eventTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="happenDate != null" >
+        HAPPEN_DATE = #{happenDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="total != null" >
+        TOTAL = #{total,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        LOCATION = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        TEL = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="card != null" >
+        CARD = #{card,jdbcType=VARCHAR},
+      </if>
+      <if test="hcodeStatus != null" >
+        HCODE_STATUS = #{hcodeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null" >
+        TEMPERATURE = #{temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="record != null" >
+        RECORD = #{record,jdbcType=VARCHAR},
+      </if>
+      <if test="arrival != null" >
+        ARRIVAL = #{arrival,jdbcType=VARCHAR},
+      </if>
+      <if test="siteId != null" >
+        SITE_ID = #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="details != null" >
+        DETAILS = #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null" >
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null" >
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null" >
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null" >
+        EXT6 = #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null" >
+        EXT7 = #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null" >
+        EXT8 = #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null" >
+        EXT9 = #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null" >
+        EXT10 = #{ext10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.EventReport" >
+    update t_event_report
+    set REPORT_NO = #{reportNo,jdbcType=BIGINT},
+      EVENT_CLASS_ID = #{eventClassId,jdbcType=VARCHAR},
+      EVENT_TYPE_ID = #{eventTypeId,jdbcType=VARCHAR},
+      HAPPEN_DATE = #{happenDate,jdbcType=TIMESTAMP},
+      USER_ID = #{userId,jdbcType=BIGINT},
+      TOTAL = #{total,jdbcType=VARCHAR},
+      LOCATION = #{location,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      TEL = #{tel,jdbcType=VARCHAR},
+      CARD = #{card,jdbcType=VARCHAR},
+      HCODE_STATUS = #{hcodeStatus,jdbcType=VARCHAR},
+      TEMPERATURE = #{temperature,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      RECORD = #{record,jdbcType=VARCHAR},
+      ARRIVAL = #{arrival,jdbcType=VARCHAR},
+      SITE_ID = #{siteId,jdbcType=BIGINT},
+      DETAILS = #{details,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=VARCHAR},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR},
+      EXT4 = #{ext4,jdbcType=VARCHAR},
+      EXT5 = #{ext5,jdbcType=VARCHAR},
+      EXT6 = #{ext6,jdbcType=VARCHAR},
+      EXT7 = #{ext7,jdbcType=VARCHAR},
+      EXT8 = #{ext8,jdbcType=VARCHAR},
+      EXT9 = #{ext9,jdbcType=VARCHAR},
+      EXT10 = #{ext10,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectAll" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+    SELECT
+      er.id,
+      (select EVENT_NAME from t_event_dict d where d.ID=er.EVENT_CLASS_ID) eventClass,
+      (select EVENT_NAME from t_event_dict d where d.ID=er.EVENT_TYPE_ID) eventType,
+      er.HAPPEN_DATE date,
+      er.TEL tel,
+      st.`NAME` siteName,
+      er.EXT1 location,
+      er.DETAILS details,
+      er.REMARKS remarks,
+      u.TRUENAME captain,
+      u.MOBILE cap_tel,
+      er.EXT2 lon,
+      er.EXT3 lat,
+      er.EXT4 status
+      FROM
+      t_event_report er
+      LEFT JOIN t_user u ON er.USER_ID = u.USER_ID
+      LEFT JOIN (select d.dept_id,o.name from t_dept d
+      left join t_project_info p
+        on d.dept_id=p.dept_id
+        left join t_business_org o
+        on p.borg_id=o.id) st ON u.DEPT_ID = st.dept_id
+    WHERE (er.ext4='1' or er.ext4='2')
+    <if test="userId != null" >
+        and u.user_id = #{userId}
+    </if>
+--     AND er.HAPPEN_DATE>DATE_SUB(NOW(), INTERVAL 7 DAY)
+    ORDER BY er.HAPPEN_DATE DESC
+  </select>
+
+  <update id="updateImagerId" parameterType="java.util.Map" >
+    update t_attachment set DATA_ID=#{dataId} where ID=#{imageId}
+  </update>
+
+  <delete id="delEventImage" parameterType="java.util.Map">
+    delete from t_attachment where data_id=#{dataId}
+  </delete>
+
+  <select id="todayTotalByUser" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) total from t_event_report where (er.ext4='1' or er.ext4='2') and DATE_FORMAT(HAPPEN_DATE, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d') and USER_ID=#{userId}
+  </select>
+
+  <select id="todayTotal" resultType="java.lang.Integer">
+    select count(*) total from t_event_report where DATE_FORMAT(HAPPEN_DATE, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+  </select>
+
+  <update id="undoEvent" parameterType="java.lang.Long">
+    update t_event_report set ext4='2' where id=#{id,jdbcType=BIGINT}
+  </update>
+</mapper>

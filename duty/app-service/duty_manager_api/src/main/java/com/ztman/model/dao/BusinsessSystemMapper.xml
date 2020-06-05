@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztman.model.dao.BusinsessSystemMapper" >
+  <resultMap id="BaseResultMap" type="com.ztman.model.entity.BusinsessSystem" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="CREATE_ID" property="createId" jdbcType="BIGINT" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NAME, STATUS, CREATE_ID, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_business_system
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_business_system
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ztman.model.entity.BusinsessSystem" >
+    insert into t_business_system (ID, NAME, STATUS, 
+      CREATE_ID, CREATE_TIME)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, 
+      #{createId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ztman.model.entity.BusinsessSystem" >
+    insert into t_business_system
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ztman.model.entity.BusinsessSystem" >
+    update t_business_system
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ztman.model.entity.BusinsessSystem" >
+    update t_business_system
+    set NAME = #{name,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=CHAR},
+      CREATE_ID = #{createId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectAll" resultType="java.util.HashMap" parameterType="java.lang.Long">
+    SELECT DISTINCT
+        s.id,
+        s.name,
+        -1 level
+    FROM
+        t_business_system s
+    RIGHT JOIN (
+        SELECT
+            *
+        FROM
+            t_dept t
+        WHERE
+            t.company_id = (
+                SELECT
+                    company_id
+                FROM
+                    t_user t
+                WHERE
+                    t.user_id = #{userId}
+            )
+    ) d ON s.id = d.business_id
+    where s.status='1'
+  </select>
+
+  <select id="queryUserCountByBnsId" resultType="java.lang.Integer" parameterType="java.lang.Long">
+    SELECT
+        count(*) count
+    FROM
+        t_user u
+    WHERE
+        u.dept_id IN (
+            SELECT
+                dept_id
+            FROM
+                t_dept d
+            WHERE
+                d.business_id = #{bnsId}
+        )
+        and u.status='1'
+  </select>
+
+  <select id="queryDeptByUserId" resultType="java.util.HashMap" parameterType="java.lang.Long">
+    SELECT
+        dept_id id,
+        dept_name name,
+        dept_id deptId,
+        level level
+    FROM
+        t_dept t
+    WHERE
+        t. LEVEL = 1
+    AND t.company_id = (
+        SELECT
+            company_id
+        FROM
+            t_user t
+        WHERE
+            t.user_id = #{userId}
+    )
+  </select>
+
+  <select id="queryUserCountByDeptId" resultType="java.lang.Integer" parameterType="java.lang.Long">
+    SELECT
+        count(*) count
+    FROM
+        t_user t
+    WHERE
+        t.dept_id = #{deptId}
+    AND t.STATUS = '1'
+  </select>
+
+  <select id="queryDeptByParentId" parameterType="java.lang.Long" resultType="java.util.HashMap">
+    SELECT
+        t.dept_id id
+    FROM
+        t_dept t
+    WHERE
+        t.parent_id = #{deptId}
+  </select>
+
+  <select id="queryZd" resultType="java.util.HashMap" parameterType="java.lang.Long">
+    SELECT
+      dept_id id,
+      dept_name name,
+      dept_id deptId,
+      level level
+    FROM
+      t_dept t
+    WHERE t.level&lt;4 and t.company_id = ( SELECT company_id FROM t_user t WHERE t.user_id = #{userId} )
+      AND t.parent_id = #{parentId}
+  </select>
+</mapper>
