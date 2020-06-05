@@ -1,0 +1,37 @@
+
+//定义全局主题&颜色的map数组，鉴于V5只有白天和晚上的主题，此处仅定义这两种
+//切记 所有颜色一式两份儿，务必保证key值统一，key值可以自定义，注意避免%_之类的，
+//与sass自有符号冲突，见文知意即可
+//另外如果基于其他UI框架，如本项目基于element-ui，则只需设置一套dark主题，
+//data-theme为dark时，样式引用dark
+//data-theme为其他值时，自然就采用了elementui的默认样式
+$themes: (
+    light: (
+        header-background-color: #204fa1,
+        link-highlight-color: #456aa9,
+        panel-background-color: rgba(255, 255, 255, 0.85),
+        panel-border-color:rgba(30,159,229,0.7),
+        label-color: #19233c,
+        time-line-label-color: #1f26e7,
+        time-line-dot-color: #19233c,
+        hotkey-background-color: #204fa1,
+        hotkey-color: #204fa1,
+        hotkey-hover-color: #184085,
+        hotkey-selected-color: #002c78,
+        hover-color: #76c4ff4d,
+    ),
+    dark: (
+        header-background-color: rgba(11, 24, 56, 0.7),
+        link-highlight-color: rgba(255, 255, 255, 0.2),
+        panel-background-color: rgba(11, 24, 56, 0.7),
+        panel-border-color: #fff,
+        label-color: #fff,
+        time-line-label-color: #1fa6e7,
+        time-line-dot-color: #e4e7ed,
+        hotkey-background-color: rgba(11, 24, 56, 0.7),
+        hotkey-color: #204fa1,
+        hotkey-hover-color: rgba(255, 255, 255, 0.3),
+        hotkey-selected-color: rgba(25, 55, 132, 0.9),
+        hover-color: rgba(255, 255, 255, 0.3),
+    )
+)

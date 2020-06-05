@@ -1,0 +1,38 @@
+/* 一、文本颜色值 */
+$color1:#19233c; // 正文     1-#19233c   例：正文文本
+$color2:#8c93a6; // 深灰     2-#8c93a6   例：选中的“车辆查询”；地图右侧操作的“路况”、“设置”等
+$color3:#bfc5d1; // 中灰     3-#bfc5d1   例：搜索框中的提示文字；顶部右侧的“关闭操作”；其他提示性文字等
+$color4:#d1d8e8; // 浅灰     4-#d1d8e8   顶部菜单未选中状态下
+$color5:#4c84ff; // 主色调   5-#4c84ff  例：选中的颜色
+
+/*二、背景色色值*/
+$color6:#f5f6fa; // table切换选中时的背景；表格表头的背景等
+$color7:#dbe7ff; // 例：选项卡选中时；底部模块标头背景；车辆选中时的背景等
+
+/*三、线条色值*/
+$color8: #edeef0;//     白色背景下的色值
+$color9: #6192ff;//     顶部蓝色背景下的色值
+$color10: #bfc5d1;//    例：底部标头上的分割线线条色值
+
+/*四、图标色值*/
+$color-yj1:#ff5560;//    预警信息
+$color-yj2:#fec200;//
+$color-yj3:#3fd080;//
+$color-yj4: #8c93a6;//     正常状态
+
+$color-red: #ef001e;
+
+
+/* police */
+$header-background-color: #204fa1;
+$link-highlight-color: #456aa9;
+$panel-background-color: #fff;
+$label-color: #19233c;
+$time-line-label-color: #1f26e7;
+$time-line-dot-color: #19233c;
+$hotkey-color: #204fa1;
+$hotkey-hover-color: #184085;
+$hotkey-selected-color: #002c78;
+$duty-border:rgba(30,159,229,0.7);
+$duty-hover: rgba(255, 255, 255, 0.2);
+$duty-bg:rgba(11,24,56,0.7);

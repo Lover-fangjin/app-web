@@ -1,0 +1,1935 @@
+SuperMap.Util.RequestJSONP.supermap_callbacks[1588840684863704]({
+	"recordsets": [{
+		"datasetName": "领导巡查路线@yzmapdata",
+		"features": [{
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 58,
+			"fieldValues": ["58", "-2", "1.2967803186255E7", "4807939.5246724", "1.2967954186255E7", "4807423.5246724", "516.0", "0", "1", "554.644301650873", "0", "任向民", "13601184555", "三海子六号路", "荣京西街至三海子五号路", "366", "小巷", "赵俊", "15901137311", "都玉宝", "13693143633", "110115004211", "鹿华苑二里社区", "骆京", "15810277894", "武鹏飞", "13691282800", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18515374449", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "82d3ab71409a405fb8ae3acf619e9b9c", "f7c1f817eb054f479d9a9bf2b00baa99", "8ad8ac4604c84fcca855395ed036c2c4", "9fd898b117514c6c9996f1348371da73"],
+			"geometry": {
+				"id": 58,
+				"center": {
+					"y": 4807653.5246724,
+					"x": 1.2967820186255E7
+				},
+				"style": null,
+				"parts": [6],
+				"points": [{
+					"y": 4807939.5246724,
+					"x": 1.2967803186255E7
+				}, {
+					"y": 4807727.5246724,
+					"x": 1.2967803186255E7
+				}, {
+					"y": 4807678.5246724,
+					"x": 1.2967811186255E7
+				}, {
+					"y": 4807653.5246724,
+					"x": 1.2967820186255E7
+				}, {
+					"y": 4807561.5246724,
+					"x": 1.2967880186255E7
+				}, {
+					"y": 4807423.5246724,
+					"x": 1.2967954186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 60,
+			"fieldValues": ["60", "-2", "1.2968825728039E7", "4806390.8059709", "1.2969081728039E7", "4805070.8059709", "1320.0", "0", "1", "1344.59510634243", "0", "焦万昌", "13601074224", "博兴十路", "凉水河一街至泰河路", "995", "大街", "王利滨", "13693095800", "温少海", "18611080800", "110115004207", "南工业区", "丁力", "13901082319", "赵树英", "13671213532", "高桂芹", "13691012384", "李啟华", "13611294675", "范金生", "13269218138", "#9999cc", "", "09323312578347eb91790fd2f2501cc2", "46ed46239e844afe80eb28ce972787b3", "4bd99c8a8f184396a20e37dd1319d333", "73ef06e378674d41a0b030400b74ea0b", "b289b7f3116646afb0990d0d78734eaa"],
+			"geometry": {
+				"id": 60,
+				"center": {
+					"y": 4805730.8059709,
+					"x": 1.2968953728039E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4806390.8059709,
+					"x": 1.2969081728039E7
+				}, {
+					"y": 4805070.8059709,
+					"x": 1.2968825728039E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 61,
+			"fieldValues": ["61", "-2", "1.29712358395554E7", "4813258.48339205", "1.29726215437536E7", "4812652.67983469", "1385.7041981685902", "0", "1", "1524.24184536786", "0", "刘金戈", "13910925089", "小羊坊南街", "经海一路至小羊坊东路", "1150", "大街", "王国强", "13681370626", "董惠", "13811362179", "110115004017", "三羊社区居委会", "焦蕾", "13466542191", "史剑波", "13911172163", "李艳平", "13811658196", "张小娟", "13693365054", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "899fe3126f6d44cbb6c26df84272036d", "875dc14958a84967ba0db5dbbcc8d11f", "32be30fbb0e44ca8a7c6f06661f88ecc", "d515f105c4ca4e1d853afe75ee00af1e"],
+			"geometry": {
+				"id": 61,
+				"center": {
+					"y": 4812687.433382487,
+					"x": 1.2971328886215707E7
+				},
+				"style": null,
+				"parts": [4],
+				"points": [{
+					"y": 4813258.48339205,
+					"x": 1.2972621543753555E7
+				}, {
+					"y": 4812818.048012332,
+					"x": 1.2971842794815397E7
+				}, {
+					"y": 4812687.433382487,
+					"x": 1.2971328886215707E7
+				}, {
+					"y": 4812652.679834691,
+					"x": 1.2971235839555386E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 63,
+			"fieldValues": ["63", "-2", "1.2966104976282E7", "4809223.51460863", "1.29664195461169E7", "4808305.45370779", "918.060900836252", "0", "1", "1003.168409213", "0", "任向民", "13601184555", "三海子一号路", "中海墅西侧公园北环路至三海子四号路", "325", "小巷", "刘国强", "13611244400", "承京梅", "18801206864", "110115004213", "鹿华苑四里社区", "朱宝军", "13641096176", "张方凯", "13811566224", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18515374449", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "021d7310eb214eb4bda733b304c0e47d", "847e888a2779415d942de193c0e08af9", "b0a6816cbe3f4aa183271337f9227938", "2f4a04dc504a430f91e1beb7e24913c0"],
+			"geometry": {
+				"id": 63,
+				"center": {
+					"y": 4808952.999203536,
+					"x": 1.2966317006160786E7
+				},
+				"style": null,
+				"parts": [5],
+				"points": [{
+					"y": 4808305.45370779,
+					"x": 1.2966104976281993E7
+				}, {
+					"y": 4808580.555920332,
+					"x": 1.2966289428964013E7
+				}, {
+					"y": 4808952.999203536,
+					"x": 1.2966317006160786E7
+				}, {
+					"y": 4809129.116777715,
+					"x": 1.2966345264911363E7
+				}, {
+					"y": 4809223.514608626,
+					"x": 1.2966419546116902E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 64,
+			"fieldValues": ["64", "-2", "1.2966107686255E7", "4810220.5246724", "1.2967426686255E7", "4809817.0246724", "1319.0", "0", "1", "1416.85420599749", "0", "董玥涵", "13801160128", "亦兴北路", "亦兴西路至西环北路", "857", "大街", "钱玉桂", "13683374366", "张福霞", "13693159325", "110115004005", "富源里社区居委会", "刘文明", "13381123727", "王春忠", "13811455497", "温凯", "13611125304", "连杰", "13671073395", "李秀明", "13910873272", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "b0e2eecf6ef140009172b0a64e6f464f", "5327db81679241338124cec65737e663", "bc08eaf6efa44ca4ba7cf9ca12e6c07f", "c3f4d6b9ee2e4e4fb0dc20adc614abcb"],
+			"geometry": {
+				"id": 64,
+				"center": {
+					"y": 4809911.5246724,
+					"x": 1.2966348186255E7
+				},
+				"style": null,
+				"parts": [7],
+				"points": [{
+					"y": 4810220.5246724,
+					"x": 1.2967426686255E7
+				}, {
+					"y": 4810189.5246724,
+					"x": 1.2967048686255E7
+				}, {
+					"y": 4810057.5246724,
+					"x": 1.2966689686255E7
+				}, {
+					"y": 4809911.5246724,
+					"x": 1.2966348186255E7
+				}, {
+					"y": 4809817.0246724,
+					"x": 1.2966160061255E7
+				}, {
+					"y": 4809818.5246724,
+					"x": 1.2966141936255E7
+				}, {
+					"y": 4809861.5246724,
+					"x": 1.2966107686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 65,
+			"fieldValues": ["65", "-2", "1.29673184977018E7", "4808536.5569491", "1.29675669244111E7", "4807528.84354215", "1007.7134069502401", "0", "1", "1037.8834907794298", "0", "任向民", "13601184555", "千寻路-三海子三号路", "凉水河一街至凉水河路", "758", "小巷", "赵俊", "15901137311", "尹新慧", "13681404678", "110115004210", "鹿华苑一里社区", "刘萍", "13810136173", "王杰峰", "15110193959", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18545374449", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "82d3ab71409a405fb8ae3acf619e9b9c", "9d0a05e408034abeabcf4bf0935d1559", "5d4acb9d24954ddeb26d88032ba7c633", "2ebf1a7cb56044a8a7a41aa1d9ac3dab"],
+			"geometry": {
+				"id": 65,
+				"center": {
+					"y": 4808032.700245624,
+					"x": 1.296744271105646E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4807528.843542149,
+					"x": 1.2967318497701818E7
+				}, {
+					"y": 4808536.5569490995,
+					"x": 1.2967566924411101E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 67,
+			"fieldValues": ["67", "-2", "1.29666563650335E7", "4808739.75710462", "1.29671252866533E7", "4807842.81874489", "896.9383597327401", "0", "1", "1025.1871034784", "0", "任向民", "13601184555", "鹤翔街-三海子二号路", "紫禁一号西侧公园北环路至凉水河路", "790", "小巷", "刘国强", "13611244400", "李连霞", "13681210519", "110115004212", "鹿华苑三里社区", "康红莲", "15801400327", "聂超", "15810268330", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18515374449", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "021d7310eb214eb4bda733b304c0e47d", "eabb27524b5844059e99574b03141bbf", "2dcd370b7d82476faae4124712f67994", "387b9a77f30945bdaf95a46aa06c6aeb"],
+			"geometry": {
+				"id": 67,
+				"center": {
+					"y": 4808489.421876495,
+					"x": 1.2966965844571354E7
+				},
+				"style": null,
+				"parts": [5],
+				"points": [{
+					"y": 4807842.818744891,
+					"x": 1.2966656365033457E7
+				}, {
+					"y": 4808181.12538566,
+					"x": 1.2966887563308509E7
+				}, {
+					"y": 4808489.421876495,
+					"x": 1.2966965844571354E7
+				}, {
+					"y": 4808575.741223568,
+					"x": 1.296701078935808E7
+				}, {
+					"y": 4808739.757104624,
+					"x": 1.2967125286653304E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 70,
+			"fieldValues": ["70", "-2", "1.29675339103602E7", "4810118.85777802", "1.29679181706835E7", "4810028.3907101", "384.260323265567", "0", "1", "394.766116091933", "0", "董玥涵", "13801160128", "广德北巷", "西环北路至广德东巷", "295", "小巷", "何宝忠", "13611191011", "安文君", "13661177190", "110115004009", "广德苑社区居委会", "王艳玲", "", "闫丽洁", "13810060108", "邢俊华", "13718030010", "付庆顺", "13691022553", "李秀明", "13910873272", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "c6a6afeede514a2a917ce9b33e304970", "db9ebfe5c7c94d959c60017c456c7123", "7f4f0b4e64ca4e1f83855f5269faf12d", "4a5091a0a0ff41279e4d8153d06810d4"],
+			"geometry": {
+				"id": 70,
+				"center": {
+					"y": 4810073.6242440585,
+					"x": 1.2967726040521868E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4810028.390710099,
+					"x": 1.2967533910360236E7
+				}, {
+					"y": 4810118.857778019,
+					"x": 1.2967918170683501E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 71,
+			"fieldValues": ["71", "-2", "1.29728314004495E7", "4812938.48148523", "1.29736306913377E7", "4811672.97666323", "1265.5048219971402", "0", "1", "1496.78601622628", "0", "顿路达", "13811250551", "经海四路", "科创一街至科创四街", "1120", "大街", "权聪慧", "13681169219", "温少海", "18611080800", "110115004202", "东工业区", "李振苏", "13910339142", "白旭", "18611763273", "杨菊", "13718833310", "陈锁柱", "13522804407", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "96ddc72c50664d92a5b30b7cbc947517", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "f73fd02d50ca41f5bb8dc12345bf45ae"],
+			"geometry": {
+				"id": 71,
+				"center": {
+					"y": 4812305.729074229,
+					"x": 1.2973231045893596E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4812938.481485227,
+					"x": 1.2972831400449524E7
+				}, {
+					"y": 4811672.97666323,
+					"x": 1.297363069133767E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 2,
+			"fieldValues": ["2", "-2", "1.29725198622678E7", "4813869.52362153", "1.29728314004495E7", "4812938.48148523", "931.042136298493", "0", "1", "1003.98311780756", "0", "刘金戈", "13910925089", "小羊坊东路", "科创一街至天成花园中街", "760", "大街", "王京虎", "13801036767", "陈超", "13552756865", "110115004203", "三羊东里社区居委会", "付洛溪", "15910297256", "张媛媛", "18801321456", "刘素平", "18201211338", "白春梅", "13718026239", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "8012e60402b74334b592303bb48de35f", "d87084e64e1e49f38d17025eb98f099b", "9785fcfdb1da4a379668269e86b7c45f", "3658fb7a8b394a26bda5fbaa2275433f"],
+			"geometry": {
+				"id": 2,
+				"center": {
+					"y": 4813258.48339205,
+					"x": 1.2972621543753555E7
+				},
+				"style": null,
+				"parts": [4],
+				"points": [{
+					"y": 4813869.523621526,
+					"x": 1.29725198622678E7
+				}, {
+					"y": 4813521.26711243,
+					"x": 1.297255363338447E7
+				}, {
+					"y": 4813258.48339205,
+					"x": 1.2972621543753555E7
+				}, {
+					"y": 4812938.481485227,
+					"x": 1.2972831400449524E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 3,
+			"fieldValues": ["3", "-2", "1.2967751186255E7", "4810677.0246724", "1.2968403186255E7", "4809647.0246724", "1030.0", "0", "1", "1219.1190431097803", "0", "董玥涵", "13801160128", "科慧大道", "文化园西路至天宝北街", "600", "大街", "何宝忠", "13611191011", "安文君", "13661177190", "110115004009", "广德苑社区居委会", "陈程", "13426366297", "闫丽洁", "13810060108", "赵金山", "13439268405", "连升", "13691568326", "刘洋", "18511581736", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "c6a6afeede514a2a917ce9b33e304970", "db9ebfe5c7c94d959c60017c456c7123", "d7db536f395c455fb0be6ce6e2af5642", "4a5091a0a0ff41279e4d8153d06810d4"],
+			"geometry": {
+				"id": 3,
+				"center": {
+					"y": 4810337.0246724,
+					"x": 1.2967975186255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4810677.0246724,
+					"x": 1.2967751186255E7
+				}, {
+					"y": 4810337.0246724,
+					"x": 1.2967975186255E7
+				}, {
+					"y": 4809647.0246724,
+					"x": 1.2968403186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 4,
+			"fieldValues": ["4", "-2", "1.29692361910068E7", "4805600.2943109", "1.29693015897232E7", "4805056.51362231", "543.78068859037", "0", "1", "551.298932621609", "0", "焦万昌", "13601074224", "博兴九路", "凉水河一街至泰河路", "860", "大街", "王利滨", "13693095800", "温少海", "18611080800", "110115004207", "南工业区", "丁力", "13901082319", "许强", "18811195510", "高桂芹", "13691012384", "袁琳", "18811552090", "范金生", "13269218138", "#9999cc", "", "09323312578347eb91790fd2f2501cc2", "46ed46239e844afe80eb28ce972787b3", "4bd99c8a8f184396a20e37dd1319d333", "73ef06e378674d41a0b030400b74ea0b", "f749fa618609446a992193e901cf6014"],
+			"geometry": {
+				"id": 4,
+				"center": {
+					"y": 4805380.267864961,
+					"x": 1.296924394699E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4805056.513622307,
+					"x": 1.2969236191006849E7
+				}, {
+					"y": 4805380.267864961,
+					"x": 1.296924394699E7
+				}, {
+					"y": 4805600.294310898,
+					"x": 1.2969301589723194E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 5,
+			"fieldValues": ["5", "-2", "1.2966889186255E7", "4808150.5246724", "1.2968177186255E7", "4807942.5246724", "1288.0", "0", "1", "1366.90515388795", "0", "任向民", "13601184555", "三海子五号路", "三海子二号路至凉水河路", "1076", "小巷", "赵俊", "15901137311", "都玉宝", "13693143633", "110115004211", "鹿华苑二里社区", "赵雪娇", "15810229600", "王军平", "13681402275", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18515374449", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "82d3ab71409a405fb8ae3acf619e9b9c", "f7c1f817eb054f479d9a9bf2b00baa99", "4e8b2a987da949a09df57abdcca040be", "2ce1c2d8aafb436f82d66eb14d520c31"],
+			"geometry": {
+				"id": 5,
+				"center": {
+					"y": 4807942.5246724,
+					"x": 1.2967897186255E7
+				},
+				"style": null,
+				"parts": [5],
+				"points": [{
+					"y": 4808150.5246724,
+					"x": 1.2966889186255E7
+				}, {
+					"y": 4807942.5246724,
+					"x": 1.2967801186255E7
+				}, {
+					"y": 4807942.5246724,
+					"x": 1.2967897186255E7
+				}, {
+					"y": 4808122.5246724,
+					"x": 1.2968165186255E7
+				}, {
+					"y": 4808126.5246724,
+					"x": 1.2968177186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 6,
+			"fieldValues": ["6", "-2", "1.29693963343224E7", "4804636.87780091", "1.29698508277036E7", "4804478.46830004", "454.49338120035804", "0", "1", "481.308428682474", "0", "陈子兵", "13911572878", "泰河一街", "鹿海园一里南侧（博兴七路至博兴八路）", "340", "大街", "李莉", "13501235018", "刘丽莎", "13141061148", "110115004007", "泰河园社区居委会", "邢军", "15201620717", "王建双", "13716572876", "袁琳", "18811325867", "康桂珍", "15011252283", "李秀明", "13910873272", "#0000ff", "", "80771f2b1c214368971f0b16d032cc1c", "4acb2e51dfcc4bc68357af77c056fd7e", "40442b399c4e4b21baecc7710ccc883c", "742a1b26eed44eda85c094a7a446ec63", "feeaf37f63bb412781906e6724560e09"],
+			"geometry": {
+				"id": 6,
+				"center": {
+					"y": 4804557.673050474,
+					"x": 1.2969623581013002E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4804478.46830004,
+					"x": 1.29698508277036E7
+				}, {
+					"y": 4804636.87780091,
+					"x": 1.29693963343224E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 9,
+			"fieldValues": ["9", "-2", "1.2967788686255E7", "4807960.5246724", "1.2968780686255E7", "4807312.5246724", "992.0", "0", "1", "1184.89155621939", "0", "任向民", "13601184555", "三海子东路", "中信新城南侧（公园北环路-西环中路）", "880", "大街", "刘国强", "13611244400", "都玉宝", "13693143633", "110115004211", "鹿华苑二里社区", "李森", "15810454632", "王军平", "13681402275", "郭武", "13521230346", "范云鹏", "15810760404", "赵青春", "18515374449", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "021d7310eb214eb4bda733b304c0e47d", "f7c1f817eb054f479d9a9bf2b00baa99", "aade2ee882854168ba2cbda72a748909", "206c4ad01a674049be0b74dc7dd0419e"],
+			"geometry": {
+				"id": 9,
+				"center": {
+					"y": 4807636.5246724,
+					"x": 1.2968284686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4807312.5246724,
+					"x": 1.2967788686255E7
+				}, {
+					"y": 4807960.5246724,
+					"x": 1.2968780686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 11,
+			"fieldValues": ["11", "-2", "1.2966689686255E7", "4810054.5246724", "1.2966857686255E7", "4809522.5246724", "532.0", "0", "1", "610.5726241324611", "0", "李燕", "13146681998", "亦兴路", "莱茵河畔东侧亦兴北路至亦兴西路", "294", "小巷", "李牧", "13910258235", "姜红燕", "13439511612", "110115004015", "星岛社区社区居委会", "李树杰", "13691041316", "李辉", "13261975870", "田少宽", "13439380335", "刘国强", "13552651606", "李秀明", "13910873272", "#33ccff", "", "c0acd3080ece4a83aac7c35bae234066", "880a827cafeb4948b06a146a45ad528b", "17c6990a263c43ff9d6d84f828e99a3d", "ad55882ed49e4da0b0b172ab7cfa7e38", "dc8012d5f9834d909d1dc8773a20f1ad"],
+			"geometry": {
+				"id": 11,
+				"center": {
+					"y": 4809706.5246724,
+					"x": 1.2966857686255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4810054.5246724,
+					"x": 1.2966689686255E7
+				}, {
+					"y": 4809706.5246724,
+					"x": 1.2966857686255E7
+				}, {
+					"y": 4809522.5246724,
+					"x": 1.2966729686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 13,
+			"fieldValues": ["13", "-2", "1.2965992686255E7", "4809493.0246724", "1.2968435686255E7", "4807741.5246724", "2443.0", "0", "1", "3087.88602785857", "0", "任向民", "13601184555", "凉水河路", "凉水河东侧（旧头路至三海子东路）", "2350", "大街", "刘国强", "13611244400", "尹新慧", "13681404678", "110115004210", "鹿华苑一里社区", "张永利", "13651188742", "白国富", "13522663220", "刘伟玲", "13522566028", "李建飞", "13811029054", "刘伟玲", "13522566028", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "021d7310eb214eb4bda733b304c0e47d", "9d0a05e408034abeabcf4bf0935d1559", "7c118ae03eb94de2bdddcc927daa80b4", "f627be26b54c46bd89853cdfd433dc48"],
+			"geometry": {
+				"id": 13,
+				"center": {
+					"y": 4808663.5246724,
+					"x": 1.2967221686255E7
+				},
+				"style": null,
+				"parts": [12],
+				"points": [{
+					"y": 4807741.5246724,
+					"x": 1.2968435686255E7
+				}, {
+					"y": 4808305.5246724,
+					"x": 1.2968049686255E7
+				}, {
+					"y": 4808389.5246724,
+					"x": 1.2967951686255E7
+				}, {
+					"y": 4808453.5246724,
+					"x": 1.2967839686255E7
+				}, {
+					"y": 4808531.5246724,
+					"x": 1.2967563686255E7
+				}, {
+					"y": 4808613.5246724,
+					"x": 1.2967313686255E7
+				}, {
+					"y": 4808663.5246724,
+					"x": 1.2967221686255E7
+				}, {
+					"y": 4809057.5246724,
+					"x": 1.2966707686255E7
+				}, {
+					"y": 4809223.5246724,
+					"x": 1.2966415686255E7
+				}, {
+					"y": 4809233.5246724,
+					"x": 1.2966349686255E7
+				}, {
+					"y": 4809360.0246724,
+					"x": 1.2966166686255E7
+				}, {
+					"y": 4809493.0246724,
+					"x": 1.2965992686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 14,
+			"fieldValues": ["14", "-2", "1.2966289186255E7", "4808579.5246724", "1.2967829186255E7", "4807943.5246724", "1540.0", "0", "1", "1830.23478673348", "0", "任向民", "13601184555", "三海子四号路", "三海子一号路至三海子五号路", "1435", "小巷", "赵俊", "15901137311", "李连霞", "13681210519", "110115004212", "鹿华苑三里社区", "刘雅鹏", "15010315281", "聂超", "15810268330", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18515374449", "#ffff00", "", "e6887988d2fa423bafa655d6f9975a0b", "82d3ab71409a405fb8ae3acf619e9b9c", "eabb27524b5844059e99574b03141bbf", "f5bcb8255aac45349a7262e9378e180f", "d831de9605b34900b64bb88ddb08ddde"],
+			"geometry": {
+				"id": 14,
+				"center": {
+					"y": 4808208.5246724,
+					"x": 1.2967796186255E7
+				},
+				"style": null,
+				"parts": [11],
+				"points": [{
+					"y": 4808579.5246724,
+					"x": 1.2966289186255E7
+				}, {
+					"y": 4808491.5246724,
+					"x": 1.2966616186255E7
+				}, {
+					"y": 4808411.5246724,
+					"x": 1.2966949186255E7
+				}, {
+					"y": 4808296.5246724,
+					"x": 1.2967506186255E7
+				}, {
+					"y": 4808228.5246724,
+					"x": 1.2967723186255E7
+				}, {
+					"y": 4808208.5246724,
+					"x": 1.2967796186255E7
+				}, {
+					"y": 4808183.5246724,
+					"x": 1.2967817186255E7
+				}, {
+					"y": 4808159.5246724,
+					"x": 1.2967829186255E7
+				}, {
+					"y": 4808124.5246724,
+					"x": 1.2967829186255E7
+				}, {
+					"y": 4808086.5246724,
+					"x": 1.2967826186255E7
+				}, {
+					"y": 4807943.5246724,
+					"x": 1.2967804186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 15,
+			"fieldValues": ["15", "-2", "1.2970415686255E7", "4812652.0246724", "1.2971233686255E7", "4812331.5246724", "818.0", "0", "1", "942.560859617281", "0", "佟帅", "13901108752", "洪金西街", "东环北路至经海一路", "330", "小巷", "曾改娥", "15120042751", "董惠", "13811362179", "110115004017", "三羊社区居委会", "焦蕾", "13466542191", "李穆凯童", "18514407070", "苑香波", "15311792393", "史兴月", "15800250939", "孙磊", "17600458676", "#ff99ff", "", "1a565c5a95954593b8d1b98dab899aca", "5f106d9f48f64e8d9a02bf26ef7145fb", "875dc14958a84967ba0db5dbbcc8d11f", "32be30fbb0e44ca8a7c6f06661f88ecc", "d515f105c4ca4e1d853afe75ee00af1e"],
+			"geometry": {
+				"id": 15,
+				"center": {
+					"y": 4812470.0246724,
+					"x": 1.2970657186255E7
+				},
+				"style": null,
+				"parts": [16],
+				"points": [{
+					"y": 4812331.5246724,
+					"x": 1.2970415686255E7
+				}, {
+					"y": 4812354.5246724,
+					"x": 1.2970464686255E7
+				}, {
+					"y": 4812387.5246724,
+					"x": 1.2970493186255E7
+				}, {
+					"y": 4812397.5246724,
+					"x": 1.2970519186255E7
+				}, {
+					"y": 4812411.0246724,
+					"x": 1.2970586686255E7
+				}, {
+					"y": 4812422.0246724,
+					"x": 1.2970623186255E7
+				}, {
+					"y": 4812432.0246724,
+					"x": 1.2970642686255E7
+				}, {
+					"y": 4812449.0246724,
+					"x": 1.2970655186255E7
+				}, {
+					"y": 4812470.0246724,
+					"x": 1.2970657186255E7
+				}, {
+					"y": 4812500.0246724,
+					"x": 1.2970656186255E7
+				}, {
+					"y": 4812525.0246724,
+					"x": 1.2970660686255E7
+				}, {
+					"y": 4812530.5246724,
+					"x": 1.2970676686255E7
+				}, {
+					"y": 4812587.5246724,
+					"x": 1.2971033686255E7
+				}, {
+					"y": 4812591.5246724,
+					"x": 1.2971076186255E7
+				}, {
+					"y": 4812614.0246724,
+					"x": 1.2971155186255E7
+				}, {
+					"y": 4812652.0246724,
+					"x": 1.2971233686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 16,
+			"fieldValues": ["16", "-2", "1.29671717815722E7", "4809481.42156075", "1.29677566570301E7", "4809195.10087558", "584.8754579294471", "0", "1", "651.198000644303", "0", "张京", "13911112562", "贵园南街", "西环北路至亦兴西路", "480", "小巷", "付春玲", "15718897633", "刘铮", "13810035935", "110115004208", "贵园西里社区", "刘斌", "15810760536", "洪亮", "15210592586", "吴建峰", "13439506921", "孙占国", "13718615527", "李秀明", "13910873272", "#00ff66", "", "dc44c6ed810b4887a03dec00cbf65eb3", "b31f720928234d708b1719ddd5fdc1a0", "de2b0cac51d0426795f6b89446f5cb88", "e9e8b29b93424346a07f912700748cdd", "2275c727bf2b4422a8aba52a221146a3"],
+			"geometry": {
+				"id": 16,
+				"center": {
+					"y": 4809338.261218166,
+					"x": 1.2967464219301142E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809481.42156075,
+					"x": 1.2967756657030107E7
+				}, {
+					"y": 4809195.100875583,
+					"x": 1.2967171781572178E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 17,
+			"fieldValues": ["17", "-2", "1.2967896945845E7", "4810314.54442635", "1.29679523496616E7", "4809868.21424889", "446.33017745986604", "0", "1", "449.7557228089", "0", "董玥涵", "13801160128", "亦德路", "北环西路至广德中巷", "330", "小巷", "何宝忠", "13611191011", "安文君", "13661177190", "110115004009", "广德苑社区居委会", "藏娜", "13671281302", "闫丽洁", "13810060108", "李文良", "13691282186", "张德山", "13691335090", "李秀明", "13910873272", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "c6a6afeede514a2a917ce9b33e304970", "db9ebfe5c7c94d959c60017c456c7123", "def66b086a6c40ae91cc77ec6a20594f", "4a5091a0a0ff41279e4d8153d06810d4"],
+			"geometry": {
+				"id": 17,
+				"center": {
+					"y": 4810091.379337624,
+					"x": 1.2967924647753306E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809868.214248894,
+					"x": 1.296795234966158E7
+				}, {
+					"y": 4810314.544426354,
+					"x": 1.2967896945845032E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 20,
+			"fieldValues": ["20", "-2", "1.2968507686255E7", "4812905.0246724", "1.2969041686255E7", "4812587.0246724", "534.0", "0", "1", "756.8171672347399", "0", "佟帅", "13901108752", "闫家场南侧路", "闫家场南侧路", "350", "小巷", "刘静", "13601002762", "李颖", "13611181252", "110115004001", "贵园北里社区居委会", "张宇", "13811133857", "白娜", "13811801619", "陈全力", "13845329334", "王建华", "18524718679", "孙磊", "17600458676", "#ff99ff", "", "1a565c5a95954593b8d1b98dab899aca", "bfb819258ac24d6d862ba606335f788c", "65d4cb92842a4fb7be72e05e401ec258", "cdb1b4f3b2474f7389102ea15e5c47cf", "a9c0d39d46f849968431f7b47f330e42"],
+			"geometry": {
+				"id": 20,
+				"center": {
+					"y": 4812799.0246724,
+					"x": 1.2969041686255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4812905.0246724,
+					"x": 1.2968507686255E7
+				}, {
+					"y": 4812799.0246724,
+					"x": 1.2969041686255E7
+				}, {
+					"y": 4812587.0246724,
+					"x": 1.2969028686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 22,
+			"fieldValues": ["22", "-2", "1.2968248186255E7", "4810939.0246724", "1.2968546186255E7", "4810460.0246724", "479.0", "0", "1", "564.1320767338091", "0", "董玥涵", "13801160128", "天华西路", "文化园西路至北环西路", "420", "大街", "何宝忠", "13611191011", "姜红燕", "13439511612", "110115004015", "星岛社区社区居委会", "夏明英", "13521153218", "杜旭", "13681441450", "张继恒", "13520662909", "赵秀杰", "18210916708", "刘洋", "18511581736", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "c6a6afeede514a2a917ce9b33e304970", "17c6990a263c43ff9d6d84f828e99a3d", "177a37b710284601b4ff549767231226", "3a192c27affd428da011e0e4e14a1001"],
+			"geometry": {
+				"id": 22,
+				"center": {
+					"y": 4810699.5246724,
+					"x": 1.2968397186255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4810939.0246724,
+					"x": 1.2968248186255E7
+				}, {
+					"y": 4810460.0246724,
+					"x": 1.2968546186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 25,
+			"fieldValues": ["25", "-2", "1.2966492186255E7", "4812397.0246724", "1.2968661186255E7", "4811425.0246724", "2169.0", "0", "1", "2380.31940273206", "0", "佟帅", "13901108752", "东马路", "三台山路至荣华桥", "1800", "大街", "曾改娥", "15120042751", "赵金茹", "13520360176", "110115004008", "晓康社区居委会", "邢金明", "13910988407", "张蕊", "15011293925", "曹占淼", "18730842545", "王建华", "18524718649", "孙磊", "17600458676", "#ff99ff", "", "1a565c5a95954593b8d1b98dab899aca", "5f106d9f48f64e8d9a02bf26ef7145fb", "998b22a897c745d2b16a1d8cdc6966b1", "c2c7c4dddf8c4baf93991078569aef91", "b0b5d032cb3f4fec8d7d093fd4e8ac5e"],
+			"geometry": {
+				"id": 25,
+				"center": {
+					"y": 4811869.0246724,
+					"x": 1.2967607186255E7
+				},
+				"style": null,
+				"parts": [6],
+				"points": [{
+					"y": 4811425.0246724,
+					"x": 1.2966492186255E7
+				}, {
+					"y": 4811615.0246724,
+					"x": 1.2966966186255E7
+				}, {
+					"y": 4811731.0246724,
+					"x": 1.2967258186255E7
+				}, {
+					"y": 4811869.0246724,
+					"x": 1.2967607186255E7
+				}, {
+					"y": 4812022.0246724,
+					"x": 1.2967971186255E7
+				}, {
+					"y": 4812397.0246724,
+					"x": 1.2968661186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 27,
+			"fieldValues": ["27", "-2", "1.2968827186255E7", "4805053.5246724", "1.2969969186255E7", "4804851.5246724", "1142.0", "0", "1", "1167.32379825679", "0", "焦万昌", "13601074224", "泰河路", "博兴七路至南海子公园", "1900", "大街", "邓淼", "18500261487", "刘丽莎", "13141061148", "110115004007", "泰河园社区居委会", "邢军", "15201620717", "赵建", "13901267477", "胡艳", "13911827161", "张振岭", "13522804860", "李秀明", "13910873272", "#9999cc", "", "09323312578347eb91790fd2f2501cc2", "eb867956cfed4143b00cabb4e0f00dcd", "40442b399c4e4b21baecc7710ccc883c", "742a1b26eed44eda85c094a7a446ec63", "a0edef2bba934524be72952530e69f84"],
+			"geometry": {
+				"id": 27,
+				"center": {
+					"y": 4805034.5246724,
+					"x": 1.2969230186255E7
+				},
+				"style": null,
+				"parts": [6],
+				"points": [{
+					"y": 4804851.5246724,
+					"x": 1.2969969186255E7
+				}, {
+					"y": 4804971.5246724,
+					"x": 1.2969581186255E7
+				}, {
+					"y": 4804992.5246724,
+					"x": 1.2969492186255E7
+				}, {
+					"y": 4805034.5246724,
+					"x": 1.2969230186255E7
+				}, {
+					"y": 4805052.5246724,
+					"x": 1.2968827186255E7
+				}, {
+					"y": 4805053.5246724,
+					"x": 1.2968827186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 28,
+			"fieldValues": ["28", "-2", "1.2967326186255E7", "4810455.5246724", "1.2968350186255E7", "4808575.5246724", "1880.0", "0", "1", "2154.14376924417", "0", "苑文健", "13501071160", "西环北路", "文化园西路至天宝南街", "1815", "大街", "刘明浩", "13811180056", "赵敬、刘铮", "18911022077、13810035935", "110115004002", "贵园东里社区居委会", "刘文龙、刘斌", "67879616、15810760536", "刘继旺、韩泽阳", "13641165577、15911151849", "付立", "18510617159", "张建文", "13126729091", "刘洋", "18511581736", "#33ffff", "", "07b300772ac7417cb21d84e94fcea148", "243c200b0eb24cb4b1320c232d427941", "3989640a542f45998ee3adcb2a299b87", "fe4e804f4c3e490e9b33579627fe2868", "fc7dff6a89c64b289a14690acb5e7fad"],
+			"geometry": {
+				"id": 28,
+				"center": {
+					"y": 4808863.5246724,
+					"x": 1.2968174186255E7
+				},
+				"style": null,
+				"parts": [5],
+				"points": [{
+					"y": 4810455.5246724,
+					"x": 1.2967326186255E7
+				}, {
+					"y": 4809319.5246724,
+					"x": 1.2967862186255E7
+				}, {
+					"y": 4808863.5246724,
+					"x": 1.2968174186255E7
+				}, {
+					"y": 4808575.5246724,
+					"x": 1.2968350186255E7
+				}, {
+					"y": 4808575.5246724,
+					"x": 1.2968342186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 29,
+			"fieldValues": ["29", "-2", "1.2969737409494E7", "4805751.4195248", "1.2970241409494E7", "4804071.4195248", "1680.0", "0", "1", "1753.9714934969702", "0", "左冬青", "13521689087", "博兴七路", "凉水河一街至泰河二街", "1320", "大街", "郭金山", "13701055962", "邢少怀", "13661001851", "110115004209", "鹿海园社区", "玄超", "13810761498", "杜维浩", "13901361807", "袁琳", "18811325867", "张树才", "13436321090", "李秀明", "13910873272", "#003bcc", "", "3fdea819787c49d3b3e37e66ad255c70", "9a26f5b42cc9434d92878c57956db026", "96ab5b9ab74c469782404ae4f37e2cab", "349935cb93f94472bac4ada42f92d79e", "423309e62f1b4d92a001374fa2803969"],
+			"geometry": {
+				"id": 29,
+				"center": {
+					"y": 4804911.4195248,
+					"x": 1.2969989409494E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4805751.4195248,
+					"x": 1.2970241409494E7
+				}, {
+					"y": 4804071.4195248,
+					"x": 1.2969737409494E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 31,
+			"fieldValues": ["31", "-2", "1.29719098897452E7", "4812753.33126651", "1.29734550824324E7", "4811815.35425122", "1545.19268710352", "0", "1", "1807.60098514386", "0", "顿路达", "13811250551", "科创二街", "经海一路至经海路", "1350", "大街", "孙志猛", "13601070788", "温少海", "18611080800", "110115004202", "东工业区", "郝进", "13910866273", "符仲祥", "13121667575", "杨菊", "13718833310", "马增利", "13671387130", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "4049708309f64750a8a6a21bdab951c4", "4bd99c8a8f184396a20e37dd1319d333", "67ff50cf11bb42feb1f29cc50b6029d6", "d6cdcde566fe49ea99d1aadd2700964d"],
+			"geometry": {
+				"id": 31,
+				"center": {
+					"y": 4812284.342758862,
+					"x": 1.2972682486088801E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4811815.354251216,
+					"x": 1.2971909889745248E7
+				}, {
+					"y": 4812753.3312665075,
+					"x": 1.2973455082432352E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 32,
+			"fieldValues": ["32", "-2", "1.2972585686255E7", "4811871.5246724", "1.2974011686255E7", "4811047.5246724", "1426.0", "0", "1", "1650.0837365803802", "0", "顿路达", "13811250551", "科创四街", "经海一路至经海路", "1230", "大街", "孙志猛", "13601070788", "温少海", "18611080800", "110115004202", "东工业区", "郝进", "13910866273", "符仲祥", "13121667575", "张兆香", "15701670131", "白春梅", "13718026239", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "4049708309f64750a8a6a21bdab951c4", "4bd99c8a8f184396a20e37dd1319d333", "67ff50cf11bb42feb1f29cc50b6029d6", "f73fd02d50ca41f5bb8dc12345bf45ae"],
+			"geometry": {
+				"id": 32,
+				"center": {
+					"y": 4811851.5246724,
+					"x": 1.2973933686255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4811047.5246724,
+					"x": 1.2972585686255E7
+				}, {
+					"y": 4811851.5246724,
+					"x": 1.2973933686255E7
+				}, {
+					"y": 4811871.5246724,
+					"x": 1.2974011686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 33,
+			"fieldValues": ["33", "-2", "1.2971752686255E7", "4812209.5246724", "1.2972141686255E7", "4811985.5246724", "389.0", "0", "1", "448.88417214243606", "0", "顿路达", "13811250551", "北良机电南侧路", "经海一路至经海二路", "323", "小巷", "孙志猛", "13601070788", "温少海", "18611080800", "110115004202", "东工业区", "郝进", "13910866273", "赵志月", "15810424298", "顾晓燕", "13522055470", "王秋来", "18611119120", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "4049708309f64750a8a6a21bdab951c4", "4bd99c8a8f184396a20e37dd1319d333", "67ff50cf11bb42feb1f29cc50b6029d6", "d6cdcde566fe49ea99d1aadd2700964d"],
+			"geometry": {
+				"id": 33,
+				"center": {
+					"y": 4812097.5246724,
+					"x": 1.2971947186255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4811985.5246724,
+					"x": 1.2971752686255E7
+				}, {
+					"y": 4812209.5246724,
+					"x": 1.2972141686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 34,
+			"fieldValues": ["34", "-2", "1.2972515030101E7", "4812759.85645148", "1.29733155810049E7", "4811483.0345896", "1276.8218618780402", "0", "1", "1507.37750970466", "0", "顿路达", "13811250551", "经海三路", "科创一街至科创四街", "1140", "大街", "权聪慧", "13681169219", "温少海", "18611080800", "110115004202", "东工业区", "李振苏", "13910339142", "赵志月", "15810424298", "吕润昌", "15010374810", "白春梅", "13718026239", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "96ddc72c50664d92a5b30b7cbc947517", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "d6cdcde566fe49ea99d1aadd2700964d"],
+			"geometry": {
+				"id": 34,
+				"center": {
+					"y": 4811940.826482242,
+					"x": 1.2973046654972302E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4812759.8564514825,
+					"x": 1.2972515030101025E7
+				}, {
+					"y": 4811940.826482242,
+					"x": 1.2973046654972302E7
+				}, {
+					"y": 4811483.0345896045,
+					"x": 1.2973315581004893E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 35,
+			"fieldValues": ["35", "-2", "1.2973191686255E7", "4813175.5246724", "1.2974007686255E7", "4811875.5246724", "1300.0", "0", "1", "1534.8797998540501", "0", "顿路达", "13811250551", "经海路", "科创一街至科创四街", "1560", "大街", "权聪慧", "13681169219", "温少海", "18611080800", "110115004202", "东工业区", "李振苏", "13910339142", "白旭", "18611763273", "王秋来", "18611119120", "王秋来", "18611119120", "孙磊", "17600458676", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "96ddc72c50664d92a5b30b7cbc947517", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "f73fd02d50ca41f5bb8dc12345bf45ae"],
+			"geometry": {
+				"id": 35,
+				"center": {
+					"y": 4812525.5246724,
+					"x": 1.2973599686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4813175.5246724,
+					"x": 1.2973191686255E7
+				}, {
+					"y": 4811875.5246724,
+					"x": 1.2974007686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 36,
+			"fieldValues": ["36", "-2", "1.2972109152117E7", "4812344.94022911", "1.29727039180518E7", "4811709.50283608", "635.4373930282891", "0", "1", "952.0071890393291", "0", "顿路达", "13811250551", "迪兴路", "科创一街至科创三街", "740", "大街", "权聪慧", "13681169219", "温少海", "18611080800", "110115004202", "东工业区", "李振苏", "13910339142", "白旭", "18611763273", "马增利", "13671387130", "孙洪敏", "15001232602", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "96ddc72c50664d92a5b30b7cbc947517", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "f73fd02d50ca41f5bb8dc12345bf45ae"],
+			"geometry": {
+				"id": 36,
+				"center": {
+					"y": 4812344.9402291095,
+					"x": 1.2972266535084404E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4812256.377622138,
+					"x": 1.2972109152116967E7
+				}, {
+					"y": 4812344.9402291095,
+					"x": 1.2972266535084404E7
+				}, {
+					"y": 4811709.502836081,
+					"x": 1.2972703918051839E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 39,
+			"fieldValues": ["39", "-2", "1.2968170920283E7", "4809044.76002704", "1.29684703693347E7", "4808848.26469094", "299.449051704258", "0", "1", "358.35004747183", "0", "苑文健", "13501071160", "天宝中街", "天宝家园北侧西环北路至天宝西路", "450", "大街", "程立森", "13810009082", "赵敬", "18911022077", "110115004002", "贵园东里社区居委会", "刘文龙", "67879616", "刘琳", "13552576191", "李红革", "13683503415", "张学勇", "13681334273", "刘洋", "18511571736", "#33ffff", "", "07b300772ac7417cb21d84e94fcea148", "4a1716c761484c43843a4ce6779c2840", "3989640a542f45998ee3adcb2a299b87", "fe4e804f4c3e490e9b33579627fe2868", "191f858fb515471fb602a0786d614019"],
+			"geometry": {
+				"id": 39,
+				"center": {
+					"y": 4808949.512358986,
+					"x": 1.2968314644808881E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4808848.264690935,
+					"x": 1.2968170920283029E7
+				}, {
+					"y": 4808949.512358986,
+					"x": 1.2968314644808881E7
+				}, {
+					"y": 4809044.760027036,
+					"x": 1.2968470369334733E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 40,
+			"fieldValues": ["40", "-2", "1.2967366595345E7", "4809299.2519673", "1.2967865595345E7", "4809051.2519673", "499.0", "0", "1", "557.22975512799", "0", "张京", "13911112562", "天宝街", "西环北路至亦兴西路", "408", "大街", "赵强", "13718888133", "李颖", "13611181252", "110115004208", "贵园西里社区", "李响", "15901189845", "杨智伟", "13910584625", "刘建芳", "17343037252", "杨洪明", "18611119113", "李秀明", "13910873272", "#00ff66", "", "dc44c6ed810b4887a03dec00cbf65eb3", "b31f720928234d708b1719ddd5fdc1a0", "de2b0cac51d0426795f6b89446f5cb88", "e9e8b29b93424346a07f912700748cdd", "fab42539bd0b49f0b2dce39678de6ac2"],
+			"geometry": {
+				"id": 40,
+				"center": {
+					"y": 4809175.2519673,
+					"x": 1.2967616095345E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809051.2519673,
+					"x": 1.2967366595345E7
+				}, {
+					"y": 4809299.2519673,
+					"x": 1.2967865595345E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 41,
+			"fieldValues": ["41", "-2", "1.2969272329955E7", "4804210.1772774", "1.2969728329955E7", "4804058.1772774", "456.0", "0", "1", "480.666204345594", "0", "陈子兵", "13911572878", "泰河二街", "鹿海园三里南侧（博兴七路至博兴八路）", "360", "大街", "李莉", "13501235018", "邢少怀", "13661001851", "110115004209", "鹿海园社区", "玄超", "13810761498", "刘文娟", "13810795732", "陈佳旺", "13522208662", "王运金", "13121368640", "李秀明", "13910873272", "#0000ff", "", "80771f2b1c214368971f0b16d032cc1c", "4acb2e51dfcc4bc68357af77c056fd7e", "96ab5b9ab74c469782404ae4f37e2cab", "349935cb93f94472bac4ada42f92d79e", "5ff0ed4c767d4847b87c75fc3a391cd7"],
+			"geometry": {
+				"id": 41,
+				"center": {
+					"y": 4804134.1772774,
+					"x": 1.2969500329955E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4804210.1772774,
+					"x": 1.2969272329955E7
+				}, {
+					"y": 4804058.1772774,
+					"x": 1.2969728329955E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 42,
+			"fieldValues": ["42", "-2", "1.2973187686255E7", "4813871.5246724", "1.2973195686255E7", "4813179.5246724", "692.0", "0", "1", "692.046241229587", "0", "刘金戈", "13910925089", "天成花园东路", "科创一街至天成花园中街", "730", "大街", "王京虎", "13801036767", "陈超", "13552756865", "110115004203", "三羊东里社区居委会", "付洛溪", "15910297256", "赵攀", "13520218800", "贾文华", "18701339082", "苏玲玲", "13311073182", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "8012e60402b74334b592303bb48de35f", "d87084e64e1e49f38d17025eb98f099b", "9785fcfdb1da4a379668269e86b7c45f", "d134deb136a94ace91ed16455b373215"],
+			"geometry": {
+				"id": 42,
+				"center": {
+					"y": 4813525.5246724,
+					"x": 1.2973191686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4813179.5246724,
+					"x": 1.2973195686255E7
+				}, {
+					"y": 4813871.5246724,
+					"x": 1.2973187686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 46,
+			"fieldValues": ["46", "-2", "1.2972282686255E7", "4813856.5246724", "1.2972368686255E7", "4813474.5246724", "382.0", "0", "1", "391.560978648282", "0", "刘金戈", "13910925089", "三羊一条", "天成花园中街至小羊坊中路", "270", "小巷", "王国强", "13681370626", "王秀茹", "13521294616", "110115004016", "开泰东里社区居委会", "王秀茹", "13521294616", "马琦", "15810199192", "刘晓娟", "13718196983", "王秋来", "18611119120", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "899fe3126f6d44cbb6c26df84272036d", "cbf8d676314c42a2a13d483628a5749b", "c53282b599fb4c879f5bb9d5570d421b", "08f07eda8c184ff58ba316dd75170b4e"],
+			"geometry": {
+				"id": 46,
+				"center": {
+					"y": 4813665.5246724,
+					"x": 1.2972325686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4813856.5246724,
+					"x": 1.2972282686255E7
+				}, {
+					"y": 4813474.5246724,
+					"x": 1.2972368686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 47,
+			"fieldValues": ["47", "-2", "1.2972368686255E7", "4813470.5246724", "1.2972450686255E7", "4813168.5246724", "302.0", "0", "1", "312.93449793846605", "0", "刘金戈", "13910925089", "三羊二条", "小羊坊中路至小羊坊南街", "230", "小巷", "王国强", "13681370626", "赵金茹", "13520360176", "110115004008", "晓康社区居委会", "李冬松", "13701397787", "王飞", "13911672256", "白春梅", "13718026239", "孙洪敏", "15001232602", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "899fe3126f6d44cbb6c26df84272036d", "998b22a897c745d2b16a1d8cdc6966b1", "e1a0556981cb474990ec0ac9119dd53a", "722f6015b2d4471d8618d1551bf1b025"],
+			"geometry": {
+				"id": 47,
+				"center": {
+					"y": 4813319.5246724,
+					"x": 1.2972409686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4813470.5246724,
+					"x": 1.2972368686255E7
+				}, {
+					"y": 4813168.5246724,
+					"x": 1.2972450686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 49,
+			"fieldValues": ["49", "-2", "1.2971443686255E7", "4814044.5246724", "1.2972143686255E7", "4813846.5246724", "700.0", "0", "1", "901.951100811483", "0", "刘金戈", "13910925089", "中街北侧路", "天成花园中街北侧支路（五环路出口）", "610", "小巷", "王国强", "13681370626", "王秀茹", "13521294616", "110115004016", "开泰东里社区居委会", "王秀茹", "13521294616", "田云蛟", "18618489545", "刘晓娟", "13718196983", "孙洪敏", "15001232602", "孙洪敏", "15001232602", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "899fe3126f6d44cbb6c26df84272036d", "cbf8d676314c42a2a13d483628a5749b", "c53282b599fb4c879f5bb9d5570d421b", "08f07eda8c184ff58ba316dd75170b4e"],
+			"geometry": {
+				"id": 49,
+				"center": {
+					"y": 4813987.5246724,
+					"x": 1.2971690686255E7
+				},
+				"style": null,
+				"parts": [7],
+				"points": [{
+					"y": 4813894.5246724,
+					"x": 1.2971443686255E7
+				}, {
+					"y": 4813957.5246724,
+					"x": 1.2971547686255E7
+				}, {
+					"y": 4813982.5246724,
+					"x": 1.2971626686255E7
+				}, {
+					"y": 4813987.5246724,
+					"x": 1.2971690686255E7
+				}, {
+					"y": 4813998.5246724,
+					"x": 1.2971740686255E7
+				}, {
+					"y": 4814044.5246724,
+					"x": 1.2972120686255E7
+				}, {
+					"y": 4813846.5246724,
+					"x": 1.2972143686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 50,
+			"fieldValues": ["50", "-2", "1.2966347686255E7", "4809912.5246724", "1.2968156686255E7", "4808812.5246724", "1809.0", "0", "1", "2238.7901695273", "0", "张京", "13911112562", "亦兴西路", "亦兴北路至西环北路", "1725", "大街", "王娜", "13681469876", "裴淑芳", "13683539879", "110115004003", "贵园南里社区居委会", "郝健", "13717750822", "李莹", "13466522482", "定建军", "13621135931", "刘俊红", "13521016891", "李秀明", "13910873272", "#00ff66", "", "dc44c6ed810b4887a03dec00cbf65eb3", "3bdd5f4c05734ba7bcb2a2fbbe58a3ca", "51019a76779b41e08b4a0c089ec70865", "a78a281eebf7442c9d23d69ffa1b5433", "522b122c450d4209a2d8c88f76104ca8"],
+			"geometry": {
+				"id": 50,
+				"center": {
+					"y": 4809524.5246724,
+					"x": 1.2966727686255E7
+				},
+				"style": null,
+				"parts": [11],
+				"points": [{
+					"y": 4808835.5246724,
+					"x": 1.2968156686255E7
+				}, {
+					"y": 4808812.5246724,
+					"x": 1.2968087686255E7
+				}, {
+					"y": 4808960.5246724,
+					"x": 1.2967439686255E7
+				}, {
+					"y": 4809046.5246724,
+					"x": 1.2967359686255E7
+				}, {
+					"y": 4809388.5246724,
+					"x": 1.2966901686255E7
+				}, {
+					"y": 4809524.5246724,
+					"x": 1.2966727686255E7
+				}, {
+					"y": 4809644.5246724,
+					"x": 1.2966523686255E7
+				}, {
+					"y": 4809740.5246724,
+					"x": 1.2966383686255E7
+				}, {
+					"y": 4809778.5246724,
+					"x": 1.2966349686255E7
+				}, {
+					"y": 4809872.5246724,
+					"x": 1.2966349686255E7
+				}, {
+					"y": 4809912.5246724,
+					"x": 1.2966347686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 53,
+			"fieldValues": ["53", "-2", "1.2966845686255E7", "4809688.5246724", "1.2966975686255E7", "4809422.5246724", "266.0", "0", "1", "296.21571730818505", "0", "张京", "13911112562", "宏德利远西侧路", "宏德利远西侧路", "115", "小巷", "赵强", "13718888133", "李颖", "13611181252", "110115004001", "贵园北里社区居委会", "李响", "15901189845", "杨智伟", "13910584625", "李桂香", "13522738945", "杨洪明", "18611119113", "李秀明", "13910873272", "#00ff66", "", "dc44c6ed810b4887a03dec00cbf65eb3", "4d45cd065fff4c0484debba72c6d0913", "65d4cb92842a4fb7be72e05e401ec258", "756a7a83f8e148bbbb2e61322fc2d4e5", "061233c0701e44dfa2b3b99e231583aa"],
+			"geometry": {
+				"id": 53,
+				"center": {
+					"y": 4809641.5246724,
+					"x": 1.2966872686255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4809688.5246724,
+					"x": 1.2966845686255E7
+				}, {
+					"y": 4809641.5246724,
+					"x": 1.2966872686255E7
+				}, {
+					"y": 4809422.5246724,
+					"x": 1.2966975686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 54,
+			"fieldValues": ["54", "-2", "1.2968948186255E7", "4805741.0246724", "1.2970104186255E7", "4805327.0246724", "1156.0", "0", "1", "1227.89738984982", "0", "焦万昌", "13601074224", "凉水河二街", "博兴七路至博兴十路", "950", "大街", "邓淼", "18500261487", "宋莎莎", "15801307805", "110115004019", "泰河园一里社区居委会", "何欢", "18611769783", "杨昆", "13601290457", "张雪英", "13552077003", "王元秀", "13683332875", "范金全", "13269218138", "#9999cc", "", "09323312578347eb91790fd2f2501cc2", "eb867956cfed4143b00cabb4e0f00dcd", "c77861b9a9bb4794aa76b214030c70a5", "0548d2900f0f4aecacc190b78dd15085", "f3898297ca7743ca8aa87b7421c042f1"],
+			"geometry": {
+				"id": 54,
+				"center": {
+					"y": 4805534.0246724,
+					"x": 1.2969526186255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4805741.0246724,
+					"x": 1.2968948186255E7
+				}, {
+					"y": 4805327.0246724,
+					"x": 1.2970104186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 55,
+			"fieldValues": ["55", "-2", "1.2969279186255E7", "4805995.5246724", "1.2969783186255E7", "4804203.5246724", "1792.0", "0", "1", "1885.5262555226", "0", "焦万昌", "13601074224", "博兴八路", "凉水河一街至泰河二街", "1380", "大街", "王利滨", "13693095800", "户立岭", "13811183360", "110115004018", "泰河园七里社区居委会", "赵志远", "18611635619", "吴永刚", "13901210814", "高连春", "13121019542", "仲崇新", "15712915267", "李秀明", "13910873272", "#9999cc", "", "09323312578347eb91790fd2f2501cc2", "46ed46239e844afe80eb28ce972787b3", "38a330beb3814dde85bfe0ba9afdaea3", "1bb59d1e98284185ac49eefcbefe07ac", "fb23fa458540456199786d5dec3202d7"],
+			"geometry": {
+				"id": 55,
+				"center": {
+					"y": 4804203.5246724,
+					"x": 1.2969279186255E7
+				},
+				"style": null,
+				"parts": [4],
+				"points": [{
+					"y": 4805995.5246724,
+					"x": 1.2969783186255E7
+				}, {
+					"y": 4804203.5246724,
+					"x": 1.2969279186255E7
+				}, {
+					"y": 4804203.5246724,
+					"x": 1.2969279186255E7
+				}, {
+					"y": 4804227.5246724,
+					"x": 1.2969279186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 56,
+			"fieldValues": ["56", "-2", "1.2971546686255E7", "4813181.0246724", "1.2973198686255E7", "4812229.0246724", "1652.0", "0", "1", "1906.67459205812", "0", "顿路达", "13811250551", "科创一街", "经海一路至经海路", "1100", "大街", "孙志猛", "13601070788", "温少海", "18611080800", "110115004202", "东工业区", "郝进", "13910866273", "符仲祥", "13121667575", "韩立红", "15321670260", "孙洪敏", "15001232602", "李和平", "15011163485", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "4049708309f64750a8a6a21bdab951c4", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "f73fd02d50ca41f5bb8dc12345bf45ae"],
+			"geometry": {
+				"id": 56,
+				"center": {
+					"y": 4812705.0246724,
+					"x": 1.2972372686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4812229.0246724,
+					"x": 1.2971546686255E7
+				}, {
+					"y": 4813181.0246724,
+					"x": 1.2973198686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 18,
+			"fieldValues": ["18", "-2", "1.29722377886372E7", "4812334.42157752", "1.29737209236765E7", "4811419.26484766", "1483.13503928483", "0", "1", "1742.75683472233", "0", "顿路达", "13811250551", "科创三街", "经海一路至经海路", "1300", "大街", "孙志猛", "13601070788", "温少海", "18611080800", "110115004202", "东工业区", "郝进", "13910866273", "符仲祥", "13121667575", "王红凤", "13520877389", "肖双全", "17710229720", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "4049708309f64750a8a6a21bdab951c4", "4bd99c8a8f184396a20e37dd1319d333", "67ff50cf11bb42feb1f29cc50b6029d6", "f73fd02d50ca41f5bb8dc12345bf45ae"],
+			"geometry": {
+				"id": 18,
+				"center": {
+					"y": 4811876.84321259,
+					"x": 1.2972979356156817E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4811419.264847657,
+					"x": 1.2972237788637174E7
+				}, {
+					"y": 4812334.421577522,
+					"x": 1.297372092367646E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 92,
+			"fieldValues": ["92", "-2", "1.2967793095345E7", "4807300.2519673", "1.2970241095345E7", "4805756.2519673", "2448.0", "0", "1", "2898.61238772098", "0", "", "", "凉水河一街", "三海子一路至博兴七路", "3830", "大街", "", "", "", "", "110115004207", "南工业区", "", "", "", "", "董新河", "13521320763", "杨晨霞", "13911408873", "李秀明", "13910873272", "#003bcc", "", "3fdea819787c49d3b3e37e66ad255c70", "9a26f5b42cc9434d92878c57956db026", "4bd99c8a8f184396a20e37dd1319d333", "73ef06e378674d41a0b030400b74ea0b", "3b63b0711f0d48ddb657d6e60911fd26"],
+			"geometry": {
+				"id": 92,
+				"center": {
+					"y": 4806520.2519673,
+					"x": 1.2968881095345E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4807300.2519673,
+					"x": 1.2967793095345E7
+				}, {
+					"y": 4806520.2519673,
+					"x": 1.2968881095345E7
+				}, {
+					"y": 4805756.2519673,
+					"x": 1.2970241095345E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 37,
+			"fieldValues": ["37", "-2", "1.2972276232637E7", "4812649.07338681", "1.29728565953505E7", "4811804.00531194", "845.0680748745801", "0", "1", "1025.16385541663", "0", "顿路达", "13811250551", "双羊路", "科创一街至科创三街", "770", "大街", "权聪慧", "13681169219", "温少海", "18611080800", "110115004202", "东工业区", "李振苏", "13910339142", "白旭", "18611763273", "薛艳洁", "18612031772", "王秋来", "18611119120", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "96ddc72c50664d92a5b30b7cbc947517", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "f73fd02d50ca41f5bb8dc12345bf45ae"],
+			"geometry": {
+				"id": 37,
+				"center": {
+					"y": 4812226.539349373,
+					"x": 1.2972566413993765E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4811804.005311936,
+					"x": 1.297285659535054E7
+				}, {
+					"y": 4812649.073386811,
+					"x": 1.2972276232636988E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 59,
+			"fieldValues": ["59", "-2", "1.29708306627094E7", "4813952.1569592", "1.2971547903958E7", "4812206.20420524", "1745.95275396854", "0", "1", "2443.4914595057103", "0", "刘金戈", "13910925089", "经海一路北段", "科创一街至南五环入口", "1750", "大街", "王京虎", "13801036767", "董惠", "13811362179", "110115004017", "三羊社区居委会", "陈小先", "13681092860", "赵世凯", "15321689016", "刘荣", "13621244953", "赵索文", "13520405569", "李和平", "15011163485", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "8012e60402b74334b592303bb48de35f", "875dc14958a84967ba0db5dbbcc8d11f", "8cf033b11c3d44d0b3c25e690fadc6ac", "a61a0f4c9a6449658256f4607ea3ea27"],
+			"geometry": {
+				"id": 59,
+				"center": {
+					"y": 4813917.308357871,
+					"x": 1.29711000226869E7
+				},
+				"style": null,
+				"parts": [14],
+				"points": [{
+					"y": 4812206.2042052355,
+					"x": 1.2971547903957954E7
+				}, {
+					"y": 4812663.171979578,
+					"x": 1.2971234704152178E7
+				}, {
+					"y": 4813269.673073217,
+					"x": 1.2971056804820422E7
+				}, {
+					"y": 4813473.335476232,
+					"x": 1.2970926241322797E7
+				}, {
+					"y": 4813574.433417522,
+					"x": 1.2970830662709368E7
+				}, {
+					"y": 4813597.791211529,
+					"x": 1.29710424848448E7
+				}, {
+					"y": 4813617.446843883,
+					"x": 1.2971052023345936E7
+				}, {
+					"y": 4813917.308357871,
+					"x": 1.29711000226869E7
+				}, {
+					"y": 4813926.218493415,
+					"x": 1.2971108290987156E7
+				}, {
+					"y": 4813952.156959204,
+					"x": 1.297133876698518E7
+				}, {
+					"y": 4813941.397385262,
+					"x": 1.2971358701598011E7
+				}, {
+					"y": 4813921.745144837,
+					"x": 1.2971367930466179E7
+				}, {
+					"y": 4813889.399542967,
+					"x": 1.2971367909578914E7
+				}, {
+					"y": 4813872.47019684,
+					"x": 1.2971366811906658E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 43,
+			"fieldValues": ["43", "-2", "1.2971615686255E7", "4813411.5246724", "1.2971975686255E7", "4812459.5246724", "952.0", "0", "1", "1017.79369225792", "0", "刘金戈", "13910925089", "康碱路", "科创一街至天成花园中街", "1000", "大街", "王京虎", "13801036767", "董惠", "13811362179", "110115004017", "三羊社区居委会", "陈小先", "13681092860", "赵世凯", "15321689016", "张绍雨", "13718332855", "李国江", "13718602713", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "8012e60402b74334b592303bb48de35f", "875dc14958a84967ba0db5dbbcc8d11f", "8cf033b11c3d44d0b3c25e690fadc6ac", "a61a0f4c9a6449658256f4607ea3ea27"],
+			"geometry": {
+				"id": 43,
+				"center": {
+					"y": 4812935.5246724,
+					"x": 1.2971795686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4812459.5246724,
+					"x": 1.2971975686255E7
+				}, {
+					"y": 4813411.5246724,
+					"x": 1.2971615686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 48,
+			"fieldValues": ["48", "-2", "1.2972103686255E7", "4813434.5246724", "1.2972166686255E7", "4813002.5246724", "432.0", "0", "1", "448.19537064711704", "0", "刘金戈", "13910925089", "小康西路", "小羊坊中路至小羊坊南街", "310", "小巷", "王国强", "13681370626", "赵金茹", "13520360176", "110115004008", "晓康社区居委会", "李冬松", "13701397787", "李宾", "13911590922", "王金朵", "13521496172", "王秋来", "18611119120", "孙磊", "17600458676", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "899fe3126f6d44cbb6c26df84272036d", "998b22a897c745d2b16a1d8cdc6966b1", "e1a0556981cb474990ec0ac9119dd53a", "b0b5d032cb3f4fec8d7d093fd4e8ac5e"],
+			"geometry": {
+				"id": 48,
+				"center": {
+					"y": 4813023.5246724,
+					"x": 1.2972144686255E7
+				},
+				"style": null,
+				"parts": [6],
+				"points": [{
+					"y": 4813434.5246724,
+					"x": 1.2972103686255E7
+				}, {
+					"y": 4813074.5246724,
+					"x": 1.2972118686255E7
+				}, {
+					"y": 4813043.5246724,
+					"x": 1.2972131686255E7
+				}, {
+					"y": 4813023.5246724,
+					"x": 1.2972144686255E7
+				}, {
+					"y": 4813002.5246724,
+					"x": 1.2972166686255E7
+				}, {
+					"y": 4813002.5246724,
+					"x": 1.2972166686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 62,
+			"fieldValues": ["62", "-2", "1.29710568048204E7", "4813513.4392432", "1.29731906333845E7", "4813269.67307322", "2133.8285640478102", "0", "1", "2164.13702952751", "0", "刘金戈", "13910925089", "小羊坊中路", "经海一路至天成花园东路", "1700", "大街", "王京虎", "13801036767", "赵金茹", "13520360176", "110115004008", "晓康社区居委会", "王芳", "13683276341", "王飞", "13911672256", "柴艳霞", "15201638413", "郝建华", "13691415738", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "8012e60402b74334b592303bb48de35f", "998b22a897c745d2b16a1d8cdc6966b1", "e0786b506e87414c83ee78e4a3415a05", "e7ba8eb01b314b0da3a4abb13c3d0c60"],
+			"geometry": {
+				"id": 62,
+				"center": {
+					"y": 4813432.102371601,
+					"x": 1.2972127522306375E7
+				},
+				"style": null,
+				"parts": [8],
+				"points": [{
+					"y": 4813269.673073217,
+					"x": 1.2971056804820422E7
+				}, {
+					"y": 4813355.506329452,
+					"x": 1.2971330726965176E7
+				}, {
+					"y": 4813413.715707329,
+					"x": 1.2971625684764888E7
+				}, {
+					"y": 4813445.814071979,
+					"x": 1.297194749058033E7
+				}, {
+					"y": 4813432.102371601,
+					"x": 1.2972127522306375E7
+				}, {
+					"y": 4813431.61137396,
+					"x": 1.2972190803375214E7
+				}, {
+					"y": 4813513.439243196,
+					"x": 1.2972549718379842E7
+				}, {
+					"y": 4813499.26711243,
+					"x": 1.297319063338447E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 44,
+			"fieldValues": ["44", "-2", "1.2971535686255E7", "4813891.5246724", "1.2973188686255E7", "4813420.5246724", "1653.0", "0", "1", "1999.47258857768", "0", "刘金戈", "13910925089", "天成花园中街", "康碱路至天成花园东路", "715", "大街", "王京虎", "13801036767", "王秀茹", "13521294616", "110115004016", "开泰东里社区居委会", "王秀茹", "13521294616", "牛岩", "18701300955", "宋小翠", "13671106506", "刘素平", "18201211338", "胡宝龙", "13436552233", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "8012e60402b74334b592303bb48de35f", "cbf8d676314c42a2a13d483628a5749b", "c53282b599fb4c879f5bb9d5570d421b", "4d9a54bbaec14e0c98488f0a1e9fec92"],
+			"geometry": {
+				"id": 44,
+				"center": {
+					"y": 4813796.5246724,
+					"x": 1.2971632686255E7
+				},
+				"style": null,
+				"parts": [11],
+				"points": [{
+					"y": 4813420.5246724,
+					"x": 1.2971621686255E7
+				}, {
+					"y": 4813649.5246724,
+					"x": 1.2971537686255E7
+				}, {
+					"y": 4813692.5246724,
+					"x": 1.2971535686255E7
+				}, {
+					"y": 4813740.5246724,
+					"x": 1.2971553686255E7
+				}, {
+					"y": 4813773.5246724,
+					"x": 1.2971585686255E7
+				}, {
+					"y": 4813796.5246724,
+					"x": 1.2971632686255E7
+				}, {
+					"y": 4813846.5246724,
+					"x": 1.2972142686255E7
+				}, {
+					"y": 4813872.5246724,
+					"x": 1.2972520686255E7
+				}, {
+					"y": 4813891.5246724,
+					"x": 1.2973125686255E7
+				}, {
+					"y": 4813886.5246724,
+					"x": 1.2973161686255E7
+				}, {
+					"y": 4813873.5246724,
+					"x": 1.2973188686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 45,
+			"fieldValues": ["45", "-2", "1.2973195686255E7", "4813635.5246724", "1.2973577686255E7", "4813501.5246724", "382.0", "0", "1", "404.820948074578", "0", "刘金戈", "13910925089", "东渠路", "天成花园东路东侧至中石化加油站", "250", "大街", "王国强", "13681370626", "王秀茹", "13521294616", "110115004016", "开泰东里社区居委会", "王秀茹", "13521294616", "牛岩", "18701300955", "贾文华", "18701339082", "孙洪敏", "15001232602", "孙磊", "17600458676", "#A329CC", "", "3f8a2525674f448991a87280dbc7f248", "899fe3126f6d44cbb6c26df84272036d", "cbf8d676314c42a2a13d483628a5749b", "c53282b599fb4c879f5bb9d5570d421b", "4d9a54bbaec14e0c98488f0a1e9fec92"],
+			"geometry": {
+				"id": 45,
+				"center": {
+					"y": 4813635.5246724,
+					"x": 1.2973577686255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4813501.5246724,
+					"x": 1.2973195686255E7
+				}, {
+					"y": 4813635.5246724,
+					"x": 1.2973577686255E7
+				}, {
+					"y": 4813635.5246724,
+					"x": 1.2973577686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 68,
+			"fieldValues": ["68", "-2", "1.29671288513457E7", "4808067.28851874", "1.29672505580742E7", "4807584.24498987", "483.04352886416007", "0", "1", "498.140119380016", "0", "任向民", "13601184555", "三海子八号路", "三海子五号路至凉水河一街", "382", "小巷", "王春雷", "15601220551", "承京梅", "18801206864", "110115004213", "鹿华苑四里社区", "朱宝军", "13641096176", "杨合霞", "13718169648", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18515374449", "#993399", "", "b211e106e4c743b7b7d9effe5748ccc9", "5b071cc2f4bb4673a3f7ec9afc2ce54a", "847e888a2779415d942de193c0e08af9", "b0a6816cbe3f4aa183271337f9227938", "25a10d1989cb489aa23a6b134e0c6816"],
+			"geometry": {
+				"id": 68,
+				"center": {
+					"y": 4807825.766754306,
+					"x": 1.2967189704709917E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4808067.288518738,
+					"x": 1.296725055807416E7
+				}, {
+					"y": 4807584.244989874,
+					"x": 1.2967128851345675E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 8,
+			"fieldValues": ["8", "-2", "1.2965932186255E7", "4808420.5246724", "1.2967784186255E7", "4807318.5246724", "1852.0", "0", "1", "2191.0766532662205", "0", "任向民", "13601184555", "公园北环路", "南海子公园北侧（旧头路至三海子东路）", "1670", "大街", "王春雷", "15601220551", "李连霞", "13681210519", "110115004212", "鹿华苑三里社区", "张强", "15010578906", "毕超", "15810278139", "赵青春", "18515374449", "赵青春", "18515374449", "赵青春", "18515374449", "#993399", "", "b211e106e4c743b7b7d9effe5748ccc9", "5b071cc2f4bb4673a3f7ec9afc2ce54a", "eabb27524b5844059e99574b03141bbf", "f8dfb52f7a8e4499885cad2b122b78cc", "387b9a77f30945bdaf95a46aa06c6aeb"],
+			"geometry": {
+				"id": 8,
+				"center": {
+					"y": 4807634.5246724,
+					"x": 1.2966900186255E7
+				},
+				"style": null,
+				"parts": [10],
+				"points": [{
+					"y": 4808420.5246724,
+					"x": 1.2965932186255E7
+				}, {
+					"y": 4808302.5246724,
+					"x": 1.2966102186255E7
+				}, {
+					"y": 4808058.5246724,
+					"x": 1.2966384186255E7
+				}, {
+					"y": 4807834.5246724,
+					"x": 1.2966644186255E7
+				}, {
+					"y": 4807668.5246724,
+					"x": 1.2966846186255E7
+				}, {
+					"y": 4807634.5246724,
+					"x": 1.2966900186255E7
+				}, {
+					"y": 4807612.5246724,
+					"x": 1.2967008186255E7
+				}, {
+					"y": 4807522.5246724,
+					"x": 1.2967320186255E7
+				}, {
+					"y": 4807476.5246724,
+					"x": 1.2967460186255E7
+				}, {
+					"y": 4807318.5246724,
+					"x": 1.2967784186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 66,
+			"fieldValues": ["66", "-2", "1.29663873381638E7", "4808988.59357021", "1.2966804720826E7", "4808061.71019405", "926.8833761615681", "0", "1", "1025.25108931087", "0", "任向民", "13601184555", "三海子七号路", "公园北环路至三海子四号路", "790", "小巷", "王春雷", "15601220551", "承京梅", "18801206864", "110115004213", "鹿华苑四里社区", "朱宝军", "13641096176", "张方凯", "13811566224", "刘伟玲", "13522566028", "李建飞", "13811029054", "赵青春", "18515374449", "#993399", "", "b211e106e4c743b7b7d9effe5748ccc9", "5b071cc2f4bb4673a3f7ec9afc2ce54a", "847e888a2779415d942de193c0e08af9", "b0a6816cbe3f4aa183271337f9227938", "2f4a04dc504a430f91e1beb7e24913c0"],
+			"geometry": {
+				"id": 66,
+				"center": {
+					"y": 4808855.449369757,
+					"x": 1.2966733327197725E7
+				},
+				"style": null,
+				"parts": [4],
+				"points": [{
+					"y": 4808061.710194045,
+					"x": 1.296638733816375E7
+				}, {
+					"y": 4808290.28399946,
+					"x": 1.2966548033752233E7
+				}, {
+					"y": 4808855.449369757,
+					"x": 1.2966733327197725E7
+				}, {
+					"y": 4808988.593570206,
+					"x": 1.2966804720825993E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 19,
+			"fieldValues": ["19", "-2", "1.2965932186255E7", "4809715.5246724", "1.2966025186255E7", "4808418.5246724", "1297.0", "0", "1", "1309.8128909902503", "0", "任向民", "13601184555", "旧头路", "公园北环路至南五环", "890", "小巷", "王春雷", "15601220551", "承京梅", "18801206864", "110115004213", "鹿华苑四里社区", "朱宝军", "13641096176", "杨合霞", "13718169648", "赵青春", "18515374449", "赵青春", "18515374449", "赵青春", "18515374449", "#993399", "", "b211e106e4c743b7b7d9effe5748ccc9", "5b071cc2f4bb4673a3f7ec9afc2ce54a", "847e888a2779415d942de193c0e08af9", "b0a6816cbe3f4aa183271337f9227938", "25a10d1989cb489aa23a6b134e0c6816"],
+			"geometry": {
+				"id": 19,
+				"center": {
+					"y": 4809405.5246724,
+					"x": 1.2966001186255E7
+				},
+				"style": null,
+				"parts": [9],
+				"points": [{
+					"y": 4809715.5246724,
+					"x": 1.2966005186255E7
+				}, {
+					"y": 4809692.5246724,
+					"x": 1.2966022186255E7
+				}, {
+					"y": 4809666.5246724,
+					"x": 1.2966025186255E7
+				}, {
+					"y": 4809503.5246724,
+					"x": 1.2965996186255E7
+				}, {
+					"y": 4809405.5246724,
+					"x": 1.2966001186255E7
+				}, {
+					"y": 4809285.5246724,
+					"x": 1.2965997186255E7
+				}, {
+					"y": 4808418.5246724,
+					"x": 1.2965934186255E7
+				}, {
+					"y": 4808418.5246724,
+					"x": 1.2965934186255E7
+				}, {
+					"y": 4808418.5246724,
+					"x": 1.2965932186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 7,
+			"fieldValues": ["7", "-2", "1.2971547903958E7", "4812206.20420524", "1.29725865532888E7", "4811039.75279273", "1166.4514125092", "0", "1", "1562.3573148636", "0", "顿路达", "13811250551", "经海一路南段", "科创一街至科创四街", "1170", "大街", "权聪慧", "13681169219", "温少海", "18611080800", "110115004202", "东工业区", "李振苏", "13910339142", "赵志月", "15810424298", "史兴月", "15800250939", "苑香波", "15311792393", "李和平", "15011163485", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "96ddc72c50664d92a5b30b7cbc947517", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "d6cdcde566fe49ea99d1aadd2700964d"],
+			"geometry": {
+				"id": 7,
+				"center": {
+					"y": 4811815.354251216,
+					"x": 1.2971909889745248E7
+				},
+				"style": null,
+				"parts": [4],
+				"points": [{
+					"y": 4811039.752792726,
+					"x": 1.29725865532888E7
+				}, {
+					"y": 4811419.264847657,
+					"x": 1.2972237788637174E7
+				}, {
+					"y": 4811815.354251216,
+					"x": 1.2971909889745248E7
+				}, {
+					"y": 4812206.2042052355,
+					"x": 1.2971547903957954E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 57,
+			"fieldValues": ["57", "-2", "1.2971959686255E7", "4812463.5246724", "1.2972819686255E7", "4811207.5246724", "1256.0", "0", "1", "1522.2141767832802", "0", "顿路达", "13811250551", "经海二路", "科创一街至科创四街", "1150", "大街", "权聪慧", "13681169219", "温少海", "18611080800", "110115004202", "东工业区", "李振苏", "13910339142", "赵志月", "15810424298", "顾晓燕", "13522055470", "马爱峰", "13611054224", "李建平", "13810166953", "#523D66", "", "ad014da5eccb4693a19302e808b5527d", "96ddc72c50664d92a5b30b7cbc947517", "4bd99c8a8f184396a20e37dd1319d333", "4716bc8d86634133a3649d3fbcbdbde0", "d6cdcde566fe49ea99d1aadd2700964d"],
+			"geometry": {
+				"id": 57,
+				"center": {
+					"y": 4811835.5246724,
+					"x": 1.2972389686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4812463.5246724,
+					"x": 1.2971959686255E7
+				}, {
+					"y": 4811207.5246724,
+					"x": 1.2972819686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 21,
+			"fieldValues": ["21", "-2", "1.2966491186255E7", "4811428.0246724", "1.2967306186255E7", "4810451.0246724", "977.0", "0", "1", "1276.39265132587", "0", "董玥涵", "13801160128", "三台山路", "文化园西路至东马路", "1100", "大街", "钱玉桂", "13683374366", "张福霞", "13693159325", "110115004005", "富源里社区居委会", "张福霞", "13693159325", "王雨", "18610058389", "王占生", "15524907367", "张书存", "15642622115", "刘洋", "18511581736", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "b0e2eecf6ef140009172b0a64e6f464f", "5327db81679241338124cec65737e663", "87eb197732d24945aa4f029c9d0f7d2b", "c6f9eb4588a34e919b4e9c817e8b5ed2"],
+			"geometry": {
+				"id": 21,
+				"center": {
+					"y": 4811075.0246724,
+					"x": 1.2966767186255E7
+				},
+				"style": null,
+				"parts": [8],
+				"points": [{
+					"y": 4810451.0246724,
+					"x": 1.2967306186255E7
+				}, {
+					"y": 4810543.0246724,
+					"x": 1.2967255186255E7
+				}, {
+					"y": 4810663.5246724,
+					"x": 1.2967154186255E7
+				}, {
+					"y": 4810953.0246724,
+					"x": 1.2966889186255E7
+				}, {
+					"y": 4811075.0246724,
+					"x": 1.2966767186255E7
+				}, {
+					"y": 4811187.0246724,
+					"x": 1.2966665186255E7
+				}, {
+					"y": 4811284.0246724,
+					"x": 1.2966602186255E7
+				}, {
+					"y": 4811428.0246724,
+					"x": 1.2966491186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 1,
+			"fieldValues": ["1", "-2", "1.2967312186255E7", "4810937.0246724", "1.2968244186255E7", "4810455.0246724", "932.0", "0", "1", "1049.26069210659", "0", "董玥涵", "13801160128", "文化园西路", "三台山路至天华西路", "800", "大街", "钱玉桂", "13683374366", "姜红燕", "13439511612", "110115004015", "星岛社区社区居委会", "夏明英", "13521153218", "李贺", "15501188180", "刘洋", "18511581736", "刘洋", "18511581736", "刘洋", "18511581736", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "b0e2eecf6ef140009172b0a64e6f464f", "17c6990a263c43ff9d6d84f828e99a3d", "177a37b710284601b4ff549767231226", "f5eea12ef1434a07b347093608cd531b"],
+			"geometry": {
+				"id": 1,
+				"center": {
+					"y": 4810696.0246724,
+					"x": 1.2967778186255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4810455.0246724,
+					"x": 1.2967312186255E7
+				}, {
+					"y": 4810937.0246724,
+					"x": 1.2968244186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 23,
+			"fieldValues": ["23", "-2", "1.2967443186255E7", "4810461.0246724", "1.2968544186255E7", "4810224.0246724", "1101.0", "0", "1", "1126.2458220682802", "0", "董玥涵", "13801160128", "北环西路", "西环北路至天华西路", "877", "大街", "何宝忠", "13611191010", "安文君", "13661177190", "110115004009", "广德苑社区居委会", "路峥", "13426299342", "闫丽洁", "13810060108", "包清华", "13521710094", "连杰", "13521760893", "刘洋", "18511581736", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "c6a6afeede514a2a917ce9b33e304970", "db9ebfe5c7c94d959c60017c456c7123", "73ca8d1a03084c9db8ef3cd44206fda9", "4a5091a0a0ff41279e4d8153d06810d4"],
+			"geometry": {
+				"id": 23,
+				"center": {
+					"y": 4810335.0246724,
+					"x": 1.2967977186255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4810461.0246724,
+					"x": 1.2968544186255E7
+				}, {
+					"y": 4810335.0246724,
+					"x": 1.2967977186255E7
+				}, {
+					"y": 4810224.0246724,
+					"x": 1.2967443186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 24,
+			"fieldValues": ["24", "-2", "1.2967667186255E7", "4809969.0246724", "1.2968201186255E7", "4809741.0246724", "534.0", "0", "1", "580.637580595676", "0", "董玥涵", "13801160128", "广德中巷", "西环北路至科慧大道", "440", "小巷", "何宝忠", "13611191011", "安文君", "13661177190", "110115004009", "广德苑社区居委会", "崔文文", "13439165271", "闫丽洁", "13810060108", "李文良", "13691282186", "张德山", "13691335090", "李秀明", "13910873272", "#E70012", "", "45664c71762648ae93264b0a77195cc4", "c6a6afeede514a2a917ce9b33e304970", "db9ebfe5c7c94d959c60017c456c7123", "3164dbf0293b488a961033076d1d6409", "4a5091a0a0ff41279e4d8153d06810d4"],
+			"geometry": {
+				"id": 24,
+				"center": {
+					"y": 4809855.0246724,
+					"x": 1.2967934186255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809969.0246724,
+					"x": 1.2968201186255E7
+				}, {
+					"y": 4809741.0246724,
+					"x": 1.2967667186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 69,
+			"fieldValues": ["69", "-2", "1.29678798215738E7", "4809650.22967974", "1.29683999416322E7", "4809305.56967311", "520.120058400556", "0", "1", "623.9514366687131", "0", "苑文健", "13501071160", "天宝北街", "西环北路至科慧大道", "480", "大街", "程立森", "13810009082", "赵敬", "18911022077", "110115004002", "贵园东里社区居委会", "刘文龙", "67879616", "白琳", "18600673565", "温水", "18010163695", "刘孟香", "15811496186", "刘洋", "18511581736", "#33ffff", "", "07b300772ac7417cb21d84e94fcea148", "4a1716c761484c43843a4ce6779c2840", "3989640a542f45998ee3adcb2a299b87", "fe4e804f4c3e490e9b33579627fe2868", "0e778575787f4f48a7200bb800df6f53"],
+			"geometry": {
+				"id": 69,
+				"center": {
+					"y": 4809477.8996764235,
+					"x": 1.2968139881602962E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809305.569673109,
+					"x": 1.296787982157376E7
+				}, {
+					"y": 4809650.229679739,
+					"x": 1.296839994163216E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 26,
+			"fieldValues": ["26", "-2", "1.2968455686255E7", "4812906.0246724", "1.2968661186255E7", "4812399.0246724", "507.0", "0", "1", "588.008058019275", "0", "佟帅", "13901108752", "吉成庄东侧路", "吉成庄东侧路", "240", "大街", "刘静", "13601002762", "李颖", "13611181252", "110115004001", "贵园北里社区居委会", "李健彬", "13681261373", "白娜", "13811801619", "乔林", "13718279410", "刘建学", "13436821318", "孙磊", "17600458676", "#ff99ff", "", "1a565c5a95954593b8d1b98dab899aca", "bfb819258ac24d6d862ba606335f788c", "65d4cb92842a4fb7be72e05e401ec258", "718931b04f6d4a68b5fa784bee0bb631", "a9c0d39d46f849968431f7b47f330e42"],
+			"geometry": {
+				"id": 26,
+				"center": {
+					"y": 4812634.5246724,
+					"x": 1.2968455686255E7
+				},
+				"style": null,
+				"parts": [3],
+				"points": [{
+					"y": 4812906.0246724,
+					"x": 1.2968502186255E7
+				}, {
+					"y": 4812634.5246724,
+					"x": 1.2968455686255E7
+				}, {
+					"y": 4812399.0246724,
+					"x": 1.2968661186255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 10,
+			"fieldValues": ["10", "-2", "1.2966908606709E7", "4809728.0360554", "1.2967636606709E7", "4809388.0360554", "728.0", "0", "1", "803.4824204673059", "0", "李燕", "13146681998", "贵园中街", "宏德利远南侧（亦兴西路至西环北路）", "345", "大街", "白杰", "18301356689", "刘铮", "13810035935", "110115004208", "贵园西里社区", "刘斌", "15810760536", "韩泽阳", "15911151849", "刘建芳", "17343037252", "李文革", "15911077127", "李秀明", "13910873272", "#33ccff", "", "c0acd3080ece4a83aac7c35bae234066", "024965542e0f4d919538e425372fad78", "de2b0cac51d0426795f6b89446f5cb88", "e9e8b29b93424346a07f912700748cdd", "fab42539bd0b49f0b2dce39678de6ac2"],
+			"geometry": {
+				"id": 10,
+				"center": {
+					"y": 4809558.0360554,
+					"x": 1.2967272606709E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809728.0360554,
+					"x": 1.2967636606709E7
+				}, {
+					"y": 4809388.0360554,
+					"x": 1.2966908606709E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 38,
+			"fieldValues": ["38", "-2", "1.2966966686255E7", "4809765.5246724", "1.2967099686255E7", "4809476.5246724", "289.0", "0", "1", "318.13519138881804", "0", "张京", "13911112562", "宏德利远东侧路", "宏德利远东侧路", "230", "小巷", "赵强", "13718888133", "李颖", "13611181252", "110115004001", "贵园北里社区居委会", "白学红", "13439043933", "杨智伟", "13910584625", "李文革", "15911077127", "姚宝廷", "13436706875", "李秀明", "13910873272", "#00ff66", "", "dc44c6ed810b4887a03dec00cbf65eb3", "4d45cd065fff4c0484debba72c6d0913", "65d4cb92842a4fb7be72e05e401ec258", "367a378741404544a3324a717a816320", "061233c0701e44dfa2b3b99e231583aa"],
+			"geometry": {
+				"id": 38,
+				"center": {
+					"y": 4809621.0246724,
+					"x": 1.2967033186255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809765.5246724,
+					"x": 1.2966966686255E7
+				}, {
+					"y": 4809476.5246724,
+					"x": 1.2967099686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 112,
+			"fieldValues": ["112", "-2", "1.2966861686255E7", "4810027.0246724", "1.2967522686255E7", "4809717.0246724", "661.0", "0", "1", "730.082872008377", "0", "", "", "贵园北巷", "文体中心南侧（贵园西巷至西环北路）", "467", "小巷", "", "", "", "", "110115004015", "星岛社区社区居委会", "", "", "", "", "廉洪铭", "13641395673", "杨洪明", "18611119113", "李秀明", "13910873272", "#33ccff", "", "c0acd3080ece4a83aac7c35bae234066", "880a827cafeb4948b06a146a45ad528b", "17c6990a263c43ff9d6d84f828e99a3d", "ad55882ed49e4da0b0b172ab7cfa7e38", "dc8012d5f9834d909d1dc8773a20f1ad"],
+			"geometry": {
+				"id": 112,
+				"center": {
+					"y": 4809872.0246724,
+					"x": 1.2967192186255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4809717.0246724,
+					"x": 1.2966861686255E7
+				}, {
+					"y": 4810027.0246724,
+					"x": 1.2967522686255E7
+				}],
+				"type": "LINE"
+			}
+		}, {
+			"fieldNames": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+			"ID": 51,
+			"fieldValues": ["51", "-2", "1.2967045686255E7", "4810186.5246724", "1.2967533686255E7", "4809142.5246724", "1044.0", "0", "1", "1152.4235332550302", "0", "张京", "13911112562", "贵园路", "亦兴北路至贵园南路", "879", "大街", "王娜", "13681469876", "李颖", "13611181252", "110115004001", "贵园北里社区居委会", "李颖", "13611181252", "杨智伟", "13910584625", "温凯", "13611125304", "韩爽", "13810518930", "李秀明", "13910873272", "#00ff66", "", "dc44c6ed810b4887a03dec00cbf65eb3", "3bdd5f4c05734ba7bcb2a2fbbe58a3ca", "65d4cb92842a4fb7be72e05e401ec258", "bf1d2f7608ce4811a81efe0832895de7", "061233c0701e44dfa2b3b99e231583aa"],
+			"geometry": {
+				"id": 51,
+				"center": {
+					"y": 4809664.5246724,
+					"x": 1.2967289686255E7
+				},
+				"style": null,
+				"parts": [2],
+				"points": [{
+					"y": 4810186.5246724,
+					"x": 1.2967045686255E7
+				}, {
+					"y": 4809142.5246724,
+					"x": 1.2967533686255E7
+				}],
+				"type": "LINE"
+			}
+		}],
+		"fieldCaptions": ["SmID", "SmKey", "SmSdriW", "SmSdriN", "SmSdriE", "SmSdriS", "SmGranule", "SmUserID", "SmLibTileID", "SmLength", "SmTopoError", "街长", "街长联系电话", "道路名称", "道路描述", "道路长度", "道路类别", "巷长（包片干部）", "巷长联系电话", "巷长_居委会主任", "巷长联系电话_居委会", "所属单位_编号", "所属单位_名称", "小巷管家姓名", "小巷管家联系电话", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "颜色", "领导id", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"],
+		"fieldTypes": ["INT32", "INT32", "DOUBLE", "DOUBLE", "DOUBLE", "DOUBLE", "DOUBLE", "INT32", "INT32", "DOUBLE", "INT32", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT", "WTEXT"],
+		"fields": ["SMID", "SMKEY", "SMSDRIW", "SMSDRIN", "SMSDRIE", "SMSDRIS", "SMGRANULE", "SMUSERID", "SMLIBTILEID", "SMLENGTH", "SMTOPOERROR", "LEADER", "JZLXDH", "DLMC", "DLMS", "DLCD", "DLLB", "XZXM", "XZLXDH", "XZXM_JWH", "XZLXDH_JWH", "SSDW_BH", "SSDW_MC", "XXGJXM", "XXGJLXDH", "XXZYXM_WG", "XXZYLXDH_WG", "XXZYXM_HW1", "XXZYLXDH_HW1", "XXZYXM_HW2", "XXZYLXDH_HW2", "XXZYXM_LH", "XXZYLXDH_LH", "COLOR", "LEADERS_ID", "LEADERID_A", "LEADERID_B", "LEADERID_C", "LEADERID_D", "LEADERID_E"]
+	}],
+	"totalCount": 70,
+	"currentCount": 70,
+	"customResponse": null
+}, 201)
