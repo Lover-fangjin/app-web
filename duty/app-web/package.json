@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "arcgis": "^1.0.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "echarts": "^4.6.0",
     "element-ui": "^2.12.0",
